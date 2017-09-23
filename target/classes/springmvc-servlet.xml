@@ -10,8 +10,8 @@
         http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd">  
   
     <!-- 自动扫描controller包下的所有类，如果@Controller注入为bean -->  
-     <context:component-scan base-package="myWebSite.admin.controller" />
-      <context:component-scan base-package="myWebSite.admin.daoImpl,myWebSite.admin.serviceImpl" />
+     <context:component-scan base-package="myWebSite.admin.controller,myWebSite.admin.daoImpl,myWebSite.admin.serviceImpl" >
+     </context:component-scan>
     
     
     <!-- 以下为SpringMVC配置 -->  

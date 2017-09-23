@@ -29,7 +29,7 @@ public class LoanPayType implements RowMapper<LoanPayType>, Serializable{
 	@Override
 	public LoanPayType mapRow(ResultSet rs, int rowNum) throws SQLException {
 		LoanPayType loanPayType = new LoanPayType();
-		loanPayType.setLoanPayTypeId(rs.getInt("loanPayTypeId"));
+		loanPayType.setLoanPayTypeId(rs.getInt("loan_pay_type_id"));
 		loanPayType.setName(rs.getString("name"));
 		return loanPayType;
 	}

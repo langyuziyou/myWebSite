@@ -10,12 +10,8 @@
         http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd">  
   
     <!-- 自动扫描controller包下的所有类，如果@Controller注入为bean -->  
-    <context:component-scan base-package="myWebSite.admin.controller"
-		use-default-filters="false"><!-- base-package 如果多个，用“,”分隔 -->
-		<context:include-filter type="annotation"
-			expression="org.springframework.stereotype.Controller" />
-	</context:component-scan>
-    
+     <context:component-scan base-package="myWebSite.admin.controller,myWebSite.admin.daoImpl,myWebSite.admin.serviceImpl" >
+     </context:component-scan>
     
     
     <!-- 以下为SpringMVC配置 -->  
