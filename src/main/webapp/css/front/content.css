@@ -1,0 +1,1210 @@
+.leftTab span{
+	float:left;
+	font-size:14px;
+	font-weight:bold;
+	color:#fff;
+	margin:-1px 0 0;
+}
+
+.mainTitle{
+	width:526px;
+	height:31px;
+	background:url(../images/mainT_bg.gif) 0 0 no-repeat;
+	font-size:14px;
+	padding:12px 15px 0;
+	font-weight:bold;
+}
+
+h1 { 
+    font: 1.2em "微软雅黑", Helvetica, sans-serif;
+	letter-spacing: 1px; 
+	margin:5px 0 15px 0; 
+	/*display : inline; */
+	color: #e04411;
+	}
+	 
+
+.mainCon{
+	width:541px;
+	height:645px;
+	background:url(../images/mainB_bg.gif) left bottom no-repeat;
+	padding:0 0 12px 15px;
+	margin:0 0 10px;
+}
+
+
+
+.newsLi li{
+	width:526px;
+	height:24px;
+	padding:2px 0 0;
+	line-height:24px;
+	border-bottom:1px dotted #bbb;
+	color:#555;
+}
+
+.newsLi li a{color:#555; font-size:14px}
+
+.newsLi li a:hover{color:#E04511}
+
+.mainCon ul.newsLi li span{float:right}
+
+
+
+.newsLiPage .pagination{width:537px; padding:10px 0 0}
+
+.newsLiPage .pagination li.pageText{width:140px}
+
+.newsLiPage .pagination li{color:#333}
+
+.giftBox{width:779px; padding:0 10px 0 0}
+
+.giftTop{
+	width:749px;
+	height:27px;
+	padding:8px 15px 0;
+	overflow:hidden;
+	color:#e02a00;
+	font-size:14px;
+	font-weight:bold;
+	background:url(../images/giftTop_bg.png) 0 0 no-repeat;
+}
+
+.giftTop span{float:left}
+
+.giftTop a{
+	float:right;
+	padding:0 0 0 15px;
+	cursor:pointer;
+	background-repeat:no-repeat;
+	background-position:left center;
+}
+
+.giftTop a.moreOpen{background-image:url(../images/moreOpen.png)}
+
+.giftTop a.moreClose{background-image:url(../images/moreClose.png)}
+
+.giftCon,.giftConH{
+	width:749px;
+	background:url(../images/giftCon_bg.gif) left bottom no-repeat;
+	margin:0 0 10px;
+	padding:3px 15px 6px;
+	line-height:21px;
+}
+
+/*真麻烦，改了一个地方还得注释*/
+.giftConH{
+	height:18px;
+	overflow:hidden;
+	background-image: url(../images/giftCon_bg.gif);
+	background-repeat: no-repeat;
+	background-position: 0 bottom;
+}
+/*------------end-------------*/
+.giftCon ul,.giftCon ul.list1 li{width:749px}
+
+.giftCon ul li{
+	float:left;
+	width:749px;
+	padding:2px 0;
+	line-height:21px;
+}
+
+.giftCon ul li .left{
+	padding:0 13px;
+	background:url(../images/categoriesLi_bg3.png) 1px 9px no-repeat;
+	font-weight:bold;
+}
+
+.giftCon ul li .right a,.giftCon ul.list1 li a{
+	color:#333;
+	float:left;
+	padding:0 12px 0 0;
+}
+
+.giftTitle,.blessTilteR{
+	width:740px;  
+	background:url(../images/giftTitle.png) 0 0 no-repeat;
+	height:25px;
+	padding:8px 12px 0 27px;
+	overflow:hidden;
+}
+
+.giftTitle span.giftName,.blessTilteR span{
+	background:url(../images/bottomspan.png) no-repeat right top;
+	float:left;
+	height:23px;
+	padding:2px 12px 0 0;
+	font-size:14px;
+	font-weight:bold;
+}
+
+.pagination{width:600px; float:right}
+
+.pagination li{line-height:19px; color:#fff}
+
+.pagination li.pageText{width:95px}
+
+.pagination li a{
+	margin:0 4px;
+	padding:0 4px;
+	text-decoration:none;
+	line-height:19px;
+	color:#fff;
+}
+
+.pagination li a:hover, .pagination li a.active{
+	background:#f4f4f4;
+	border:1px solid #b2b9c1;
+	padding:1px 3px;
+	line-height:15px;
+	color:#e04511;
+}
+
+.pagination li a.previous, .pagination li a.next,
+.pagination li a.next:hover,.pagination li a.previous:hover{
+	display:block;
+	height:19px;
+	overflow:hidden;
+	width:22px;
+	border:none;
+	padding:0;
+	background:url(../images/btn-previous.gif) top center no-repeat;
+	margin-left:0;
+	text-indent:-200px;
+}
+
+.pagination li a.next,.pagination li a.next:hover{background-image:url(../images/btn-next.gif)}
+
+.pagination li a.inact,.pagination li a.inact:hover{background-position:bottom center}
+
+.pagination li.gotoPage{float:right}
+
+.pagination li.gotoPage input.page{
+	width:30px;
+	margin:0 3px;
+	height:15px;
+	padding:1px 0 0;
+}
+
+.pagination li.gotoPage input.go{
+	width:43px;
+	height:22px;
+	background:url(../images/btn_sure.png) center center no-repeat;
+	cursor:pointer;
+	border:none;
+	margin:-2px 10px 0 0;
+}
+
+.pagination li select{font-size:12px; padding:1px; float:right}
+
+.giftListBox{
+	width:777px;
+	border-right:1px solid #ff2b01;
+	border-left:1px solid #ff2b01;
+}
+
+.giftbottom{
+	width:779px;
+	height:7px;
+	overflow:hidden;
+	background:url(../images/giftbottom_bg.png) 0 0 no-repeat;
+	margin:0 0 10px;
+}
+
+.productList{width:777px; padding:8px 0}
+
+.productList li{width:158px; padding:8px 18px}
+
+.productList li a{
+	width:158px;
+	height:160px;
+	overflow:hidden;
+}
+
+.productList li > a:hover { border:1px solid #E52761; }
+.productList .line { border-bottom: 1px dashed #D1D1D1; height: 1px; padding: 0px; margin: 5px 0px; width: 777px; }
+.productList li span.two-line { height:34px; text-align:center; width:158px; }
+
+.productList li a img{
+	width:150px;
+	height:150px;
+	padding:3px;
+	border:1px solid #eee;
+}
+
+.productList li span{
+	line-height:17px;
+	text-align:center;
+	width:158px;
+}
+
+.productList li span a{color:#333; float:none}
+
+.productList li span font{
+	color:#FF7E00;
+	font-size:12px;
+	font-weight:bold;
+}
+
+.giftListBox .pagination{
+	width:749px;
+	float:left;
+	margin:0 14px;
+	padding:12px 0 5px;
+	border-top:1px solid #ccc;
+}
+
+.giftListBox .pagination li,.pagination li a{color:#333}
+
+.giftListBox .pagination li.pageText{width:240px}
+
+.giftListBox .pagination a:hover,.giftListBox .pagination a.active{color:#e04511}
+
+.detailImg{width:442px}
+
+.imgBorder{
+	width:330px;
+	/*height:360px;*/
+	background:url(../images/detailImg_bg.png) 0 0 no-repeat;
+	padding:7px 0 0 7px;
+}
+
+.imgBorder img{
+	vertical-align:middle;
+	border:0;
+}
+
+.imgBorder span{
+	float:left;
+	width:317px;
+	text-align:center;
+	color:#555;
+	padding:7px 0 0;
+}
+
+.thumbnail{width:72px; padding:0 0 0 12px}
+
+.thumbnailBtn{
+	width:68px;
+	height:14px;
+	overflow:hidden;
+	padding:0 0 0 4px;
+	text-align:center;
+	line-height:normal;
+}
+
+.thumbnailList{
+	width:72px;
+	height:312px;
+	/*overflow:hidden;*/
+}
+
+.thumbnailList li{
+	width:72px;
+	height:68px;
+	padding:5px 0;
+}
+
+.thumbnailList li a{
+	width:63px;
+	height:63px;
+	background:url(../images/thumbnail_bg.png) 0 0 no-repeat;
+	padding:5px 0 0 9px;
+}
+
+.thumbnailList li a:hover,
+.thumbnailList li a.active{background-position:left bottom}
+
+.thumbnailList li a img{width:58px; height:58px}
+
+.detailInfor{float:right; width:560px}
+
+.detailInfor h1{
+	width:536px;
+	height:45px;
+	font-size:14px;
+	font-weight:bold;
+	color:#fff;
+	line-height:45px;
+	background:url(../images/detailh1.png) 0 0 no-repeat;
+	padding:0 0 0 24px;
+}
+
+.detailInfor h1 a{color:#fff}
+
+.detailBox{
+	width:536px;
+	/*height:315px;*/
+	padding:0 0 0 24px;
+	overflow:hidden;
+	background:url(../images/detailBox.png) left bottom no-repeat;
+}
+
+.inforLi{width:355px; padding:5px 0}
+
+.inforLi li{
+	width:355px;
+	height:24px;
+	line-height:24px;
+	font-size:14px;		
+}
+
+.neighbor{
+	width:70px;
+	margin:0 20px 0 0;
+	text-align:center;
+}
+
+.explain{
+	width:515px;
+	background:#fffaf7;
+	border-bottom:1px solid #ddd;
+	border-top:1px solid #ddd;
+	padding:6px 1px;
+	line-height:22px;
+	margin:6px 0;
+}
+
+.inforLi li input{
+	width:55px;
+	border:1px solid #ccc;
+	padding:2px 3px 0 0;
+	margin:0 23px 0 0; 
+}
+
+.inforLi li font{
+	font-size:16px;
+	font-weight:bold;
+	color:#ff7e00;
+	color: #e04411;
+}
+
+
+.inforLi li font.line{text-decoration:line-through}
+
+.btnDiv{width:530px; padding:6px 0}
+
+.btnDiv .button{float:left; margin:0 20px 0 0}
+
+.btnDiv span{float:left; color:#ccc; line-height:26px}
+
+.giftTab{width:779px; height:36px}
+
+.giftTab a{
+	width:123px;
+	height:28px;
+	padding:8px 0 0;
+	background:url(../images/giftTab_bg.png) left bottom no-repeat;
+	float:left;
+	font-weight:bold;
+	color:#fff;
+	text-align:center;
+}
+
+.giftTab a.act,.giftTab a:hover{
+	font-size:14px;
+	background-position:0 0;
+}
+
+.giftInfor{
+	width:747px;
+	border:1px solid #ea3124;
+	padding:13px 15px;
+	line-height:21px;
+	margin:0 0 10px;
+}
+
+.giftInfor.writing div{float:none}
+
+.giftInfor h2,.giftInfor p{
+	width:747px;
+	float:left;
+	padding:0 0 10px;
+}
+
+.giftInfor h2{font-size:14px}
+
+.giftInfor p.gray{color:#999; padding:0}
+
+.related{width:757px; padding:12px 10px 2px}
+
+.related li{width:96px; padding:0 15px}
+
+.related li img{
+	width:88px;
+	height:88px;
+	padding:3px;
+	border:1px solid #fab582;
+	background:#fff;
+}
+
+.related li a{
+	width:96px;
+	height:99px;
+	overflow:hidden;
+}
+
+.related li span{
+	width:96px;
+	text-align:center;
+	line-height:16px;
+}
+
+.related li span a{
+    color:#333; 
+    float:none; 
+	font-size:12px;}
+
+.related li span font{
+	color:#ff7e00;
+	font-size:12px;
+	font-weight:bold;
+}
+
+.userComments{margin:-10px 0 0}
+
+.userComments li{
+	width:747px;
+	padding:5px 0 4px;
+	border-bottom:1px dotted #999;
+	line-height:16px;
+}
+
+.userComments li div{width:747px; padding:3px 0; color:#666}
+
+.userComments li span{padding:3px 0}
+
+.userComments li span.time{float:right}
+
+.userComments li span.left{overflow:hidden; width:63px}
+
+.userComments li span.right{
+	color:#666;
+	overflow:hidden;
+	width:680px;
+}
+
+ul.page{float:right; padding:10px 0}
+
+ul.page li{padding:0 0 0 8px}
+
+.commentsBox{
+	width:725px;
+	border:1px solid #eee;
+	background:#f9f9f9;
+	padding:6px 10px;
+	margin:1px 0;
+}
+
+.commentsBox table{width:100%; border:0}
+
+.commentsBox .input{padding:2px; width:200px}
+
+.commentsBox .input.sort{width:60px; margin:0 5px 0 0}
+
+.commentsBox .textarea{
+	border:1px solid #ccc;
+	font-size:12px;
+	width:630px;
+	height:100px;
+	padding:2px 3px;
+}
+
+.commentsBox table td.radio{padding:6px 0 0}
+
+.commentsBox table td.radio img{margin:0 10px 0 0}
+
+.detailR{
+	width:213px;
+	height:70px;
+	padding:67px 0 0;
+	text-align:center;
+	background:url(../images/detailR_bg.png) 0 0 no-repeat;
+	margin:36px 0 10px;
+}
+
+.detailR input{margin:6px 6px 0}
+
+.advertising{width:310px; height:238px; overflow:hidden}
+
+#SwitchBigPic{width:300px; height:181px}
+
+.advertising .pic{width:299px; height:180px}
+
+.advertising ul{width:300px}
+
+.advertising li{width:60px}
+
+.advertising li a{
+	height:35px;
+	padding:9px 3px 3px;
+	width:53px;
+	overflow:hidden;
+	background:url(../images/ad-bg.gif) 0 0 no-repeat;
+}
+
+.advertising li a img{height:35px; width:53px}
+
+.advertising li.selected a,.advertising li a:hover{
+	color:#fff;
+	text-decoration:none;
+	background-position:left bottom;
+}
+
+.newsHot{
+	width:441px;
+	height:212px;
+	border:2px solid #ff8155;
+	margin:0 0 10px;
+	padding:6px 12px;
+	background:#fffcf7;
+}
+
+.newsHot h2{
+	float:left;
+	width:441px;
+	height:26px;
+	border-bottom:1px solid #eee;
+	margin:0 0 8px;
+}
+
+.newsHot h2 span{
+	float:left;
+	font-size:14px;
+	font-weight:bold;
+	color:#f96400;
+}
+
+.newsHot h2 a{float:right; font-size:12px}
+
+.newsImg{
+	width:80px;
+	height:72px;
+	padding:5px 0 0 5px;
+	background:url(../images/newsImg_bg.png) 0 0 no-repeat;
+}
+
+.newsImg img{width:63px; height:63px}
+
+.newsHot h1{
+	float:left;
+	width:356px;
+	font-size:14px;
+	line-height:19px;
+	margin:0 0 3px;
+}
+
+.newText{color:#999; width:356px; line-height:18px}
+
+.newsList{width:440px; margin:5px 1px 0}
+
+.newsList li{
+	width:220px;
+	line-height:19px;
+	color:#444;
+	height:19px;
+	overflow:hidden;
+}
+
+.newBox{
+	width:779px;
+	height:135px;
+	background:#fffbf5 url(../images/newbox_bg2.gif) 0 0 no-repeat;
+	margin:0 0 10px;
+}
+
+.newBox .btnArea{
+	width:38px;
+	height:50px;
+	text-align:center;
+	padding:59px 0 0;
+}
+
+.newBox .showArea{
+	width:703px;
+	height:135px;
+	overflow:hidden;
+}
+
+.newBox ul li{width:96px; padding:12px 25px 0 0}
+
+.newBox ul li img{
+	width:88px;
+	height:88px;
+	padding:3px;
+	border:1px solid #fab582;
+	background:#fff;
+}
+
+.newBox ul li a{
+	width:96px;
+	height:99px;
+	overflow:hidden;
+}
+
+.newBox ul li span{
+	width:96px;
+	text-align:center;
+	line-height:16px;
+}
+
+.newBox ul li span a{color:#333; float:none}
+
+.newsLeftBox,.newsRightBox{width:384px}
+
+.content div.newsRightBox{float:right}
+
+.newsTab{
+	width:362px;
+	height:25px;
+	padding:8px 12px 0;
+	background:url(../images/leftTab_bg2.png) 0 0 no-repeat;
+	overflow:hidden;
+}
+
+.newsTab li a{
+	height:25px;
+	line-height:25px;
+	text-align:center;
+	width:90px;
+	cursor:pointer;
+	font-size:14px;
+}
+
+.newsTab li.normal a{color:#fff}
+
+.newsTab li.act a{
+	background:url(../images/bottomTitle1_a.png) no-repeat 0 0;
+	color:#333;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+.newsTextCon,.blessConR{
+	background:url(../images/leftText_bg2.gif) left bottom no-repeat;
+	display:none;
+	height:197px;
+	overflow:hidden;
+	margin:0 0 10px;
+	padding:11px 0 0 12px;
+	width:372px;
+}
+
+.newsTextCon .newsImg{
+	border:1px solid #ddd;
+	margin:1px 10px 0 0;
+	padding:3px;
+	width:110px;
+	height:87px;
+}
+
+.newsTextCon .newsImg img{width:110px; height:87px}
+
+.newsTextCon h1{
+	float:left;
+	width:234px;
+	font-size:14px;
+	line-height:19px;
+	margin:-1px 0 3px;
+}
+
+.newsTextConLi li{
+	float:left;
+	width:221px;
+	background:transparent url(../images/list-bg.png) no-repeat scroll left center;
+	height:20px;
+	line-height:20px;
+	overflow:hidden;
+	padding:0 0 0 13px;
+}
+
+.newsTextConLi li a,.newsTextCon .newsList li a{color:#555}
+
+.newsTextCon .newsList{width:372px; margin:4px 0 0}
+
+.newsTextCon .newsList li{
+	width:175px;
+	line-height:21px;
+	height:21px;
+	overflow:hidden;
+	padding:0 0 0 11px;
+	background:url(../images/point.png) 1px 10px no-repeat;
+}
+
+.qaTitle{
+	background:url(../images/mainT_bg2.gif) no-repeat 0 0;
+	height:26px;
+	padding:8px 15px 0;
+	width:354px;
+	font-weight:bold;
+}
+
+.qaTitle span{float:left; font-size:14px}
+
+.qaTitle a{float:right}
+
+.qaCon{
+	background:url(../images/mainB_bg2.gif) no-repeat left bottom;
+	padding:0 15px;
+	width:354px;
+	height:207px;
+	overflow:hidden;
+}
+
+.qaCon ul li{
+	float:left;
+	border-bottom:1px dotted #999;
+	width:354px;
+	height:24px;
+}
+
+.qaCon.bless{height:161px; margin:0 0 10px}
+
+ul.blesslist li{
+	background:url(../images/blessli.png) 1px 9px no-repeat;
+	padding:0 0 0 15px;
+	width:339px;
+	height:24px;
+	border-bottom:1px dotted #999;
+}
+
+ul.blesslist li span{color:#f8941a}
+
+ul.blesslist li a{color:#343434}
+
+.articleBox{
+	border:1px solid #EA3124;
+	line-height:21px;
+	margin:0 0 10px 0;
+	padding:10px 12px;
+	width:753px;
+}
+
+.article{width:753px}
+
+.article h1{
+	font-size:16px;
+	font-weight:bold;
+	padding:10px 0;
+	text-align:center;
+	text-indent:0;
+} 
+
+.article h1 a:hover,
+.article p.time a:hover{color:#E04511; text-decoration:none}
+
+.article p{
+	text-indent:30px;
+	font-size:13px;
+	line-height:18px;
+	padding:0 0 10px;
+}
+
+.article p.time{
+	text-indent:0;
+	text-align:center;
+	font-size:12px;
+	color:#ccc;
+	padding:2px 0 12px;
+	margin:0 0 15px;
+	border-bottom:1px dotted #ccc;
+}
+
+.article p.time span{display:inline; padding:0 5px}
+
+.article p.time a{color:#ccc}
+
+/*.article h3{color:#FF9000; font-size:14px}*/
+.article h3{ font-family: "宋体";  font-style: normal; display : inline; color:#FF9000; }
+
+
+.articleB{
+	width:753px;
+	border-top:1px dotted #ccc;
+	padding:10px 0;
+	margin:12px 0 0 ;
+}
+
+.articleB div{width:376px}
+
+.articlelist{
+	float:left;
+	width:765px;
+	padding:5px 6px 0;
+}
+
+.articlelist li{
+	float:left;
+	border-bottom:1px dotted #ccc;
+	margin:1px 8px;
+	width:239px;
+}
+
+.articlelist li a{color:#333}
+
+.articlelist.long li{width:737px}
+
+.articlelist.long li a{
+	float:left;
+	width:737px;
+	color:#E04511;
+	font-weight:bold;
+}
+
+.articlelist.long li p{
+	float:left;
+	width:737px;
+	line-height:18px;
+	padding:0 0 8px;
+}
+
+.banner{
+	width:779px;
+	height:130px;
+	overflow:hidden;
+	margin:0 0 10px;
+}
+
+.blessTilte{
+	background-image:url(../images/title_bg4.png);
+	height:33px;
+	padding:6px 0 0 13px;
+	color:#fff;
+}
+
+.blessCon{
+	background-image:url(../images/con_bg2.gif);
+	margin:0 0 10px;
+	padding:0 0 6px 13px;
+}
+
+.blessCon1{width:200px; margin:-3px 0 0}
+
+.blessTilteR{
+	background-image:url(../images/blessTilte.png);
+	width:345px;
+	font-size:14px;
+}
+
+.blessTilteR a{float:right; color:#fff}
+
+.blessConR{
+	display:block;
+	height:160px;
+	padding:2px 0 0 14px;
+	width:370px;
+}
+
+.blessLi li,.quesLi li{
+	border-bottom:1px dotted #bbb;
+	line-height:20px;
+	width:526px;
+	padding:5px 0;
+}
+
+.blessLi li .button,.quesSearch .button,.editlist li.btn .button{
+	background:url(../images/cartbtn_bg.gif) no-repeat 0 0;
+	border:none;
+	color:#fff;
+	cursor:pointer;
+	font-size:12px;
+	font-weight:bold;
+	height:23px;
+	width:96px;
+}
+
+.blessLi li .button.long{
+	background-image:url(../images/cartbtn_bg1.gif);
+	width:131px;
+	margin:0 5px 0 0;
+}
+
+.blessLi li p{float:left; width:526px}
+
+.blessLi li div{padding:3px 0; width:526px; text-align:right}
+
+.quesImg{height:163px; padding:9px 0 0; width:162px}
+
+.quesImg img{
+	height:145px;
+	padding:3px;
+	border:1px solid #ccc;
+	width:145px;
+}
+
+.quesTop{
+	width:364px;
+	padding:5px 0 0;
+	height:157px;
+	overflow:hidden;
+}
+
+.quesTop h1{
+	float:left;
+	width:364px;
+	font-size:14px;
+	padding:1px 0;
+	border-bottom:1px dotted #ccc;
+}
+
+.category h3{
+	float:left;
+	width:364px;
+	font-size:14px;
+	padding:1px 0;
+	border-bottom:1px dotted #ccc;
+}
+
+.quesTop p{
+	float:left;
+	width:364px;
+	line-height:20px;
+	padding:1px 0 3px;
+}
+
+.quesTop p span{color:#999}
+
+.quesList li{width:253px; padding:0 5px}
+
+.mainCon ul.quesList li a{color:#666; float:none}
+
+
+
+.quesList li.title{
+	width:516px;
+	font-size:14px;
+	font-weight:bold;
+	background:#eee;
+	border-bottom:1px solid #ccc;
+	color:#E04511;
+	padding:2px 5px 0;
+	margin:0 0 2px;
+}
+
+.quesSearch{
+	background:#FFFCF7;
+	border:2px solid #FF8155;
+	margin:0 0 10px;
+	padding:9px 12px;
+	width:528px;
+}
+
+.quesSearch span{
+	font-size:14px;
+	font-weight:bold;
+	color:#ff7800;
+	float:left;
+	padding:0 8px 0 2px;
+}
+
+.quesSearch .input{
+	width:240px;
+	height:18px;
+	float:left;
+	padding:3px 3px 0;
+	margin:0 2px;
+}
+
+.quesSearch .button{float:left; margin:0 3px}
+
+.quesLi li div{width:526px; padding:2px 0}
+
+.quesLi li div a{float:left; font-weight:bold}
+
+.quesLi li div span{float:right; padding:0 0 0 8px}
+
+.quesLi li div span.time{color:#666}
+
+.quesLi li p{
+	float:left;
+	width:526px;
+	height:20px;
+	overflow:hidden;
+	padding:1px 0 3px;
+	color:#777;
+}
+
+.quesText,.quesText p{width:749px; padding:4px 0}
+
+.quesText h2{width:749px; font-size:14px}
+
+.quesText p.bottom{
+	text-align:right;
+	border-bottom:1px dotted #ccc;
+	margin:-2px 0 0;
+	color:#777;
+}
+
+.quesText .btn{width:749px; padding:7px 0 2px}
+
+.quesText .btn a{float:left; height:38px}
+
+.quesText .btn a.button{margin:0 9px 0 0}
+
+.quesText .btn a.button1{
+	height:36px;
+	line-height:36px;
+	font-size:16px;
+	font-weight:bold;
+	padding:0 9px;
+	background:url(../images/quesbg.png) 0 0 repeat-x;
+	border:1px solid #ff9700;
+	margin:0 9px 0 0;
+}
+
+.quesText .btn a.button1:hover{color:#333; text-decoration:none}
+
+.editlist{padding:6px 0 10px 6px; width:490px}
+
+.editlist li{
+	width:450px;
+	margin:6px 0;
+	height:25px;
+	overflow:hidden;
+}
+
+.editlist li span{
+	width:89px;
+	padding:0 7px 0 0;
+	text-align:right;
+	line-height:25px;
+	font-weight:bold;
+	float:left;
+	color:#444;
+}
+
+.editlist li .input{
+	float:left;
+	height:16px;
+	padding:3px;
+	width:205px;
+}
+
+.editlist li .input.long{width:460px}
+
+.editlist li .input.sort{width:90px}
+
+.editlist li textarea.input.long{height:120px}
+
+.editlist li.btn{
+	height:auto;
+	margin:0;
+	padding:8px 0 5px 96px;
+	width:362px;
+}
+
+.brandBox{
+	float:left;
+	border:1px solid #ff2b01;
+	border-top:none;
+	width:990px;
+	padding:5px;
+	margin:0 0 10px;
+}
+
+.brandBox li{
+	float:left;
+	width:182px;
+	height:170px;
+	margin:5px;
+	border:1px solid #ddd;
+	padding:2px;
+	overflow:hidden;
+}
+
+.brandBox li h4{
+	float:left;
+	width:172px;
+	/* background:#eee; */
+	padding:0 5px;
+	font-weight:normal;
+	font-size:12px;
+}
+
+.brandBox li h4 span{float:right}
+
+.brandBox li a.brandImg,.brandLeft{
+	width:130px;
+	height:70px;
+	padding:1px;
+	border:1px solid #eee;
+	margin:8px 28px 5px;
+}
+
+.brandBox li a.brandImg{width:130px; height:70px}
+
+.brandBox li p{
+	float:left;
+	width:170px;
+	padding:0 6px;
+	line-height:19px;
+	color:#666;
+	text-indent:2em;
+}
+
+.brandLeft{margin:6px 10px 7px 0}
+
+.giftCon ul.brandRight,.giftCon ul.brandRight li{float:left; width:605px}
+
+.giftCon ul.brandRight li{padding:3px 0; line-height:19px}
+
+.cultureBanner{
+	width:1002px;
+	background:url(../images/banner_bg.png) top right no-repeat;
+	height:290px;
+	margin:0 0 10px;
+}
+
+.cultureBanner a{width:753px; float:left; height:290px; text-indent:-5000px}
+
+.cultureBanner p{width:163px; float:right; padding:18px 18px 0 0}
+
+.cultureBanner p span{color:#FF3300; font-weight:bold}
+
+.content div.topPage{float:right; color:#fff}
+
+.topPage #page-link a{color:#fff}
+
+.classifyBox{width:493px; margin:2px 0 11px}
+
+.classifyBox.leftClass{margin:2px 16px 11px 0}
+
+.classTitle{
+	background:url(../images/classTitle.png) no-repeat 0 0;
+	height:22px;
+	overflow:hidden;
+	padding:11px 12px 0 28px;
+	width:453px;
+	font-size:14px;
+	font-weight:bold;
+}
+
+.classCon{
+	width:467px;
+	padding:3px 13px 7px;
+	background:#fff url(../images/classCon.gif) left bottom no-repeat;
+}
+
+.classCon ul,.classCon ul li{float:left; width:467px}
+
+.classCon ul li{padding:5px 0; border-bottom:1px dotted #ddd;font-size:13px}
+
+.classCon ul li .left{
+	background:url(../images/categoriesLi_bg3.png) no-repeat 1px 9px;
+	font-weight:bold;
+	padding:0 0 0 14px;
+	width:453px;
+}
+
+.classCon ul li .right{width:466px;padding:0 0 0 1px}
+
+.classCon ul li .right a{
+	color:#333;
+	float:left;
+	padding:0 9px 0 0;
+	white-space:nowrap;
+	line-height:22px;
+}
+
+.classCon ul li .right a:hover{color:#E04511}

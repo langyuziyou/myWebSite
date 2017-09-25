@@ -1,0 +1,37 @@
+.viewBox,.viewTop,h4,input,.viewCon,.viewCon ul,.viewCon ul li,.viewCon p{float:left}
+
+.viewBox{width:110px; overflow:hidden}
+
+.viewTop{width:96px; height:140px; background:url(../images/viewT.png) 0 0 no-repeat; padding:6px 7px 0; line-height:16px}
+
+.viewTop .close{float:right; padding:0 18px 0 0; font-weight:bold; color:#fff; background:url(../images/btn_viewC.png) right center no-repeat; text-decoration:none}
+
+.viewTop a.close:hover{color:#e04511} .viewTop input{margin:3px 11px}
+
+.viewTop h4{width:96px; height:25px; font-size:14px; color:#fff; text-align:center; padding:12px 0 0}
+
+.viewCon{width:96px; padding:0 7px 7px; background:url(../images/viewC.png) left bottom no-repeat}
+
+.viewCon h4{width:96px; height:32px; line-height:26px; font-size:14px; color:#fff; text-align:center;) center top no-repeat}
+
+.viewCon .button{width:96px; height:24px; color:#fff; background:url(../images/cartbtn_bg.gif) 0 0 no-repeat; cursor:pointer; font-weight:bold; line-height:24px; border:none}
+
+.viewCon ul li{width:96px; padding:0 0 6px}
+
+.viewCon a.pic{float:left; width:62px; height:64px; padding:0 16px}
+
+.viewCon a.pic img{width:60px; height:60px; border:1px solid #ddd}
+
+.viewCon a.pic:hover img{border:1px solid #F90}
+
+.viewCon p{width:96px; overflow:hidden; text-align:center; color:#F90; line-height:16px}
+
+.viewCon a.name{text-align:center; color:#333; text-decoration:none}
+
+.viewCon a.name:hover{text-decoration:underline; color:#E04511}
+
+.qqstyle {
+float:left;
+padding:0 0 2px 12px;
+width:84px;
+}

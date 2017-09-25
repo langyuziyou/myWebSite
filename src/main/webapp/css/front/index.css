@@ -1,0 +1,237 @@
+
+h1{
+font-size: 14px;color: #fff; display : inline}
+
+h3{
+font-size: 12px;color: #FFE400;display : inline}
+
+.newBox{
+	width:775px;
+	height:146px;
+	padding:32px 0 0 14px;
+	background:url(../images/newbox_bg.gif) top right no-repeat;
+	overflow:hidden;
+	margin:0 0 10px;
+}
+
+.newBox .btnArea{
+	width:38px;
+	height:50px;
+	text-align:center;
+	padding:50px 0 0;
+}
+
+.newBox .showArea{
+	width:696px;
+	height:138px;
+	overflow:hidden;
+}
+
+.newBox ul li{width:96px; padding:0 25px 0 0}
+
+.newBox ul li img{
+	width:88px;
+	height:88px;
+	padding:3px;
+	border:1px solid #fab582;
+	background:#fff;
+}
+
+.newBox ul li a{
+	width:96px;
+	height:99px;
+	overflow:hidden;
+}
+
+.newBox ul li span{
+	width:96px;
+	text-align:center;
+	line-height:16px;
+}
+
+.newBox ul li span a,.goodsList li span a{color:#333; float:none}
+
+.newBox ul li span font,.goodsList li span font{
+	color:#ff7e00;
+	font-size:12px;
+	font-weight:bold;
+}
+
+.priceBox{
+	width:187px;
+	padding:0 13px;
+	background:url(../images/pricebox_bg1.png) no-repeat scroll 0 0;
+    height:177px; 
+/*修改了price的高度地方*/
+/*	height:187px; */
+}
+
+.priceBox h4{
+	width:185px;
+	font-size:14px;
+	text-align:center;
+	color:#ffe82b;
+	padding:5px 0 0;
+	height:36px;
+}
+
+.priceBox a{color:#333}
+
+.priceBox ul li{width:92px; border-bottom:1px solid #eee}
+
+.mainTitle{
+	width:526px;
+	height:30px;
+	background:url(../images/mainT_bg.gif) 0 0 no-repeat;
+	font-size:14px;
+	padding:13px 15px 0;
+}
+
+.mainTitle a{
+	float:left;
+	color:#333;
+	padding:0 15px 0 0;
+	width:60px;
+	background:url(../images/separated.png) right center no-repeat;
+}
+
+.mainTitle a:hover,.mainTitle a.act{font-weight:bold}
+
+.mainTitle a.last{background:none; padding:0}
+
+.mainCon{
+	width:541px;
+	background:url(../images/mainB_bg.gif) left bottom no-repeat;
+	padding:13px 0 15px 15px;
+	margin:0 0 10px;
+}
+
+/*修改了首页flash宽度地方*/
+.adArea{width:213px}
+
+.goodsList{width:532px}
+
+.goodsList li.focus{
+	width:114px;
+	height:165px;
+	overflow:hidden;
+	padding:7px 12px 0 7px;
+	background:url(../images/focusList_bg.gif) 0 0 no-repeat;
+}
+
+.goodsList li.focus img{width:114px; height:114px}
+
+.goodsList li.focus a{
+	width:114px;
+	height:114px;
+}
+
+.goodsList li.focus span{
+	width:114px;
+	text-align:center;
+	line-height:17px;
+}
+
+.goodsList li.sort{
+	width:88px;
+	height:125px;
+	overflow:hidden;
+	padding:15px 11px 0 7px;
+}
+
+.goodsList li.sort img{width:88px; height:88px}
+
+.goodsList li.sort a{width:88px; height:91px; overflow:hidden}
+
+.goodsList li.sort span{
+	width:88px;
+	text-align:center;
+	line-height:17px;
+}
+
+.goodsList li.line{
+	border-bottom:1px dotted #ddd;
+	height:13px;
+	width:525px;
+	overflow:hidden;
+}
+
+.QandAtitle{
+	width:974px;
+	height:34px;
+	padding:10px 20px 0;  
+	overflow:hidden;
+	margin:0 auto;
+	background:url(../images/QandAtitle.gif) 0 0 no-repeat;
+	font-weight:bold;
+	color:#ffe400;
+}
+
+.QandAtitle font{color:#fff; font-size:14px}
+
+.QandAbox{
+	width:996px;
+	padding:0 2px 2px;
+	border:1px solid #ddd3cc;
+	border-top:none;
+	margin:-2px auto 10px;
+	overflow:hidden;
+	height:262px;
+} 
+
+.QandAbox div{width:272px}
+
+.QandAbox div a{ height:131px}
+
+.QandAbox ul{width:350px}
+
+/*.QandAbox ul li{
+	width:350px;
+	height:26px;
+	padding:2px 0 0;
+	border-bottom:1px dotted #999;
+} */
+
+.QandAbox ul li{
+    display: block;
+	width:350px;
+	height:26px;
+	padding:2px 0 0;
+	border-bottom:1px dotted #999;
+	line-height: 26px;
+white-space: nowrap;
+word-break: keep-all;
+overflow: hidden;
+text-overflow: ellipsis;
+border-bottom: 1px dotted
+}
+
+.QandAbox ul li.title1,
+.QandAbox ul li.title2{
+	background:#fffdee;
+	font-weight:bold;
+	text-align:center;
+	border-bottom:2px solid #ff5a00;
+}
+
+.QandAbox ul li.title2{background:#ffefeb; font-size:14px}
+
+.QandAbox ul li.title1 a{font-size:14px}
+
+.QandAbox ul li.title2 a{color:#444}
+
+/*最外层容器*/
+.ldh_fx_panel{width:556px;position:relative;overflow:hidden;background:#f1f1f1}
+/*图片大小*/
+.ldh_fx_panel img{border:none;width:556px;height:207px}
+/*图片容器*/
+.ldh_fx_wrap{height:207px;overflow:hidden}
+/*导航容器*/
+.ldh_fx_nav{position:absolute;bottom:0px;width:560px;height:28px;font:12px/1.5 arial;color:red}
+/*导航按扭*/
+.ldh_fx_nav a{display:block;float:left;display:inline;height:100%;line-height:28px;text-decoration:none;margin-right:1px;font:14px/2.2 arial;position:relative;overflow:hidden}
+/*文本与半透明背景*/
+.ldh_fx_nav a .ldh_fx_link_bg{display:block;height:100%;background:#666;filter:Alpha(opacity=75);opacity:0.75;zoom:1}
+.ldh_fx_nav a .ldh_fx_link_txt{position:absolute;top:0;left:0;display:block;width:100%;text-align:center;cursor:pointer;color:#fff}
+.ldh_fx_nav a:hover .ldh_fx_link_bg,.ldh_fx_nav a.ldh_fx_hot .ldh_fx_link_bg{background:#eee}
+.ldh_fx_nav a:hover .ldh_fx_link_txt,.ldh_fx_nav a.ldh_fx_hot .ldh_fx_link_txt{color:#ff9000}

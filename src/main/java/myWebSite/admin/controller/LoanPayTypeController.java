@@ -57,5 +57,11 @@ public class LoanPayTypeController {
 		
 		return new ModelAndView("/list");
 	}
+	
+	@RequestMapping(value = "/reStart")
+	public ModelAndView reStart(HttpServletRequest request) {
+
+		return new ModelAndView("/front/reStart");
+	}
 
 }
