@@ -1,0 +1,60 @@
+.header .logo{
+	left: 40px;
+	position: absolute;
+}
+.header .logo img{
+	height: 40px;
+}
+.header span{
+	font-size: 20px;
+	color: #fff;
+	margin-left: 50px;
+	line-height: 60px;
+}
+.header div.user{
+	position: absolute;
+	right: 40px;
+}
+.header div.user button{
+	margin-top: -4px;
+}
+.header div.user span{
+	font-size: 16px;
+	margin: 0 10px 0 0;
+}
+.layui-side.hg-side{
+	width: 150px;
+}
+.layui-side.hg-side .layui-nav-tree{
+	width: 150px;
+}
+.layui-side.hg-side .site-demo-title {
+    position: fixed;
+    left: 150px;
+    right: 0;
+    top: 65px;
+} 
+.layui-body.hg-body{
+	top: 60px;
+    left: 150px;
+    bottom: 0;
+}
+.layui-body.hg-body .layui-main.hg-main{
+	margin: 15px;
+}
+.loginMain{
+	margin: 150px auto 0;
+	width: 300px;
+}
+.loginMain button{
+	width: 100%;
+}
+.loginMain .layui-field-box{
+	padding: 20px;
+}
+.loginMain.c{
+	width: 500px;
+}
+.bug .layui-table-cell .layui-form-checkbox{
+	top: 5px;
+}

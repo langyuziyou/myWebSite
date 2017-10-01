@@ -1190,178 +1190,13 @@ function updateimgnone(id){
   </div> 
    
 </div>
-<div class="footer">
-   <p><a href="http://www.lipin-bj.cn/help/4/" rel="nofollow">关于我们</a> | <a href="http://www.lipin-bj.cn/help/23/" rel="nofollow">联系我们</a> | <a href="http://www.lipin-bj.cn/help/5/" rel="nofollow">厂家加盟</a> |  <a href="http://www.lipin-bj.cn/map.html">网站地图</a> | <a href="http://www.lipin-bj.cn/friendlinks.html">网址大全</a></p>
-<!-- 分享注释掉 <script type="text/javascript" id="bdshare_js" data="type=slide&img=0&pos=left&uid=393030" ></script>
-<script type="text/javascript" id="bdshell_js"></script>
-<script type="text/javascript">
-		var bds_config = {"bdTop":129};
-		document.getElementById("bdshell_js").src = "http://share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
-</script>  -->
- <p>北京古韵华礼文化发展有限公司 版权所有 2008-2015 京ICP备12041176号-8 <script src="<%=basePath%>css/images/stat.php" language="JavaScript"></script>
- 	<a href="http://www.cnzz.com/stat/website.php?web_id=1880666" target="_blank" title="站长统计"><img border="0" hspace="0" vspace="0" src="<%=basePath%>css/images/pic.gif"></a>
-</p>
-   <p>古韵礼品网 Copyright © www.lipin-bj.cn All Rights Reserved.
-   <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?e466d1f5c9b18d04d3e48bd876bff9cb";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script></p>     
-</div> 
-
-<link rel="stylesheet" type="text/css" href="<%=basePath%>css/front/view.css">
-<script language="javascript">
-// JavaScript Document
+<!--<div class="footer"> &copy; 2005-2017  版权所有，并保留所有权利。 </a><br />-->
+<jsp:include page="/WEB-INF/views/front/footer.jsp" flush="true"></jsp:include>  
 <!--
-var delta=0.15;
-var collection;
-var closeB=false;
-function floaters() 
-{
-  this.items=[];
-  this.addItem=function(id,x,y,contentF,contentS)
-  {
-  	var str = "";
-  	if(document.all){
-  			str = '<IFRAME style="position:absolute; visibility:inherit; top:0px; left:0px; width:80px; z-index:-1;opacity:0;filter: Alpha(Opacity=0); -moz-opacity: 0;" src="javascript:void(0);" frameBorder="0" scrolling="no"></IFRAME>';
-  	}
-  	if(choose())
-    {    	
-    	document.write('<DIV  kk="kk" id='+id+' style="Z-INDEX:10;POSITION:absolute;width:150px;left:'+(typeof(x)=='string'?eval(x):x)+';top:'+(typeof(y)=='string'?eval(y):y)+'">'+str+contentF+'</DIV>');
-    }else{
-    	document.write('<DIV id='+id+' style="Z-INDEX:10;POSITION:absolute;width:150px;left:'+(typeof(x)=='string'?eval(x):x)+';top:'+(typeof(y)=='string'?eval(y):y)+'">'+str+contentS+'</DIV>');
-    }     
-    var newItem={};
-    newItem.object=document.getElementById(id);
-    newItem.x=x;
-    newItem.y=y;
-    newItem.close = false;
-    newItem.name = id;
-    this.items[this.items.length]=newItem;
-  }
-  this.play=function()
-  {
-     collection=this.items
-     setInterval('play()',10);
-  }
-}
-  function play()
-  {
-    for(var i=0;i<collection.length;i++)
-   {
-   	 if(collection[i].close){	
-	     collection[i].object.style.display = 'none';
-	     continue;
-     }
-    var followObj=collection[i].object;
-    var followObj_x=(typeof(collection[i].x)=='string'?eval(collection[i].x):collection[i].x);
-    var followObj_y=(typeof(collection[i].y)=='string'?eval(collection[i].y):collection[i].y);
-    if(followObj.offsetLeft!=(getScrollXY().x+followObj_x))
-    {
-     var dx=(getScrollXY().x+followObj_x-followObj.offsetLeft)*delta;
-     dx=(dx>0?1:-1)*Math.ceil(Math.abs(dx));
-     followObj.style.left=followObj.offsetLeft+dx+"px";
-    }
-    if(followObj.offsetTop!=(getScrollXY().y+followObj_y)) 
-    {
-    	var dy=(getScrollXY().y+followObj_y-followObj.offsetTop)*delta;
-        dy=(dy>0?1:-1)*Math.ceil(Math.abs(dy));
-        followObj.style.top=followObj.offsetTop+dy+"px";
-    }
-    followObj.style.display = '';
-   }
-  }
-  function getScrollXY(){
-	var x,y;
-	if(document.body.scrollTop){
-	  x=document.body.scrollLeft;
-	  y=document.body.scrollTop;
-	}
-	else{
-	  x=document.documentElement.scrollLeft;
-	  y=document.documentElement.scrollTop;
-	}
-	return {x:x,y:y};
-	} 
-  function closeBanner(name)
-  {
-    for(var i=0;i<collection.length;i++)
-    {
-     if(collection[i].name == name){	
-     collection[i].object.style.display = 'none';
-     collection[i].close = true;
-     return;
-     }
-    }
-  }
-  function cls()
-  {  	
-  }
-  function choose()
-  {
-  	var number=Math.ceil(Math.random()*10);
-    number=number%2;
-    if(number==0)return true;
-    else return false;
-  }
-	function correctPNG(myImage) // correctly handle PNG transparency in Win IE 5.5 & 6.
-{
-    var arVersion = navigator.appVersion.split("MSIE")
-    var version = parseFloat(arVersion[1])
-    if ((version >= 5.5) && (document.body.filters))
-    {
-     		var imgID = (myImage.id) ? "id='" + myImage.id + "' " : "";
-		    var imgClass = (myImage.className) ? "class='" + myImage.className + "' " : "";
-		    var imgTitle = (myImage.title) ?  "title='" + myImage.title  + "' " : "title='" + myImage.alt + "' ";
-		    var imgStyle = "display:inline-block;" + myImage.style.cssText;
-		    if (myImage.align == "left") imgStyle = "float:left;" + imgStyle;
-        if (myImage.align == "right") imgStyle = "float:right;" + imgStyle;
-        if (myImage.parentElement.href) imgStyle = "cursor:pointer;" + imgStyle;
-		    var strNewHTML = "<span " + imgID + imgClass + imgTitle
-		                  + " style=\"" + "width:" + myImage.width 
-		                  + "px; height:" + myImage.height 
-		                  + "px;" + imgStyle + ";"
-		                  + "filter:progid:DXImageTransform.Microsoft.AlphaImageLoader"
-		                  + "(src=\'" + myImage.src + "\', sizingMethod='scale');\"></span>";
-
-		    myImage.outerHTML = strNewHTML;  
-    }    
-} 
-var theFloaters  = new floaters();
-//
-var contentF='<div id=history_div onload=correctPNG(this)><div class=viewBox><div class=viewTop><a href=javascript:cls(); onclick=closeBanner(\'followDiv1\') class=close>关闭</a><h4>在线客服</h4><a href= http://wpa.qq.com/msgrd?V=1&amp;uin=9656970&amp;Site=古韵礼品网欢迎您&amp;Menu=yes target= _blank class=qqstyle><img src= http://wpa.qq.com/pa?p=1:9656970:4 border=0 alt=QQ />&nbsp;古韵一号</a><a href= http://wpa.qq.com/msgrd?V=1&amp;uin=512453559&amp;Site=古韵礼品网欢迎您&amp;Menu=yes target= _blank class=qqstyle><img src= http://wpa.qq.com/pa?p=1:512453559:4 border=0 alt=QQ />&nbsp;古韵二号</a><a href= http://wpa.qq.com/msgrd?V=1&amp;uin=1256482905&amp;Site=古韵礼品网欢迎您&amp;Menu=yes target= _blank  class=qqstyle><img src= http://wpa.qq.com/pa?p=1:1256482905:4 border=0 alt=QQ />&nbsp;厂家加盟</a><a href= http://wpa.qq.com/msgrd?V=1&amp;uin=514153422&amp;Site=古韵礼品网欢迎您&amp;Menu=yes target= _blank  class=qqstyle><img src= http://wpa.qq.com/pa?p=1:514153422:4 border=0 alt=QQ />&nbsp;友情链接</a><br></div><div class=viewCon id=history_list><h4>浏览历史</h4><ul></ul><input type=button class=button id=clear_history value=清空浏览历史 onclick=clear_history()></div></div></div>';
-var contentS='<div id=history_div onload=correctPNG(this)><div class=viewBox><div class=viewTop><a href=javascript:cls(); onclick=closeBanner(\'followDiv1\') class=close>关闭</a><h4>在线客服</h4><a href= http://wpa.qq.com/msgrd?V=1&amp;uin=9656970&amp;Site=古韵礼品网欢迎您&amp;Menu=yes target= _blank class=qqstyle><img src= http://wpa.qq.com/pa?p=1:9656970:4 border=0 alt=QQ />&nbsp;古韵一号</a><a href= http://wpa.qq.com/msgrd?V=1&amp;uin=512453559&amp;Site=古韵礼品网欢迎您&amp;Menu=yes target= _blank class=qqstyle><img src= http://wpa.qq.com/pa?p=1:512453559:4 border=0 alt=QQ />&nbsp;古韵二号</a><a href= http://wpa.qq.com/msgrd?V=1&amp;uin=1256482905&amp;Site=古韵礼品网欢迎您&amp;Menu=yes target= _blank  class=qqstyle><img src= http://wpa.qq.com/pa?p=1:1256482905:4 border=0 alt=QQ />&nbsp;厂家加盟</a><a href= http://wpa.qq.com/msgrd?V=1&amp;uin=514153422&amp;Site=古韵礼品网欢迎您&amp;Menu=yes target= _blank  class=qqstyle><img src= http://wpa.qq.com/pa?p=1:514153422:4 border=0 alt=QQ />&nbsp;友情链接</a><br></div><div class=viewCon id=history_list><h4>浏览历史</h4><ul></ul><input type=button class=button id=clear_history value=清空浏览历史 onclick=clear_history()></div></div></div>';
-theFloaters.addItem('followDiv1','document.body.clientWidth-180','20',contentF,contentS);
-theFloaters.play();
-//-->
-</script>
-
-<script type="text/javascript">
-if (document.getElementById('history_list').innerHTML.replace(/\s/g,'').length<1)
-{
-  document.getElementById('history_div').style.display='block';
-}
-else
-{
-    document.getElementById('history_div').style.display='block';
-}
-function clear_history()
-{
-Ajax.call('/user.php', 'act=clear_history',clear_history_Response, 'GET', 'TEXT',1,1);
-}
-function clear_history_Response(res)
-{
-document.getElementById('history_list').innerHTML = '您已清空最近浏览过的商品';
-}
-</script>
-
-
-
-
+	作者：54087810@qq.com
+	时间：2017-09-26
+	描述：
+-->
 <script type="text/javascript" src="<%=basePath%>js/front/nav.js"></script>
 <script type="text/javascript" src="<%=basePath%>js/front/prototype.js"></script>
 <script type="text/javascript" src="<%=basePath%>js/front/local.js"></script>
@@ -1370,4 +1205,6 @@ document.getElementById('history_list').innerHTML = '您已清空最近浏览过
 <script language="javascript" type="text/javascript" src="<%=basePath%>js/front/yao.js"></script>
 <script language="javascript" type="text/javascript">
 	YAO.YTabs({tabs:YAO.getElByClassName('categoriesTab','li','categories'),contents:YAO.getElByClassName('categoriesSub','ul','categories'),hideAll:true});
-</script></body></html>
+</script>
+</body>
+</html>

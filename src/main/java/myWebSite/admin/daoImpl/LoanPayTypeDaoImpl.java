@@ -40,9 +40,8 @@ public class LoanPayTypeDaoImpl implements LoanPayTypeDao{
 	@Override
 	public Integer save(LoanPayType entity) {  
         
-      String sql = " INSERT INTO loan_pay_type(loan_pay_type_id, name) VALUES(:id, :name) ";  
+      String sql = " INSERT INTO loan_pay_type( name) VALUES(:name) ";  
       MapSqlParameterSource paramSource = new MapSqlParameterSource();  
-      paramSource.addValue("id", entity.getLoanPayTypeId());  
       paramSource.addValue("name", entity.getName());  
       int result = namedParameterJdbcTemplate.update(sql, paramSource);  
       return result;  

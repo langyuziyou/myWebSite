@@ -42,16 +42,27 @@
 		cache-period="31536000" />
 	<mvc:resources mapping="/js/**" location="/js/"
 		cache-period="31536000" />
+	<mvc:resources mapping="/treeTable/**" location="/treeTable/"
+		cache-period="31536000" />
 	<mvc:resources mapping="/ueditor/**" location="/ueditor/"
 		cache-period="31536000" />
 	<mvc:resources mapping="/umeditor/**" location="/umeditor/"
 		cache-period="31536000" />
 	<mvc:resources mapping="/upload/**" location="/upload/"
 		cache-period="31536000" />
+			<mvc:resources mapping="/shop/**" location="/shop/"
+		cache-period="31536000" />
 		
-		 
+	
+		<!--配置拦截器, 多个拦截器,顺序执行 -->
+<!-- 	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/sys/**" />
+			<bean class="myWebSite.admin.interceptor.LogInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors> -->
   
-    <!-- 对模型视图名称的解析，即在模型视图名称添加前后缀 -->  
+    <!-- 对模型视图名称的解析，即在模型视图名称添加前后缀 -->
     <bean  
         class="org.springframework.web.servlet.view.InternalResourceViewResolver">  
         <property name="viewClass"  

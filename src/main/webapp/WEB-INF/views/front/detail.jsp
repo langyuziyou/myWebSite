@@ -10,7 +10,9 @@
 %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <title>如意中秋礼盒套装 -古韵礼品网(www.lipin-bj.cn)</title>
 <meta name="Description" content="古韵礼品网(www.lipin-bj.cn)提供如意中秋礼盒套装,市场价格:1790元,古韵网价格:1180元,可个性定制免费设计,批量订购价格更低更优惠！">
@@ -18,151 +20,83 @@
 <!--<base href="http://www.lipin-bj.cn/">--><base href="."> 
 <link rel="stylesheet" type="text/css" href="<%=basePath%>css/front/layout.css">
 <link rel="stylesheet" type="text/css" href="<%=basePath%>css/front/content.css">
+<link rel="stylesheet" type="text/css" href="<%=basePath%>css/front/zoom.css">
+<style>
+	    /* SIMPLE DEMO STYLES */
+    body {
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+    .container {
+      margin: 50px;
+      max-width: 700px;
+    }
+    .container img {
+      width: 100%;
+    }
+    .container .pull-left {
+      width: 55%;
+      float: left;
+      margin: 20px 20px 20px -80px;
+    }
+    @media (min-width: 750px) {
+      body {
+        font-size: 16px;
+        line-height: 1.6;
+      }
+      .container {
+        margin: 100px auto;
+      }
+    }
+</style>	
 <!--[if lte IE 7]><link rel="stylesheet" href="/themes/guyun/style/ie7.css" type="text/css"/><![endif]-->
 <!--[if lte IE 6]><link rel="stylesheet" href="/themes/guyun/style/ie6.css" type="text/css"/><![endif]-->
-<script src="<%=basePath%>js/front/jquery.min.js"></script>
+<script src="<%=basePath%>js/jquery-1.9.1.js"></script>
 <script src="<%=basePath%>js/front/hm.js"></script>
 <script type="text/javascript" src="<%=basePath%>js/front/nav.js"></script>
 <script type="text/javascript" src="<%=basePath%>js/front/common.js"></script>
-<script type="text/javascript" src="<%=basePath%>js/front/transport.js"></script>
 <script type="text/javascript" src="<%=basePath%>js/front/utils.js"></script>
-<script type="text/javascript" src="<%=basePath%>js/front/beBig.js"></script>
+<script type="text/javascript" src="<%=basePath%>js/front/zoom.js"></script>
 <script type="text/javascript"> 
 var process_request = "正在处理您的请求...";
 </script>
+
+<!-- 图片放大
+	作者：54087810@qq.com
+	时间：2017-09-26
+	描述：
+-->
+
+
+
 </head>
 <body style="cursor: auto;">
 <script type="text/javascript">
 var process_request = "正在处理您的请求...";
 </script>
-<div class="header">
-		<div class="headerCon marginUp">
-			<div class="logo">
-				<a class="logoH" href="http://www.lipin-bj.cn/"></a>
-				<div class="contact">				
-				</div>
-			</div>
-			<div class="right">
-			您好，欢迎来到古韵礼品网，买礼品首选礼品网站！ <div id="append_parent"></div>
-&nbsp;&nbsp;&nbsp;&nbsp;
- <a href="http://www.lipin-bj.cn/user.php" rel="nofollow">登陆</a>&nbsp;/&nbsp;<a href="http://www.lipin-bj.cn/user.php?act=register" rel="nofollow">注册</a>
-			&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="http://www.lipin-bj.cn/flow.php" rel="nofollow">购物车</a>
-			&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="http://www.lipin-bj.cn/" rel="nofollow" onclick="window.external.addFavorite(this.href,this.title);return false;" title="古韵礼品网 - 礼品公司第一品牌">收藏本站</a>
-			</div>	
-            <div class="search">
-				<form action="" method="get" name="advancedSearchForm" id="advancedSearchForm">
-					<input type="text" class="input" id="keywords" value="" name="keywords" style="width:90px;">
-					<select id="stype" name="stype">
-					<option value="p">搜索礼品</option>
-					<option value="a">搜索文章</option>
-					</select>
-					<input type="hidden" name="action" value="form">
-					<input type="image" src="<%=basePath%>css/images/search_btn.png" class="btn">
-				</form>
-								
-				<div class="keyword"><span class="text" "font:12px"="">&nbsp;热门：&nbsp;</span>
-                                <a href="http://www.lipin-bj.cn/f-chuanyilipin/">创意礼品</a><span>|</span>
-				<a href="http://www.lipin-bj.cn/f-shangwulipin/">商务礼品</a><span>|</span>
-				<a href="http://www.lipin-bj.cn/f-xiaolipin/">小礼品</a><span>|</span>
-				<a href="http://www.lipin-bj.cn/f-jiangpinlipin/">奖品</a>
-				</div>
-				
-			</div>
-		</div>
-		
-		<div class="headerNav">
-			<ul>
-			<li class="home"><a href="http://www.lipin-bj.cn/" rel="nofollow" class="active">首页</a></li>
-			
-						<li><a href="http://www.lipin-bj.cn/f-shangwulipin/">商务礼品</a></li>
-						<li><a href="http://www.lipin-bj.cn/f-xiaolipin/">小礼品</a></li>
-						<li><a href="http://www.lipin-bj.cn/f-guanggaolipin/">广告礼品</a></li>
-						<li><a href="http://www.lipin-bj.cn/f-gongyilipin/">工艺礼品</a></li>
-						<li><a href="http://www.lipin-bj.cn/f-gaodanglipin/">高档礼品</a></li>
-						<li><a href="http://www.lipin-bj.cn/f-teselipin/">特色礼品</a></li>
-						<li><a href="http://www.lipin-bj.cn/f-cuxiaolipin/">促销礼品</a></li>
-						<li><a href="http://www.lipin-bj.cn/f-shuijinglipin/">水晶礼品</a></li>
-						<li><a href="http://www.lipin-bj.cn/f-bangonglipin/">办公礼品</a></li>
-						<li><a href="http://www.lipin-bj.cn/f-jiajulipin/">家居礼品</a></li>
-						<li><a href="http://www.lipin-bj.cn/f-kaiyelipin/">开业礼品</a></li>
-									</ul>
-			
-				
-			
-						
-			
-					<div style="display:block;" id="leftDiv">
-															
-					<a href="http://www.lipin-bj.cn/f-qingdianlipin/">庆典礼品</a><span>|</span>				
-					<a href="http://www.lipin-bj.cn/f-diqiuyi/">地球仪</a><span>|</span>						
-					<a href="http://www.lipin-bj.cn/k-qiaoqianlipin/">乔迁</a><span>|</span>							
-					<a href="http://www.lipin-bj.cn/f-gufaliuli/">古法琉璃</a><span>|</span>						
-					<a href="http://www.lipin-bj.cn/f-dianzilipin/">电子礼品</a><span>|</span>					
-					<a href="http://www.lipin-bj.cn/f-jianpai/">奖牌</a><span>|</span>						
-					<a href="http://www.lipin-bj.cn/f-jianbei/">奖杯</a><span>|</span>							
-					<a href="http://www.lipin-bj.cn/f-guci/">骨瓷</a><span>|</span>						
-					<a href="http://www.lipin-bj.cn/k-hunqinglipin/">婚庆礼品</a><span>|</span>				
-					<a href="http://www.lipin-bj.cn/f-ciqi/">瓷器</a><span>|</span>					
-					<a href="http://www.lipin-bj.cn/f-tandiao/">炭雕</a><span>|</span>				
-					<a href="http://www.lipin-bj.cn/f-chaju/">茶具</a><span>|</span>						
-					<a href="http://www.lipin-bj.cn/f-lipinupan/">礼品u盘</a><span>|</span>			
-					<a href="http://www.lipin-bj.cn/k-lipindingzhi/">定制礼品</a><span>|</span>		
-					<a href="http://www.lipin-bj.cn/wd/">送礼</a><span>|</span>							
-					<a href="http://www.lipin-bj.cn/tupianpindao/">礼品图片</a><span>|</span>				
-					<a href="http://www.lipin-bj.cn/">礼品公司</a>										
-					</div>
-				
-				
-								
-				
-				
-						
-		</div>
-        
-	</div>
-<div class="classBg" id="classBg"></div>
-<div class="classBox" id="classBox">
-</div>
-<script language="javascript">
-function sclass(){
-	var filter = 0;
-	Ajax.call('/class.php?act=sclass', filter, sclassResponse, 'GET', 'JSON');
-}
-/*function sclassResponse(result){
-	document.getElementById('classBox').style.display = 'block';
-	document.getElementById('classBox').innerHTML = result.content;
-}
-function sclassclose(){
-	document.getElementById('class').style.display = 'none';
-}*/
-function closeClass(){
-	document.getElementById("classBox").style.display="none";
-	document.getElementById("classBg").style.display="none";
-}
-function sclassResponse(result){
-	document.getElementById('classBox').innerHTML = result.content;
-	var bg = document.getElementById("classBg");
-	var box = document.getElementById("classBox");
-	bg.style.display="block";
-	box.style.display="block";
-	box.style.left=((document.body.clientWidth-760+12)/2)+"px";
-}
-</script>
+<!-- header
+	作者：54087810@qq.com
+	时间：2017-09-26
+	描述：
+-->
+<jsp:include page="/WEB-INF/views/front/header.jsp" flush="true"></jsp:include>  
+
 <div class="navline">
   当前位置：<a href="http://www.lipin-bj.cn/">古韵礼品网</a>首页<code>&gt;</code>
     <a href="http://www.lipin-bj.cn/f-shangwulipin/">商务礼品</a> <code>&gt;</code> 
 	  <a href="http://www.lipin-bj.cn/f-jierilipin/">节日礼品</a> <code>&gt;</code> 
 	  <a href="http://www.lipin-bj.cn/f-zhongqiulipin/">中秋礼品</a> <code>&gt;</code> 
-	  <strong><a href="http://www.lipin-bj.cn/lipin/8180">如意中秋礼盒套装</a></strong>  </div>
+	  <strong><a href="http://www.lipin-bj.cn/lipin/8180">如意中秋礼盒套装</a></strong>  
+</div>
 <form action="javascript:addToCart(8180)" method="post" name="ECS_FORMBUY" id="ECS_FORMBUY"> 
-	<div class="content">
-		<script type="text/javascript" src="<%=basePath%>js/front/highslide.js"></script>
+	<div class="content" style="overflow:visible;">
+		
 <script language="javascript">
 function upimgurl(url){
 	document.getElementById('imgfile').src = url;
-	document.getElementById("imgherf").setAttribute("href",url);
 	var img = new Image();
-document.getElementById("imgfile").width=300;
+	document.getElementById("imgfile").width=300;
 	document.getElementById("imgfile").height=300;
 }
 function reload(url){
@@ -178,8 +112,8 @@ function reload(url){
 <div class="detailImg">
 			<div class="imgBorder">
 			<div style="height:317px;line-height:317px;vertical-align:middle;text-align:center;width:317px;" class="imgConter">
-				<a href="http://www.lipin-bj.cn/images/201709/source_img/8180_G_1504578258597.jpg" onclick="return hs.expand(this)" class="highslide" id="imgherf" title="如意中秋礼盒套装">
-				<img src="" alt="如意中秋礼盒套装" id="imgfile">
+				<a class="highslide" id="imgherf" title="如意中秋礼盒套装">
+				<img src="" alt="如意中秋礼盒套装" id="imgfile" data-action="zoom">
 				</a>
 						</div>
 			<span>
@@ -207,8 +141,8 @@ function reload(url){
 			</script>
 				<div id="News" style="border:0px dashed; OVERFLOW: hidden; WIDTH: 75px; HEIGHT:310px">
 				<ul class="thumbnailList">
-							  								<li><a href="http://www.lipin-bj.cn/gallery.php?id=8180&amp;img=18895" target="_blank" onmouseover="upimgurl(&#39;http://www.lipin-bj.cn/images/201709/goods_img/8180_P_1504578258813.jpg&#39;);"><img src=""></a></li>
-															<li><a href="http://www.lipin-bj.cn/gallery.php?id=8180&amp;img=18896" target="_blank" onmouseover="upimgurl(&#39;http://www.lipin-bj.cn/images/201709/goods_img/8180_P_1504578258979.jpg&#39;);"><img src=""></a></li>
+							  								<li><a   onmouseover="upimgurl(&#39;http://www.lipin-bj.cn/images/201709/goods_img/8180_P_1504578258813.jpg&#39;);"><img src="" data-action="zoom"></a></li>
+															<li><a   onmouseover="upimgurl(&#39;http://www.lipin-bj.cn/images/201709/goods_img/8180_P_1504578258979.jpg&#39;);"><img src=""></a></li>
 														</ul>
 				</div>
 			</div>		
@@ -244,22 +178,7 @@ function reload(url){
 					<input type="image" src="<%=basePath%>css/images/btn_favorite.png" rel="nofollow" class="button" onclick="collect(8180)">
 				</div>
 				<div class="btnDiv">
-					 					<!-- <span>喜欢？快分享给朋友吧：</span>
-					<div class="sharebox"> 
-    <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
-        <a class="bds_qzone"></a>
-        <a class="bds_tsina"></a>
-        <a class="bds_tqq"></a>
-        <a class="bds_renren"></a>
-        <span class="bds_more">更多</span>
-		<a class="shareCount"></a>
-    </div>
-<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=393030" ></script>
-<script type="text/javascript" id="bdshell_js"></script>
-<script type="text/javascript">
-	document.getElementById("bdshell_js").src = "http://share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
-</script>
-</div>  -->
+
 				</div>
 			</small></div><small>
 		</small></div><small>
@@ -810,192 +729,12 @@ function toggleCommentLayer()
 	</div>
     
 <!--<div class="footer"> &copy; 2005-2017  版权所有，并保留所有权利。 </a><br />-->
-<div class="footer">
-   <div align="center">
-   <p>北京古韵华礼文化发展有限公司 版权所有 2008-2015 京ICP备12041176号-11 
-   	<a href="http://www.cnzz.com/stat/website.php?web_id=1880666" target="_blank" title="站长统计">
-   		<img border="0" hspace="0" vspace="0" src="<%=basePath%>css/images/pic.gif"></a>
-   </p>
-   <p>古韵礼品网 Copyright © www.lipin-bj.cn All Rights Reserved.
-   <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?e466d1f5c9b18d04d3e48bd876bff9cb";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script></p> 
-<link rel="stylesheet" type="text/css" href="<%=basePath%>css/front/view.css">
-<script language="javascript">
-// JavaScript Document
+<jsp:include page="/WEB-INF/views/front/footer.jsp" flush="true"></jsp:include>  
 <!--
-var delta=0.15;
-var collection;
-var closeB=false;
-function floaters() 
-{
-  this.items=[];
-  this.addItem=function(id,x,y,contentF,contentS)
-  {
-  	var str = "";
-  	if(document.all){
-  			str = '<IFRAME style="position:absolute; visibility:inherit; top:0px; left:0px; width:80px; z-index:-1;opacity:0;filter: Alpha(Opacity=0); -moz-opacity: 0;" src="javascript:void(0);" frameBorder="0" scrolling="no"></IFRAME>';
-  	}
-  	if(choose())
-    {    	
-    	document.write('<DIV  kk="kk" id='+id+' style="Z-INDEX:10;POSITION:absolute;width:150px;left:'+(typeof(x)=='string'?eval(x):x)+';top:'+(typeof(y)=='string'?eval(y):y)+'">'+str+contentF+'</DIV>');
-    }else{
-    	document.write('<DIV id='+id+' style="Z-INDEX:10;POSITION:absolute;width:150px;left:'+(typeof(x)=='string'?eval(x):x)+';top:'+(typeof(y)=='string'?eval(y):y)+'">'+str+contentS+'</DIV>');
-    }     
-    var newItem={};
-    newItem.object=document.getElementById(id);
-    newItem.x=x;
-    newItem.y=y;
-    newItem.close = false;
-    newItem.name = id;
-    this.items[this.items.length]=newItem;
-  }
-  this.play=function()
-  {
-     collection=this.items
-     setInterval('play()',10);
-  }
-}
-  function play()
-  {
-    for(var i=0;i<collection.length;i++)
-   {
-   	 if(collection[i].close){	
-	     collection[i].object.style.display = 'none';
-	     continue;
-     }
-    var followObj=collection[i].object;
-    var followObj_x=(typeof(collection[i].x)=='string'?eval(collection[i].x):collection[i].x);
-    var followObj_y=(typeof(collection[i].y)=='string'?eval(collection[i].y):collection[i].y);
-    if(followObj.offsetLeft!=(getScrollXY().x+followObj_x))
-    {
-     var dx=(getScrollXY().x+followObj_x-followObj.offsetLeft)*delta;
-     dx=(dx>0?1:-1)*Math.ceil(Math.abs(dx));
-     followObj.style.left=followObj.offsetLeft+dx+"px";
-    }
-    if(followObj.offsetTop!=(getScrollXY().y+followObj_y)) 
-    {
-    	var dy=(getScrollXY().y+followObj_y-followObj.offsetTop)*delta;
-        dy=(dy>0?1:-1)*Math.ceil(Math.abs(dy));
-        followObj.style.top=followObj.offsetTop+dy+"px";
-    }
-    followObj.style.display = '';
-   }
-  }
-  function getScrollXY(){
-	var x,y;
-	if(document.body.scrollTop){
-	  x=document.body.scrollLeft;
-	  y=document.body.scrollTop;
-	}
-	else{
-	  x=document.documentElement.scrollLeft;
-	  y=document.documentElement.scrollTop;
-	}
-	return {x:x,y:y};
-	} 
-  function closeBanner(name)
-  {
-    for(var i=0;i<collection.length;i++)
-    {
-     if(collection[i].name == name){	
-     collection[i].object.style.display = 'none';
-     collection[i].close = true;
-     return;
-     }
-    }
-  }
-  function cls()
-  {  	
-  }
-  function choose()
-  {
-  	var number=Math.ceil(Math.random()*10);
-    number=number%2;
-    if(number==0)return true;
-    else return false;
-  }
-	function correctPNG(myImage) // correctly handle PNG transparency in Win IE 5.5 & 6.
-{
-    var arVersion = navigator.appVersion.split("MSIE")
-    var version = parseFloat(arVersion[1])
-    if ((version >= 5.5) && (document.body.filters))
-    {
-     		var imgID = (myImage.id) ? "id='" + myImage.id + "' " : "";
-		    var imgClass = (myImage.className) ? "class='" + myImage.className + "' " : "";
-		    var imgTitle = (myImage.title) ?  "title='" + myImage.title  + "' " : "title='" + myImage.alt + "' ";
-		    var imgStyle = "display:inline-block;" + myImage.style.cssText;
-		    if (myImage.align == "left") imgStyle = "float:left;" + imgStyle;
-        if (myImage.align == "right") imgStyle = "float:right;" + imgStyle;
-        if (myImage.parentElement.href) imgStyle = "cursor:pointer;" + imgStyle;
-		    var strNewHTML = "<span " + imgID + imgClass + imgTitle
-		                  + " style=\"" + "width:" + myImage.width 
-		                  + "px; height:" + myImage.height 
-		                  + "px;" + imgStyle + ";"
-		                  + "filter:progid:DXImageTransform.Microsoft.AlphaImageLoader"
-		                  + "(src=\'" + myImage.src + "\', sizingMethod='scale');\"></span>";
-		    myImage.outerHTML = strNewHTML;  
-    }    
-} 
-
-//-->
-</script>
-
-</div> 
-<div>
-
-
-<script type="text/javascript">
-var goods_id = 8180;
-var goodsattr_style = 1;
-var gmt_end_time = 0;
-var day = "天";
-var hour = "小时";
-var minute = "分钟";
-var second = "秒";
-var end = "结束";
-var goodsId = 8180;
-var now_time = 1506322399;
-onload = function(){
-  changePrice();
-  fixpng();
-  try {onload_leftTime();}
-  catch (e) {}
-}
-/**
- * 点选可选属性或改变数量时修改商品价格的函数
- */
-function changePrice()
-{
-  var attr = getSelectedAttributes(document.forms['ECS_FORMBUY']);
-  var qty = document.forms['ECS_FORMBUY'].elements['number'].value;
-  Ajax.call('goods.php', 'act=price&id=' + goodsId + '&attr=' + attr + '&number=' + qty, changePriceResponse, 'GET', 'JSON');
-}
-/**
- * 接收返回的信息
- */
-function changePriceResponse(res)
-{
-  if (res.err_msg.length > 0)
-  {
-    alert(res.err_msg);
-  }
-  else
-  {
-    document.forms['ECS_FORMBUY'].elements['number'].value = res.qty;
-    if (document.getElementById('ECS_GOODS_AMOUNT'))
-      document.getElementById('ECS_GOODS_AMOUNT').innerHTML = res.result;
-  }
-}
-</script>
-</div>
-</div>
+	作者：54087810@qq.com
+	时间：2017-09-26
+	描述：
+-->
 	</small>
 </form>
 
