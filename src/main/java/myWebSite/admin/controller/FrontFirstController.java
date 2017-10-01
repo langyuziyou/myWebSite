@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import myWebSite.admin.tools.StringUtil;
+
+
 /****
  * 
  *
@@ -20,7 +23,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Scope("prototype")
 @Controller
 @RequestMapping("/front")
-public class FrontFirstController {
+public class FrontFirstController extends BaseController{
 	
 	private static final Logger LOGGER = Logger  
             .getLogger(FrontFirstController.class);  
@@ -54,6 +57,26 @@ public class FrontFirstController {
 	public ModelAndView detail(HttpServletRequest request,@PathVariable("lipin") String lipin) {
 		LOGGER.info("查询礼品: "+lipin);
 		return new ModelAndView("/front/detail");
+	}
+	
+	
+	/****
+	 * 搜索 
+	 * @author yzj
+	 * @version 2.0 2017年9月26日 上午10:00:33
+	 * 
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping(value = "/search")
+	public ModelAndView search(HttpServletRequest request) {
+		LOGGER.info("高级搜索开始: ");
+		
+		Integer page = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : PAGE_NO;
+		Integer pageSize = request.getParameter("pageSize") != null ? Integer.parseInt(request.getParameter("pageSize")) : PAGE_SIZE;
+		String name = request.getParameter("name") != null ? request.getParameter("name") : "";
+		
+		return new ModelAndView("/front/search");
 	}
 
 }
