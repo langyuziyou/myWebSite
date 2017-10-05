@@ -29,7 +29,10 @@ function verifyRule(form){
       if(value.length > 100){  
         return '不能超过100个字符';  
       }  
-    }  
+    },
+   	editcontent:function (vale) {
+        layedit.sync(shopDetail); //同步编辑内容到textarea #10line
+    }
     ,phone: [/^1[3|4|5|7|8]\d{9}$/, '手机必须11位，只能是数字！']
     ,email: [/^[a-z0-9._%-]+@([a-z0-9-]+\.)+[a-z]{2,4}$|^1[3|4|5|7|8]\d{9}$/, '邮箱格式不对']  
   }); 

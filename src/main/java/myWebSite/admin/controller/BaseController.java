@@ -25,7 +25,7 @@ public class BaseController {
             .getLogger(BaseController.class); 
 	//分页默认值
 	public static final Integer PAGE_NO = 1;
-	public static final Integer PAGE_SIZE = 20;
+	public static final Integer PAGE_SIZE = 10;
 	
 	public static final String SESSION_LOAD_CATEGORY_FIRST = "SESSION_LOAD_CATEGORY_FIRST";
 	

@@ -28,8 +28,10 @@ CREATE TABLE `shop_info` (
   `create_by` VARCHAR(50) CHARACTER SET utf8 DEFAULT NULL COMMENT '创建人',
   `is_show` INT(1) NOT NULL DEFAULT 1 COMMENT '1:展示，2:隐藏',
   `description` TEXT COMMENT '商品介绍',
+  `from_type` INT(1) NOT NULL DEFAULT 1 COMMENT '1:导入，2:新增',
   PRIMARY KEY (`shop_info_id`)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COMMENT='商品信息'
+
 
 
 /*****************  分类  ************************/

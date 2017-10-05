@@ -12,4 +12,12 @@ public interface ShopDao extends GenericDao<Shop,Integer>{
 
 	Map<String, Object> shopList(Map<String, Object> paraList);
 
+	int[] shopExcelIn(Map<String, Object> map);
+
+	Integer insertShop(Shop shop);
+	
+	Map<String, Object> findByName(String name);
+
+	Map<String, Object> findById(String id);
+
 }

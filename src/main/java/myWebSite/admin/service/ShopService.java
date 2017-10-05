@@ -9,7 +9,7 @@ public interface ShopService {
 
 	List<Map<String, Object>> getListById(String id);
 
-	Integer addShop(String pId, String name,Integer level);
+	Integer addShop(String uploadImage,String price,String name,String firstSelect,String secondSelect,String threeSelect,String description);
 
 	Integer editShop(String id, String pId, String name, Integer level);
 
@@ -18,5 +18,7 @@ public interface ShopService {
 	Integer delShop(String id);
 
 	Map<String, Object> shopList(Map<String, Object> paraList);
+
+	int[] shopExcelIn(Map<String, Object> paraList);
 
 }

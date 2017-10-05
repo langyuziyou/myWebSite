@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -18,6 +19,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -31,10 +33,12 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
 import myWebSite.admin.entity.ImageData;
+import myWebSite.admin.entity.Shop;
 import myWebSite.admin.service.CategoryService;
 import myWebSite.admin.service.ShopService;
 import myWebSite.admin.tools.AjaxJson;
 import myWebSite.admin.tools.DateUtil;
+import myWebSite.admin.tools.ExcelUtil;
 
 /****
  * 商品 相关
@@ -73,6 +77,9 @@ public class ShopController extends BaseController {
 		int pageSize = request.getParameter("pageSize") != null ? Integer.parseInt(request.getParameter("pageSize")) : PAGE_SIZE;
 
 		String shopName = request.getParameter("shopName") != null ? request.getParameter("shopName") : "";
+		String price1 = request.getParameter("price1") != null ? request.getParameter("price1") : "";
+		String price2 = request.getParameter("price2") != null ? request.getParameter("price2") : "";
+		
 		String firstSelect = request.getParameter("firstSelect") != null ? request.getParameter("firstSelect") : "-1";
 		String secondSelect = request.getParameter("secondSelect") != null ? request.getParameter("secondSelect") : "-1";
 		String threeSelect = request.getParameter("threeSelect") != null ? request.getParameter("threeSelect") : "-1";
@@ -82,6 +89,9 @@ public class ShopController extends BaseController {
 		paraList.put("pageSize", pageSize);
 
 		paraList.put("shopName", shopName);
+		paraList.put("price1", price1);
+		paraList.put("price2", price2);
+		
 		paraList.put("firstSelect", firstSelect);
 		paraList.put("secondSelect", secondSelect);
 		paraList.put("threeSelect", threeSelect);
@@ -95,6 +105,8 @@ public class ShopController extends BaseController {
 		request.setAttribute("pageSize", pageSize);
 
 		request.setAttribute("shopName", shopName);
+		request.setAttribute("price1", price1);
+		request.setAttribute("price2", price2);
 
 		request.setAttribute("firstSelect", firstSelect);
 		request.setAttribute("secondSelect", secondSelect);
@@ -142,6 +154,68 @@ public class ShopController extends BaseController {
 
 		return new ModelAndView("/sys/shop/shopAdd");
 	}
+	
+	
+	/***
+	 * 准备编辑
+	 * 
+	 * @author yzj
+	 * @version 2.0 2017年9月30日 上午9:40:30
+	 * 
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping(value = "/preEdit/id/{id}")
+	public ModelAndView preEdit(HttpServletRequest request, @PathVariable("id") String id) {
+		LOGGER.info(" preEdit ");
+		request.setAttribute("id", id);
+		Map<String, Object> result = shopService.findById(id);
+		request.setAttribute("result", result);
+
+		return new ModelAndView("/sys/shop/shopEdit");
+	}
+	
+	
+	/**
+	 * 新增 
+	 * @author yzj
+	 * @version 2.0 2017年10月2日 下午12:10:04
+	 * 
+	 * @param req
+	 * @param pId
+	 * @param name
+	 * @param level
+	 * @param response
+	 * @return
+	 */
+	@RequestMapping(value = "/addShop")
+	@ResponseBody
+	public AjaxJson addShop(HttpServletRequest req,String uploadImage, String price,String name,String firstSelect,String secondSelect,
+			String threeSelect,String description, HttpServletResponse response) {
+			AjaxJson j = new AjaxJson();		
+
+		try {
+			Integer result = shopService.addShop(uploadImage,price,name,firstSelect,secondSelect,threeSelect,description);
+			if(result == 1){
+				LOGGER.info(" 新增 成功 ");
+				j.setMsg(" 新增 成功  ");
+			}else
+			{
+				LOGGER.info(" 新增 失败 ");
+				j.setMsg(" 新增 失败  ");
+				j.setSuccess(false);
+			}
+			
+		} catch (Exception e) {
+			LOGGER.error("编辑失败 : " + e.getMessage());
+
+			j.setMsg(e.toString());
+			j.setSuccess(false);
+		}
+		return j;
+	}
+	
+	
 
 	/**
 	 * 
@@ -229,7 +303,196 @@ public class ShopController extends BaseController {
 
 	}
 	
+	/**
+	 * 商品信息 导入 id
+	 * @author yzj
+	 * @version 2.0 2017年9月7日 下午4:52:29
+	 * 
+	 * @param request
+	 * @param response
+	 * @return
+	 */
+	@RequestMapping(value = "excelInId")
+	@ResponseBody
+	public AjaxJson excelInId(MultipartHttpServletRequest request, HttpServletResponse response) {
+		AjaxJson ajax = new AjaxJson();
+		ajax.setMsg("访问失败");
+		ajax.setSuccess(false);
+		String category = request.getParameter("category");
+
+		try {
+			MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+			for (Iterator<?> it = multipartRequest.getFileNames(); it.hasNext();) {
+				String key = (String) it.next();
+				MultipartFile mulfile = multipartRequest.getFile(key);
+				ajax = this.importShopExcel(new ExcelUtil(mulfile.getInputStream(), ""),category);
+			}
+		} catch (Exception e) {
+			ajax.setSuccess(false);
+		}
+		return ajax;
+	}	
 	
+	
+	/***
+	 * 
+	 * @author yzj
+	 * @version 2.0 2017年9月7日 下午4:53:22
+	 * 
+	 * @param ex
+	 * @return
+	 * @throws Exception
+	 */
+	private AjaxJson importShopExcel(ExcelUtil ex,String category){
+		AjaxJson ajax = new AjaxJson();
+		Gson gson = new Gson();
+		List<List<String>> read = new ArrayList<>();
+		List<Shop> list = new ArrayList<>();
+		System.out.println(list.size());
+		StringBuffer sb = new StringBuffer();
+		sb.append("[");
+		try {
+			read = ex.read(0, 1, ex.getRowCount(0) - 1);
+			
+			for(List<String> readChild:read){
+				if(readChild.get(0)!=null){
+					
+						System.out.println(readChild.get(4).replace("\"", "\'") );
+						
+						sb.append("{\"shopInfoName\":" + "\"" + readChild.get(0) + "\"");
+						sb.append(",\"shopInfoImage\":"  + "\"" + readChild.get(1)  + "\"");
+						sb.append(",\"price\":"  + "\"" + readChild.get(2)  + "\"");
+						sb.append(",\"shopCategoryId\":"  + "\"" + category  + "\"");
+						sb.append(",\"description\":"  + "\"" + readChild.get(3).replace("\"", "\'")  + "\"");
+						sb.append("},");
+			
+					
+				}
+			}
+			
+			if (sb.length() > 2) {
+				sb.deleteCharAt(sb.length() - 1); // 删除多余的逗号
+
+			}
+			sb.append("]");
+			System.out.println(sb);
+			
+
+			Map<String, Object> paraList = new HashMap<String, Object>();
+			paraList.put("sb", sb.toString());
+			paraList.put("user", "admin");
+			int[] strList = shopService.shopExcelIn(paraList);
+			
+			System.out.println(strList);
+
+			
+		} catch (Exception e) {
+			ajax.setSuccess(false);
+			ajax.setMsg(e.toString());
+		}
+		return ajax;
+	}
+	
+	
+	/**
+	 * 商品信息 导入 
+	 * @author yzj
+	 * @version 2.0 2017年9月7日 下午4:52:29
+	 * 
+	 * @param request
+	 * @param response
+	 * @return
+	 */
+	@RequestMapping(value = "excelIn")
+	@ResponseBody
+	public AjaxJson excelIn(MultipartHttpServletRequest request, HttpServletResponse response) {
+		AjaxJson ajax = new AjaxJson();
+		ajax.setMsg("访问失败");
+		ajax.setSuccess(false);
+
+		try {
+			MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+			for (Iterator<?> it = multipartRequest.getFileNames(); it.hasNext();) {
+				String key = (String) it.next();
+				MultipartFile mulfile = multipartRequest.getFile(key);
+				ajax = this.importShopExcel(new ExcelUtil(mulfile.getInputStream(), ""));
+			}
+		} catch (Exception e) {
+			ajax.setSuccess(false);
+		}
+		return ajax;
+	}	
+	
+	
+	/***
+	 * 
+	 * @author yzj
+	 * @version 2.0 2017年9月7日 下午4:53:22
+	 * 
+	 * @param ex
+	 * @return
+	 * @throws Exception
+	 */
+	private AjaxJson importShopExcel(ExcelUtil ex){
+		AjaxJson ajax = new AjaxJson();
+		Gson gson = new Gson();
+		List<List<String>> read = new ArrayList<>();
+		List<Shop> list = new ArrayList<>();
+		System.out.println(list.size());
+		StringBuffer sb = new StringBuffer();
+		sb.append("[");
+		try {
+			read = ex.read(0, 1, ex.getRowCount(0) - 1);
+			
+			for(List<String> readChild:read){
+				if(readChild.get(0)!=null){
+					
+
+//						sb.append("{\"brand\":" + "\"" + readChild.get(0)==null?" ":readChild.get(0) + "\"");
+//						sb.append(",\"productCode\":"  + "\"" + readChild.get(1)==null?" ":readChild.get(1)  + "\"");
+//						sb.append(",\"color\":"  + "\"" + readChild.get(2)==null?" ":readChild.get(2)  + "\"");
+//						sb.append(",\"taxNo\":"  + "\"" + readChild.get(3)==null?" ":readChild.get(3)  + "\"");
+//						sb.append(",\"chnName\":"  + "\"" + readChild.get(4)==null?" ":readChild.get(4)  + "\"");
+//						sb.append(",\"detail\":"  + "\"" + readChild.get(5)==null?" ":readChild.get(5) + "\"");
+//						sb.append("},");
+						
+//						System.out.println(readChild.get(0));
+					
+						System.out.println(readChild.get(4).replace("\"", "\'") );
+						
+						sb.append("{\"shopInfoName\":" + "\"" + readChild.get(0) + "\"");
+						sb.append(",\"shopInfoImage\":"  + "\"" + readChild.get(1)  + "\"");
+						sb.append(",\"price\":"  + "\"" + readChild.get(2)  + "\"");
+						sb.append(",\"shopCategoryId\":"  + "\"" + readChild.get(3)  + "\"");
+						sb.append(",\"description\":"  + "\"" + readChild.get(4).replace("\"", "\'")  + "\"");
+						sb.append("},");
+			
+					
+				}
+			}
+			
+			if (sb.length() > 2) {
+				sb.deleteCharAt(sb.length() - 1); // 删除多余的逗号
+
+			}
+			sb.append("]");
+			System.out.println(sb);
+			
+
+			Map<String, Object> paraList = new HashMap<String, Object>();
+			paraList.put("sb", sb.toString());
+			paraList.put("user", "admin");
+			int[] strList = shopService.shopExcelIn(paraList);
+			
+			System.out.println(strList);
+
+			
+		} catch (Exception e) {
+			ajax.setSuccess(false);
+			ajax.setMsg(e.toString());
+		}
+		return ajax;
+	}
 	
 
 }
