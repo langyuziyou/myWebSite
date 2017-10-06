@@ -1,9 +1,11 @@
 package myWebSite.admin.daoImpl;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -20,6 +22,27 @@ public class CategoryDaoImpl extends CommonDaoImpl implements CategoryDao {
 
 	@Autowired
 	private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
+	
+	
+	
+	/**
+	 * 当查询结果数为0时，会报异常，则默认报异常为没有结果
+	 */
+	public int count(String sql, Object... o) {
+		String newSql = "SELECT COUNT(1) FROM ( " + sql + " ) t";
+		try {
+			if (o == null) {
+				return jdbcTemplate.queryForObject(newSql, Integer.class);
+			}
+			return jdbcTemplate.queryForObject(newSql, o, Integer.class);
+		} catch (EmptyResultDataAccessException e) {
+			return 0;
+		}
+	}
+
+	public int count(String sql) {
+		return count(sql, null);
+	}
 
 	@Override
 	public ShopCategory getById(Integer id) {
@@ -94,8 +117,15 @@ public class CategoryDaoImpl extends CommonDaoImpl implements CategoryDao {
 
 	@Override
 	public Map<String, Object> findByName(String name, Integer level) {
-		String sql = " SELECT shop_category_id as id,shop_category_name,parent_id as parentId,level,description FROM shop_category where shop_category_name = ?  and level = ? ";
-		Map<String, Object> result = jdbcTemplate.queryForMap(sql,new Object[] { name,level });
+		Map<String, Object> result;
+		try{
+			String sql = " SELECT shop_category_id as id,shop_category_name,parent_id as parentId,level,description FROM shop_category where shop_category_name = ?  and level = ? ";
+			result = jdbcTemplate.queryForMap(sql,new Object[] { name,level });
+	
+		}
+		catch(EmptyResultDataAccessException e){
+			result = new HashMap<>();
+		}
 		return result;
 	}
 

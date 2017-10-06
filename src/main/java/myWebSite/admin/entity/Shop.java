@@ -51,6 +51,11 @@ public class Shop implements RowMapper<Shop>, Serializable{
 	 */
 	private String description;
 	
+	
+	
+	private Integer fromType;
+	
+	private String price;
 	 
 	
 	public Integer getShopInfoId() {
@@ -147,6 +152,34 @@ public class Shop implements RowMapper<Shop>, Serializable{
 		this.description = description;
 	}
 
+	
+	
+
+
+	public Integer getFromType() {
+		return fromType;
+	}
+
+
+
+	public void setFromType(Integer fromType) {
+		this.fromType = fromType;
+	}
+
+	
+	
+
+
+	public String getPrice() {
+		return price;
+	}
+
+
+
+	public void setPrice(String price) {
+		this.price = price;
+	}
+
 
 
 	@Override
@@ -160,6 +193,8 @@ public class Shop implements RowMapper<Shop>, Serializable{
 		shop.setCreateBy(rs.getString("create_by"));
 		shop.setIsShow(rs.getInt("is_show"));
 		shop.setDescription(rs.getString("description"));
+		shop.setFromType(rs.getInt("from_type"));
+		shop.setPrice(rs.getString("price"));
 		return shop;
 	}
 

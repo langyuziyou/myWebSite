@@ -2,6 +2,7 @@ myWebSite\admin\dao\SysUserDao.class
 myWebSite\admin\dao\CategoryDao.class
 myWebSite\admin\entity\Shop.class
 myWebSite\admin\entity\SysUser.class
+myWebSite\admin\tools\ExcelUtil.class
 myWebSite\admin\dao\ShopDao.class
 myWebSite\admin\entity\ShopCategory.class
 myWebSite\admin\daoImpl\CategoryDaoImpl.class
@@ -11,6 +12,7 @@ myWebSite\admin\controller\LoanPayTypeController.class
 myWebSite\admin\serviceImpl\LoanPayTypeServiceImple.class
 myWebSite\admin\service\ShopService.class
 myWebSite\admin\tools\DateUtil.class
+myWebSite\admin\daoImpl\ShopDaoImpl$1.class
 myWebSite\admin\entity\LoanPayType.class
 myWebSite\admin\controller\FileController.class
 myWebSite\admin\service\LoanPayTypeService.class

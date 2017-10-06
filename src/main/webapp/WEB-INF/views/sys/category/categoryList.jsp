@@ -66,7 +66,7 @@
 																</a>
 																<a href="<%=basePath%>category/preEdit/id/${model.id}" class="layui-btn"> 编辑
 																</a>
-															
+																<a href="javascript:;" class="layui-btn  layui-btn-normal" id="addBtn" onClick="productImport('${model.id}')">导入</a>
 																<a class="layui-btn layui-btn-danger" onclick="del('${model.id}')"> 删除
 																</a>
 														
@@ -94,6 +94,57 @@
 		
 		
 <script>
+/**
+ * 信息导入
+ */
+function productImport(id) {
+	layui.use(['layer', 'upload'], function() {
+		var $ = layui.jquery, layer = layui.layer;
+		layer.open({
+			area : [ '90px', '180px' ],
+			offset : '250px',
+			title : '产品信息导入',
+			content : '<div style="text-align: center"><button type="button" class="layui-btn" id="btnFile"><i class="layui-icon"></i>商品信息导入</button></div>'
+		});
+		
+		var upload = layui.upload;
+		upload.render({
+			url : basePath + "shop/excelInId",
+			elem : '#btnFile',
+			accept : 'file',
+			data:{category:id},
+			exts : 'xlsx|xls',
+			before : function(input) {
+				layer.open({type : 3});
+			},
+			done : function(data) {
+				layer.closeAll();
+				var jsonObj = data;
+				if (jsonObj.success) {
+					 layer.alert(data.msg, {
+					  title: '提示信息'  
+						  }); 
+				} else {
+					 layer.alert(data.msg, {
+					  title: '提示信息'  
+						  }); 
+				}
+			},
+			error : function(data) {
+				layer.closeAll();
+				tipGo('解析文件错误！');
+				return;
+			}
+		});
+	});
+}
+	
+
+
+
+
+
+
 var html = "";
 $(document).ready(function() {
     var option = {
@@ -137,8 +188,15 @@ $(document).ready(function() {
 				html += '<td><span controller="true">'+list[i].shop_category_name+'</span></td>';
 				html += '<td>' + list[i].level + '</td>';
 				html += '<td>' + list[i].parentId + '</td>';
-				html += '<td><a  href="' + basePath + 'category/preAdd/id/'+list[i].id+'" class="layui-btn layui-btn-normal"> 新增下级分类 </a>';
-				html += '<a  href="' + basePath + 'category/preEdit/id/'+list[i].id+'" class="layui-btn "> 编辑 </a>';		
+				html += '<td>';
+				if(list[i].level!=3){
+					html += '<a  href="' + basePath + 'category/preAdd/id/'+list[i].id+'" class="layui-btn layui-btn-normal"> 新增下级分类 </a>';
+					
+				}
+				
+				html += '<a  href="' + basePath + 'category/preEdit/id/'+list[i].id+'" class="layui-btn "> 编辑 </a>';	
+				html += '<a href="javascript:;" class="layui-btn  layui-btn-normal" id="addBtn" onClick="productImport(\''+list[i].id+'\')">导入</a>';
+				
 				html += '<a class="layui-btn layui-btn-danger "  onclick="del(' + list[i].id + ')" > 删除 </a></td>';
 				html += '</tr>';
 			    }

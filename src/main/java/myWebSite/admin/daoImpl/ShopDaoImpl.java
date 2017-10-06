@@ -5,17 +5,24 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import myWebSite.admin.dao.ShopDao;
 import myWebSite.admin.entity.Shop;
+import myWebSite.admin.tools.DateUtil;
 
 @Repository
 public class ShopDaoImpl extends CommonDaoImpl implements ShopDao {
+
+	private static final Logger LOGGER = Logger.getLogger(ShopDaoImpl.class);
+
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
@@ -58,6 +65,9 @@ public class ShopDaoImpl extends CommonDaoImpl implements ShopDao {
 		Integer pageSize = Integer.parseInt(paraList.get("pageSize").toString());
 		// conditions
 		String shopName = paraList.get("shopName").toString();
+		String price1 = paraList.get("price1").toString();
+		String price2 = paraList.get("price2").toString();
+		
 		String firstSelect = paraList.get("firstSelect").toString();
 		String secondSelect = paraList.get("secondSelect").toString();
 		String threeSelect = paraList.get("threeSelect").toString();
@@ -99,6 +109,16 @@ public class ShopDaoImpl extends CommonDaoImpl implements ShopDao {
 				paramList.add("%" + shopName + "%");
 			}
 			
+			if(!price1.equals("")){
+				sql.append(" AND  price >= ? ");
+				paramList.add(price1);
+			}
+			
+			if(!price2.equals("")){
+				sql.append(" AND  price <= ? ");
+				paramList.add(price2);
+			}
+			
 
 			// 查询总数
 			count = count(sql.toString(), paramList.toArray());
@@ -118,9 +138,20 @@ public class ShopDaoImpl extends CommonDaoImpl implements ShopDao {
 			paramList.add(firstSelect);
 			
 			if (!shopName.equals("")) {
-				sql.append(" AND  shop_info_name = ?");
+				sql.append(" AND  shop_info_name like ?");
 				paramList.add("%" + shopName + "%");
 			}
+			
+			if(!price1.equals("")){
+				sql.append(" AND  price >= ? ");
+				paramList.add(price1);
+			}
+			
+			if(!price2.equals("")){
+				sql.append(" AND  price <= ? ");
+				paramList.add(price2);
+			}
+			
 			
 			sql.append(" union ");
 			sql.append(baseSql.toString());
@@ -128,9 +159,19 @@ public class ShopDaoImpl extends CommonDaoImpl implements ShopDao {
 			paramList.add(firstSelect);
 			
 			if (!shopName.equals("")) {
-				sql.append(" AND  shop_info_name = ?");
+				sql.append(" AND  shop_info_name like ?");
 				paramList.add("%" + shopName + "%");
 			}
+			if(!price1.equals("")){
+				sql.append(" AND  price >= ? ");
+				paramList.add(price1);
+			}
+			
+			if(!price2.equals("")){
+				sql.append(" AND  price <= ? ");
+				paramList.add(price2);
+			}
+			
 			
 			sql.append(" union ");
 			sql.append(baseSql.toString());
@@ -138,9 +179,20 @@ public class ShopDaoImpl extends CommonDaoImpl implements ShopDao {
 			paramList.add(firstSelect);
 			
 			if (!shopName.equals("")) {
-				sql.append(" AND  shop_info_name = ?");
+				sql.append(" AND  shop_info_name like ?");
 				paramList.add("%" + shopName + "%");
 			}
+			
+			if(!price1.equals("")){
+				sql.append(" AND  price >= ? ");
+				paramList.add(price1);
+			}
+			
+			if(!price2.equals("")){
+				sql.append(" AND  price <= ? ");
+				paramList.add(price2);
+			}
+			
 
 			// 查询总数
 			count = count(sql.toString(), paramList.toArray());
@@ -159,9 +211,42 @@ public class ShopDaoImpl extends CommonDaoImpl implements ShopDao {
 			
 			
 			if (!shopName.equals("")) {
-				sql.append(" AND  shop_info_name = ?");
+				sql.append(" AND  shop_info_name like ?");
 				paramList.add("%" + shopName + "%");
 			}
+			
+			if(!price1.equals("")){
+				sql.append(" AND  price >= ? ");
+				paramList.add(price1);
+			}
+			
+			if(!price2.equals("")){
+				sql.append(" AND  price <= ? ");
+				paramList.add(price2);
+			}
+			
+			
+
+			sql.append(" union ");
+			sql.append(baseSql.toString());
+			sql.append(" AND shop_category.`parent_id` = ? ");
+			paramList.add(secondSelect);
+			
+			if (!shopName.equals("")) {
+				sql.append(" AND  shop_info_name like ?");
+				paramList.add("%" + shopName + "%");
+			}
+			
+			if(!price1.equals("")){
+				sql.append(" AND  price >= ? ");
+				paramList.add(price1);
+			}
+			
+			if(!price2.equals("")){
+				sql.append(" AND  price <= ? ");
+				paramList.add(price2);
+			}
+			
 			
 
 			// 查询总数
@@ -181,9 +266,20 @@ public class ShopDaoImpl extends CommonDaoImpl implements ShopDao {
 			
 			
 			if (!shopName.equals("")) {
-				sql.append(" AND  shop_info_name = ?");
+				sql.append(" AND  shop_info_name like ?");
 				paramList.add("%" + shopName + "%");
 			}
+			
+			if(!price1.equals("")){
+				sql.append(" AND  price >= ? ");
+				paramList.add(price1);
+			}
+			
+			if(!price2.equals("")){
+				sql.append(" AND  price <= ? ");
+				paramList.add(price2);
+			}
+			
 			
 
 			// 查询总数
@@ -214,6 +310,62 @@ public class ShopDaoImpl extends CommonDaoImpl implements ShopDao {
 		result.put("list", list);
 		result.put("count", count);
 		result.put("pageCount", pageCount);
+		return result;
+	}
+
+	@Override
+	public int[] shopExcelIn(Map<String, Object> map) {
+		int [] result = null;
+		Gson g = new Gson();
+	try {
+		String list = map.get("sb").toString();
+		String currentUser = map.get("user").toString();// userName
+		/***************************************************************
+		 * 前台传入的 json 数据 已经封装成 ProductExcel
+		 **************************************************************/
+		List<Shop> shopList = g.fromJson(list, new TypeToken<List<Shop>>() {
+		}.getType());
+		
+		List<Object[]> batchArgs = new ArrayList<Object[]>();
+		StringBuffer sb = new StringBuffer();
+		sb.append("  INSERT INTO `shop_info`  ");
+		sb.append(" (shop_info_name,shop_info_image,price,shop_category_id,create_time,create_by,description,from_type) ");
+		sb.append(" VALUES(?,?,?,?,?,?,?,?) ");
+			for(Shop p:shopList){
+					batchArgs.add(new Object[] { p.getShopInfoName(),p.getShopInfoImage(),p.getPrice(),p.getShopCategoryId(),DateUtil.getDateTime(),currentUser,p.getDescription(),1});
+			}
+			result = jdbcTemplate.batchUpdate(sb.toString(), batchArgs);
+		} catch (Exception e) {
+			LOGGER.error(e.toString());
+		}
+		return result;
+	}
+
+	@Override
+	public Integer insertShop(Shop p) {
+		StringBuffer sb = new StringBuffer();
+		Integer result = null;
+		try{
+			sb.append("  INSERT INTO `shop_info`  ");
+			sb.append(" (shop_info_name,shop_info_image,price,shop_category_id,create_time,create_by,description,from_type) ");
+			sb.append(" VALUES(?,?,?,?,?,?,?,?) ");
+			result = jdbcTemplate.update(sb.toString(),new Object[]{ p.getShopInfoName(),p.getShopInfoImage(),p.getPrice(),p.getShopCategoryId(),DateUtil.getDateTime(),"admin",p.getDescription(),2});
+		}catch(Exception e){
+			LOGGER.error(e.toString());
+		}
+		return result;
+	}
+
+	@Override
+	public Map<String, Object> findByName(String name) {
+		String sql = " select * from shop_info where shop_info_name = ? ";
+		Map<String, Object> result = jdbcTemplate.queryForMap(sql,new Object[] { name });
+		return result;
+	}
+	
+	public Map<String, Object> findById(String id) {
+		String sql = " select * from shop_info where shop_info_id = ? ";
+		Map<String, Object> result = jdbcTemplate.queryForMap(sql,new Object[] { id });
 		return result;
 	}
 

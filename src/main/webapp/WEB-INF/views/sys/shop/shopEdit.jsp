@@ -40,19 +40,20 @@
 		
 							 	<form name="" class="layui-form" action="">
 									 <input type="hidden" name="uploadImage" id="uploadImage"/>
+									 <input type="hidden" name="id" id="id" value="${result.shop_info_id}"/>
 																		<!-- email -->
 									<div class="layui-form-item">
 										     <div class="layui-inline">
 										      <label class="layui-form-label">名称:</label>
 										      <div class="layui-input-inline">
-										      	 <input type="text" name="name" value="" id="name" class="layui-input" lay-verify="notNull"/>
+										      	 <input type="text" name="name" value="${result.shop_info_name}" id="name" class="layui-input" lay-verify="notNull"/>
 										      </div>
 										    </div>
 										    
 										     <div class="layui-inline">
 										      <label class="layui-form-label">价格:</label>
 										      <div class="layui-input-inline">
-										      	 <input type="text" name="price" value="" id="price" class="layui-input" lay-verify="notNull"/>
+										      	 <input type="text" name="price" value="${result.price}" id="price" class="layui-input" lay-verify="notNull"/>
 										      </div>
 										    </div>
 									  </div>
@@ -64,7 +65,7 @@
 									       <select id="firstSelect" name="firstSelect" value="${firstSelect}"  lay-filter="firstSelect" >
 												<option value="-1">请选择</option>
 												<c:forEach items="${categoryFirstList}" var="row">
-													<option value="${row.id}" <c:if test="${row.id eq firstSelect }">selected="selected"</c:if>>${row.shop_category_name}</option>
+													<option value="${row.id}" <c:if test="${row.id eq result.shop_category_id }">selected="selected"</c:if>>${row.shop_category_name}</option>
 												</c:forEach>
 											</select>
 		
@@ -77,7 +78,7 @@
 										      <select id="secondSelect" name="secondSelect"  lay-filter="secondSelect">
 													<option value="-1">请选择</option>
 													<c:forEach items="${secondSelectList}" var="row">
-														<option value="${row.id}" <c:if test="${row.id eq secondSelect }">selected="selected"</c:if>>${row.shop_category_name}</option>
+														<option value="${row.id}" <c:if test="${row.id eq result.shop_category_id }">selected="selected"</c:if>>${row.shop_category_name}</option>
 													</c:forEach>
 											  </select>
 										      </div>
@@ -89,7 +90,7 @@
 										      <select id="threeSelect" name="threeSelect">
 													<option value="-1">请选择</option>
 													<c:forEach items="${threeSelectList}" var="row">
-														<option value="${row.id}" <c:if test="${row.id eq threeSelect }">selected="selected"</c:if>>${row.shop_category_name}</option>
+														<option value="${row.id}" <c:if test="${row.id eq result.shop_category_id }">selected="selected"</c:if>>${row.shop_category_name}</option>
 													</c:forEach>
 												</select>
 										      </div>
@@ -114,7 +115,7 @@
 											<legend>描述</legend>
 										</fieldset>
 										
-										<textarea id="shopDetail" name="shopDetail"  lay-verify="editcontent"  style="display: none;"></textarea>
+										<textarea id="shopDetail" name="shopDetail"  lay-verify="editcontent"  style="display: none;">${result.description}</textarea>
 										
 										
 										<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">

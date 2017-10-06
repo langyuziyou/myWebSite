@@ -37,6 +37,7 @@
 								<div></div>
 								</br>
 								<a href="<%=basePath%>shop/preAdd" class="layui-btn  layui-btn-small layui-btn-normal" id="addBtn">新增</a>
+								
 							 	<form name="" id="mainForm" action="<%=basePath%>shop/list" method="post">
 									<input type="hidden" value="${page}" id="page" name="page" /> 
 									<input type="hidden" value="${pageCount}" id="pageCount" name="pageCount" /> 
@@ -48,6 +49,17 @@
 										      <label class="layui-form-label">名称:</label>
 										      <div class="layui-input-inline">
 										      	 <input type="text" name="shopName" value="${shopName}" id="shopName" class="layui-input"/>
+										      </div>
+										    </div>
+										    
+										    <div class="layui-inline">
+										      <label class="layui-form-label">价格:</label>
+										      <div class="layui-input-inline">
+										      	 <input type="text" name="price1" value="${price1}" id="price1"  class="layui-input"/>
+										      	 	 
+										      </div>
+										       <div class="layui-input-inline">
+										     	 <input type="text" name="price2" value="${price2}" id="price2"  class="layui-input"/>
 										      </div>
 										    </div>
 
@@ -106,6 +118,7 @@
 							<!--	       <th><input name="" lay-skin="primary" lay-filter="allChoose" type="checkbox"></th>-->
 								        <th style="min-width:80px;">ID</th>
 								        <th style="min-width:230px;">名称</th>
+								         <th style="min-width:30px;">价格</th>
 								        <th style="min-width:80px;">分类</th>
 								        <th style="min-width:80px;">图片</th>
 								        <th>操作</th>
@@ -118,11 +131,13 @@
 																		${row.shop_info_id }
 																	</td>
 																	<td>${row.shop_info_name }</td>
+																	<td>${row.price }</td>
 																	<td> ${row.shop_category_name }</td>
 																	<td>${row.shop_info_image }</td>
 																	<td>
-																	<a href="javascript:;" style="margin-left: 10px;"id="edit${row.sysAdminId}" class="layui-btn  layui-btn-small layui-btn-warm" onClick="edit('${row.contractCategoryId}','${row.categoryName}','${row.description }','${row.receiveUnit }','${row.upCode }','${row.sourceCode }')">编辑</a>
-																	<a href="javascript:;" id="hide${row.contractCategoryId}" class="layui-btn  layui-btn-small layui-btn-disabled" style="display:none;">编辑</a>	
+																	<a href="<%=basePath%>shop/preEdit/id/${row.shop_info_id}" class="layui-btn"> 编辑
+																	</a>
+																		
 																	</td>
 																</tr>
 										 </c:forEach>
@@ -154,16 +169,6 @@
 
 
 <script>
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
      var isAdd = true; 
      var isEdit = false;
      
@@ -200,229 +205,7 @@
 			  }); 
 	
 }
-	     
-     
-     
-     /**
-      * 创建一个tr
-      */
-	function addData(){
-		if(isAdd){
-			editModel();
-			var html="";
-			html+='<tr id="addTr">';
-			html+='<td> <input type="text" name="categoryName" lay-verify="notNull" placeholder="" class="layui-input"></td>';
-			html+='<td> <input type="text" name="description" lay-verify="address" placeholder="可支持200个汉字" class="layui-input"></td>';
-			html+='<td> <input type="text" name="receiveUnit"   class="layui-input"></td>';
-			html+='<td> </td>';
-			html+='<td> <input type="text" name="sourceCode" lay-verify="code"  class="layui-input"></td>';
-			html+='<td>';
-			html+='	<a href="javascript:;" style="margin-left: 10px;" class="layui-btn  layui-btn-small layui-btn-normal" lay-submit="" lay-filter="demo1" >保存</a>';
-			html+=' <a href="javascript:;" class="layui-btn  layui-btn-small layui-btn-danger" onClick="delTr()">取消</a>';
-			html+='</td>';
-			html+='</tr>';
-			
-			$("#mainTable").prepend(html);
-			
-			// 重新 渲染 
-			layui.use('form', function(){
-			  	var $ = layui.jquery, form = layui.form;
-				form.render();
-				
-			//自定义验证规则  
-			verifyRule(form);
-			  	
-			  
-			     //监听提交  
-				  form.on('submit(demo1)', function(data){
-				
-				  var param = JSON.stringify(data.field)
-				    console.log(param);
-				  	//
-				  	$.ajax({
-	 	    	            type: "POST",
-	 	    	            url: basePath + "contractCategory/contractAdd",
-	 	    	            data:"param="+param,
-	 	    	            datatype: "json",
-	 	    	            success:function(data){
-	 	    	            	if(data.success){
-	 	    	            		
-            					    layer.alert(data.msg, {
-   									  title: '提示信息'  
-  										  }); 
-	 	    						setTimeout(function () { 
-	 	    							window.location.reload();
-	 	    					    }, 2000);
-	 	    	            	}else{
-	 	    	            		layer.alert(data.msg, {
-   									  title: '提示信息'  
-  										  }); 
-	 	    	            	}
-	 	    	            },
-	 	    	            error: function(){
-	 	    	            	layer.alert(data.msg, {
-   									  title: '提示信息'  
-  										  }); 
-	 	    	            }         
-	 	             });
 
-				    return false;  
-				  }); 
-				
-			});
-			isAdd = false;
-		}
-		
-	}
-	
-	/**
-	 * 删除一个dr
-	 */
-	function delTr(){
-		$("#addTr").remove();
-		isAdd = true;
-		norModel();
-	}
-	
-	
-	/**
-	 * 编辑模式 
-	 * 新增 和其他编辑 不可用 
-	 */
-	function editModel(){
-		//新增按钮
-		$("#addBtn").removeClass("layui-btn-normal");
-		$("#addBtn").addClass("layui-btn-disabled");
-		$("#addBtn").removeAttr("onClick");
-		
-		//编辑按钮
-		 $("a[id^='edit']").each(function(i){
-	  			$(this).hide();
-		  	});
-		  	 $("a[id^='hide']").each(function(i){
-	  			$(this).show();
-		  	});
-	}
-
-	
-	/**
-	 * 非编辑模式 
-	 * 新增 和其他编辑 不可用 
-	 */
-	function norModel(){
-	// 新增按钮
-		$("#addBtn").addClass("layui-btn-normal");
-		$("#addBtn").removeClass("layui-btn-disabled");
-		$("#addBtn").attr("onClick","addData()");
-		
-	//编辑按钮
-		 $("a[id^='edit']").each(function(i){
-	  			$(this).show();
-		  	});
-		  	 $("a[id^='hide']").each(function(i){
-	  			$(this).hide();
-		  	});	
-	}
-	
-	
-	
-	/**
-	 * 准备编辑
-	 * trId 当前tr 的id 
-	 * type 1.买方 2 卖方
-	 */
-	function edit(id,categoryName,description,receiveUnit,upCode,sourceCode){
-			isEdit = true;
-			
-			var html='';
-			html+='<td ><input type="hidden" name="id"  value="'+id+'" />'+categoryName+'</td>';
-			html+='<td> '+description+'</td>';
-			html+='<td> '+receiveUnit+'</td>';
-			html+='<td> '+categoryName+upCode+'</td>';
-			html+='<td> <input type="text" name="sourceCode" lay-verify="code" value="'+sourceCode+'" class="layui-input"> </td>';
-
-			html+='<td>	<a href="javascript:;" style="margin-left: 10px;" class="layui-btn  layui-btn-small layui-btn-normal" lay-submit="" lay-filter="demo2" >保存修改</a>';
-			html+=' <a href="javascript:;" class="layui-btn  layui-btn-small layui-btn-danger" onClick="cancel(\''+id+'\',\''+categoryName+'\',\''+description+'\',\''+receiveUnit+'\',\''+upCode+'\',\''+sourceCode+'\')">取消</a>';
-			html+='</td>';
-	
-		$("#tr"+id).empty();
-		$("#tr"+id).append(html);
-		// 选中
-		
-		if(isEdit){
-			editModel();
-		}
-			
-			// 重新 渲染 
-			layui.use('form', function(){
-			  	var $ = layui.jquery, form = layui.form;
-				form.render();
-				
-			//自定义验证规则  
-				verifyRule(form);
-			  	
-			  
-			     //监听提交  
-				  form.on('submit(demo2)', function(data){
-				
-				  var param = JSON.stringify(data.field)
-				    console.log(param);
-				  	//
-				  	$.ajax({
-	 	    	            type: "POST",
-	 	    	            url: basePath + "contractCategory/contractEdit",
-	 	    	            data:"param="+param,
-	 	    	            datatype: "json",
-	 	    	            success:function(data){
-	 	    	            	if(data.success){
-	 	    	            		
-            					    layer.alert(data.msg, {
-   									  title: '提示信息'  
-  										  }); 
-	 	    						setTimeout(function () { 
-	 	    							window.location.reload();
-	 	    					    }, 2000);
-	 	    	            	}else{
-	 	    	            		layer.alert(data.msg, {
-   									  title: '提示信息'  
-  										  }); 
-	 	    	            	}
-	 	    	            },
-	 	    	            error: function(){
-	 	    	            	layer.alert(data.msg, {
-   									  title: '提示信息'  
-  										  }); 
-	 	    	            }         
-	 	             });
-
-				    return false;  
-				  }); 
-				
-			});
-		
-			
-	}
-	
-	
-	/**
-	 * 非编辑模式 
-	 * 新增 和其他编辑 不可用 
-	 */
-	function cancel(id,categoryName,description,receiveUnit,upCode,sourceCode){
-		norModel();
-		var html="";
-			html+='<td >'+categoryName+'</td>';
-			html+='<td> '+description+'</td>';
-			html+='<td> '+receiveUnit+'</td>';
-			html+='<td> '+categoryName+upCode+'</td>';
-			html+='<td> '+categoryName+sourceCode+'</td>';
-			html+='<td>';
-			html+='	<a href="javascript:;" style="margin-left: 10px;" class="layui-btn  layui-btn-small layui-btn-warm" id="edit'+id+'" onClick="edit(\''+id+'\',\''+categoryName+'\',\''+description+'\',\''+receiveUnit+'\',\''+upCode+'\',\''+sourceCode+'\')">编辑</a>';
-			html+='<a href="javascript:;" id="hide'+id+'" class="layui-btn  layui-btn-small layui-btn-disabled" style="display:none;">编辑</a>';
-			html+='</td>';
-		$("#tr"+id).empty();
-		$("#tr"+id).append(html);
-	}
 </script>
 	</body>
 </html>
