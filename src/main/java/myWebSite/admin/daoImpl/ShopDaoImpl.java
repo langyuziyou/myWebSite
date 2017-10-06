@@ -15,7 +15,7 @@ import myWebSite.admin.dao.ShopDao;
 import myWebSite.admin.entity.Shop;
 
 @Repository
-public class ShopDaoImpl implements ShopDao {
+public class ShopDaoImpl extends CommonDaoImpl implements ShopDao {
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
@@ -23,24 +23,7 @@ public class ShopDaoImpl implements ShopDao {
 	@Autowired
 	private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
-	/**
-	 * 当查询结果数为0时，会报异常，则默认报异常为没有结果
-	 */
-	public int count(String sql, Object... o) {
-		String newSql = "SELECT COUNT(1) FROM ( " + sql + " ) t";
-		try {
-			if (o == null) {
-				return jdbcTemplate.queryForObject(newSql, Integer.class);
-			}
-			return jdbcTemplate.queryForObject(newSql, o, Integer.class);
-		} catch (EmptyResultDataAccessException e) {
-			return 0;
-		}
-	}
 
-	public int count(String sql) {
-		return count(sql, null);
-	}
 
 	@Override
 	public Shop getById(Integer id) {

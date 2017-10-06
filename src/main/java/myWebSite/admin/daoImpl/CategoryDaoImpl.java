@@ -13,7 +13,7 @@ import myWebSite.admin.dao.CategoryDao;
 import myWebSite.admin.entity.ShopCategory;
 
 @Repository
-public class CategoryDaoImpl implements CategoryDao {
+public class CategoryDaoImpl extends CommonDaoImpl implements CategoryDao {
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;

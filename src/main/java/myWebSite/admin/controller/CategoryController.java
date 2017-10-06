@@ -115,7 +115,7 @@ public class CategoryController extends BaseController {
 			}
 		} catch (Exception e) {
 			LOGGER.error("新增失败 : " + e.getMessage());
-
+			
 			j.setMsg(e.toString());
 			j.setSuccess(false);
 		}
