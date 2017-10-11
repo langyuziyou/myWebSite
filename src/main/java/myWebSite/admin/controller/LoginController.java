@@ -72,7 +72,7 @@ public class LoginController extends BaseController{
 //		 System.out.println("commonUserB:"+PasswordUtil.encrytPwd("123456", "commonUserB"));
 
 
-		String url = "/sys/login";
+		String url = "/sys/loginPage";
 		request.setAttribute("loginError", null);
 
 
@@ -134,6 +134,6 @@ public class LoginController extends BaseController{
 			request.setAttribute("loginError", ex.toString());
 			return new ModelAndView(url);
 		}
-		return new ModelAndView("redirect:/sys/loginPage");
+		return new ModelAndView("redirect:/shop/list");
 	}
 }

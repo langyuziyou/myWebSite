@@ -33,4 +33,6 @@ public interface ShopDao extends GenericDao<Shop,Integer>{
 
 	void deleteImgByShopId(String id);
 
+	Integer delShop(String id);
+
 }

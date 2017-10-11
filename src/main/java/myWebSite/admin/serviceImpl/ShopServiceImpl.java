@@ -106,8 +106,7 @@ public class ShopServiceImpl implements ShopService{
 
 	@Override
 	public Integer delShop(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		return shopDao.delShop(id);
 	}
 
 	@Override

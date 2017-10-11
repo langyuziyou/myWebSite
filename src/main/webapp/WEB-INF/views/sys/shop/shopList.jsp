@@ -148,6 +148,8 @@
 																	<td>
 																	<a href="<%=basePath%>shop/preEdit/id/${row.shop_info_id}" class="layui-btn"> 编辑
 																	</a>
+																	
+																	<a class="layui-btn layui-btn-danger" onclick="del('${row.shop_info_id}')"> 删除
 																		
 																	</td>
 																</tr>
@@ -216,6 +218,47 @@
 			  }); 
 	
 }
+	
+	
+	
+	/**
+	 * 删除
+	 */
+	function del(id){
+		layer.confirm("确认要删除吗，删除后不能恢复", { title: "删除确认" }, function (index) {  
+               		 layer.close(index); 
+				  	//
+				  	$.ajax({
+	 	    	            type: "POST",
+	 	    	            url: basePath + "shop/delShop",
+	 	    	            data:{
+	 	    	            	id:id
+	 	    	            },
+	 	    	            datatype: "json",
+	 	    	            success:function(data){
+				            	 var data = eval('(' + data + ')');
+				            	if(data.success){
+								    layer.alert(data.msg, {
+									  title: '提示信息'  
+										  }); 
+									setTimeout(function () { 
+										window.location.href=basePath+'shop/list';
+								    }, 2000);
+				            	}else{
+				            		layer.alert(data.msg, {
+									  title: '提示信息'  
+										  }); 
+				            	}
+				            },
+	 	    	            error: function(){
+	 	    	            	layer.alert(data.msg, {
+   									  title: '提示信息'  
+  										  }); 
+	 	    	            }         
+	 	             });
+               			
+            });   
+	}	
 
 </script>
 	</body>

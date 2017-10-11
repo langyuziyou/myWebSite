@@ -437,4 +437,17 @@ public class ShopDaoImpl extends CommonDaoImpl implements ShopDao {
 	
 	}
 
+	@Override
+	public Integer delShop(String id) {
+		String sql = " delete from shop_info where shop_info_id = ? ";
+		Integer result = 0;
+		try{
+			result = jdbcTemplate.update(sql,new Object[]{id});
+		}catch(Exception e){
+			LOGGER.error(e.toString());
+		}
+		return result;
+	
+	}
+
 }

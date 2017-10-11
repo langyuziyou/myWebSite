@@ -137,6 +137,32 @@ public class ShopController extends BaseController {
 
 		return new ModelAndView("/sys/shop/shopList");
 	}
+	
+	
+	
+	
+	@RequestMapping(value = "/delShop")
+	@ResponseBody
+	public AjaxJson delShop(HttpServletRequest req, String id, HttpServletResponse response) {
+		AjaxJson j = new AjaxJson();
+		try {
+			Integer result = shopService.delShop(id);
+			if (result == -1) {
+				LOGGER.error("删除 失败 ,存在子菜单 ");
+				j.setMsg("删除 失败 ,存在子菜单  ");
+				j.setSuccess(false);
+				return j;
+			}
+			LOGGER.info(" 删除 成功 Id =  " + result);
+			j.setMsg(" 删除 成功 Id =  " + result);
+		} catch (Exception e) {
+			LOGGER.error("删除 失败 : " + e.getMessage());
+
+			j.setMsg(e.toString());
+			j.setSuccess(false);
+		}
+		return j;
+	}
 
 	/***
 	 * 准备新增

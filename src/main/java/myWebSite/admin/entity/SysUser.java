@@ -29,8 +29,18 @@ public class SysUser implements RowMapper<SysUser>, Serializable {
 	private Integer groupId;
 	
 	
+	private String trueName;
+	
+	
+	
 
 	
+	public String getTrueName() {
+		return trueName;
+	}
+	public void setTrueName(String trueName) {
+		this.trueName = trueName;
+	}
 	public Integer getSysUserId() {
 		return sysUserId;
 	}

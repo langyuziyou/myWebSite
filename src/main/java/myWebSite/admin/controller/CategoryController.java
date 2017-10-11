@@ -261,6 +261,13 @@ public class CategoryController extends BaseController {
 		AjaxJson j = new AjaxJson();
 		try {
 			Integer result = categoryService.delCategory(id);
+			if (result == -2) {
+				String str = "删除 失败 ,已经被商品引用";
+				LOGGER.error(str);
+				j.setMsg(str);
+				j.setSuccess(false);
+				return j;
+			}
 			if (result == -1) {
 				LOGGER.error("删除 失败 ,存在子菜单 ");
 				j.setMsg("删除 失败 ,存在子菜单  ");
