@@ -57,7 +57,7 @@ public class LogInterceptor implements HandlerInterceptor {
 //		request.getSession().setAttribute("ex_p", new Gson().toJson(param)); // 拦截请求的参数
 		logger.info("请求的路径：" + url + "\n 请求的参数：" + param);
 
-		request.getRequestDispatcher("/WEB-INF/sys/login.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/views/sys/login.jsp").forward(request, response);
 		
 		return false;
 	}

@@ -136,5 +136,11 @@ public class CategoryDaoImpl extends CommonDaoImpl implements CategoryDao {
 		return categoryList;
 	}
 
+	@Override
+	public Integer findShopById(String id) {
+		String sql =" SELECT * FROM `shop_info` WHERE first_shop_category_id =? OR second_shop_category_id = ?  OR three_shop_category_id =?  ";
+		return count(sql,new Object[]{id,id,id});
+	}
+
 
 }

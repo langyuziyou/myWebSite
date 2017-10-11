@@ -51,6 +51,10 @@ public class CategoryServiceImpl implements CategoryService {
 	 * 删除
 	 */
 	public Integer delCategory(String id) {
+		Integer count = categoryDao.findShopById(id);
+		if(count>0){
+			return -2;
+		}
 		List<Map<String, Object>> list = categoryDao.getListByParentId(id);
 		if (list.isEmpty()) {
 			return categoryDao.delCategory(id);

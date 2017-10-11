@@ -111,6 +111,11 @@ public class ShopController extends BaseController {
 		request.setAttribute("firstSelect", firstSelect);
 		request.setAttribute("secondSelect", secondSelect);
 		request.setAttribute("threeSelect", threeSelect);
+		
+		
+		/// basePath 
+		String basePath = request.getSession().getServletContext().getContextPath();
+		request.setAttribute("basePath", basePath);//
 
 		/**
 		 * categoryList
@@ -131,6 +136,32 @@ public class ShopController extends BaseController {
 		}
 
 		return new ModelAndView("/sys/shop/shopList");
+	}
+	
+	
+	
+	
+	@RequestMapping(value = "/delShop")
+	@ResponseBody
+	public AjaxJson delShop(HttpServletRequest req, String id, HttpServletResponse response) {
+		AjaxJson j = new AjaxJson();
+		try {
+			Integer result = shopService.delShop(id);
+			if (result == -1) {
+				LOGGER.error("删除 失败 ,存在子菜单 ");
+				j.setMsg("删除 失败 ,存在子菜单  ");
+				j.setSuccess(false);
+				return j;
+			}
+			LOGGER.info(" 删除 成功 Id =  " + result);
+			j.setMsg(" 删除 成功 Id =  " + result);
+		} catch (Exception e) {
+			LOGGER.error("删除 失败 : " + e.getMessage());
+
+			j.setMsg(e.toString());
+			j.setSuccess(false);
+		}
+		return j;
 	}
 
 	/***
@@ -171,8 +202,85 @@ public class ShopController extends BaseController {
 		request.setAttribute("id", id);
 		Map<String, Object> result = shopService.findById(id);
 		request.setAttribute("result", result);
+		
+		//分类 信息
+		String categoryId1 = result.get("first_shop_category_id").toString();
+		String categoryId2 = result.get("second_shop_category_id").toString();
+		String categoryId3 = result.get("three_shop_category_id").toString();
+
+		// 如果是 1级分类 就查询一级分类就好
+		List<Map<String, Object>> categoryFirstList = loadCategoryFirst(request);
+		request.setAttribute("categoryFirstList", categoryFirstList);
+		
+		request.setAttribute("firstSelect", categoryId1);
+		request.setAttribute("secondSelect", categoryId2);
+		request.setAttribute("threeSelect", categoryId3);
+		
+		if(!categoryId2.equals("-1")){
+			List<Map<String, Object>> secondSelectList = categoryService.findByPid(categoryId1);
+			request.setAttribute("secondSelectList", secondSelectList);// 二级分类数据
+
+		}
+		if(!categoryId3.equals("-1"))	{
+			List<Map<String, Object>> secondSelectListx = categoryService.findByPid(categoryId1);
+			request.setAttribute("secondSelectList", secondSelectListx);// 二级分类数据
+			List<Map<String, Object>> threeSelectList = categoryService.findByPid(categoryId2);
+			request.setAttribute("threeSelectList", threeSelectList);// 三级
+		}	
+		
+		// 图片
+		List<Map<String,Object>> imgList = shopService.imgByShopId(id);
+		request.setAttribute("imgList", imgList);
 
 		return new ModelAndView("/sys/shop/shopEdit");
+	}
+	
+	
+	/**
+	 * 编辑
+	 * @author yzj
+	 * @version 2.0 2017年10月11日 下午3:17:43
+	 * 
+	 * @param req
+	 * @param uploadImage
+	 * @param price
+	 * @param name
+	 * @param firstSelect
+	 * @param secondSelect
+	 * @param threeSelect
+	 * @param firstSelectVal
+	 * @param secondSelectVal
+	 * @param threeSelectVal
+	 * @param description
+	 * @param response
+	 * @return
+	 */
+	@RequestMapping(value = "/editShop")
+	@ResponseBody
+	public AjaxJson editShop(HttpServletRequest req,String uploadImage,String id, String price,String name,String firstSelect,String secondSelect,
+			String threeSelect,String firstSelectVal,String secondSelectVal,String threeSelectVal,String description, HttpServletResponse response) {
+			AjaxJson j = new AjaxJson();		
+
+
+			Integer result = shopService.editShop(uploadImage,id,price,name,firstSelect,secondSelect,threeSelect,firstSelectVal,secondSelectVal,threeSelectVal,description);
+			if(result == 1){
+				String str = "编辑 成功";
+				LOGGER.info(str);
+				j.setMsg(str);
+			}else if(result == -1){
+				String str = "编辑 失败";
+				LOGGER.info(str);
+				j.setMsg(str);
+				j.setSuccess(false);
+			}
+			else
+			{
+				String str = "编辑 失败";
+				LOGGER.info(str);
+				j.setMsg(str);
+				j.setSuccess(false);
+			}
+		return j;
 	}
 	
 	
@@ -191,30 +299,56 @@ public class ShopController extends BaseController {
 	@RequestMapping(value = "/addShop")
 	@ResponseBody
 	public AjaxJson addShop(HttpServletRequest req,String uploadImage, String price,String name,String firstSelect,String secondSelect,
-			String threeSelect,String description, HttpServletResponse response) {
+			String threeSelect,String firstSelectVal,String secondSelectVal,String threeSelectVal,String description, HttpServletResponse response) {
 			AjaxJson j = new AjaxJson();		
 
-		try {
-			Integer result = shopService.addShop(uploadImage,price,name,firstSelect,secondSelect,threeSelect,description);
+
+			Integer result = shopService.addShop(uploadImage,price,name,firstSelect,secondSelect,threeSelect,firstSelectVal,secondSelectVal,threeSelectVal,description);
 			if(result == 1){
 				LOGGER.info(" 新增 成功 ");
 				j.setMsg(" 新增 成功  ");
-			}else
+			}else if(result == -1){
+				LOGGER.info(" 新增 失败,已经存在相同的名称 ");
+				j.setMsg(" 新增 失败,已经存在相同的名称 ");
+				j.setSuccess(false);
+			}
+			else
 			{
 				LOGGER.info(" 新增 失败 ");
 				j.setMsg(" 新增 失败  ");
 				j.setSuccess(false);
 			}
-			
-		} catch (Exception e) {
-			LOGGER.error("编辑失败 : " + e.getMessage());
-
-			j.setMsg(e.toString());
-			j.setSuccess(false);
-		}
 		return j;
 	}
 	
+	
+	
+	@RequestMapping(value = "/deleteImg")
+	@ResponseBody
+	public AjaxJson deleteImg(HttpServletRequest req,String id,String imgId, HttpServletResponse response) {
+			AjaxJson j = new AjaxJson();		
+
+
+			Integer result = shopService.deleteImg(id,imgId);
+			if(result == 1){
+				String str = "删除 成功";
+				LOGGER.info(str);
+				j.setMsg(str);
+			}else if(result == -1){
+				String str = "删除失败";
+				LOGGER.info(str);
+				j.setMsg(str);
+				j.setSuccess(false);
+			}
+			else
+			{
+				String str = "删除 失败";
+				LOGGER.info(str);
+				j.setMsg(str);
+				j.setSuccess(false);
+			}
+		return j;
+	}
 	
 
 	/**
@@ -280,7 +414,7 @@ public class ShopController extends BaseController {
 			// 扫描文件夹下是否存在相同文件
 			File f = new File(fileAdd + "/" + fileName);
 			if (f.exists()) {
-				sb.append("0" + fileAdd + "/" + fileName );
+				sb.append("0shop\\upload\\imgs\\"+ DateUtil.getDate()+"\\" +  fileName);
 				up = false;
 			}
 			

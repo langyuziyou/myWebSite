@@ -1,6 +1,7 @@
 myWebSite\admin\dao\SysUserDao.class
 myWebSite\admin\dao\CategoryDao.class
 myWebSite\admin\entity\Shop.class
+myWebSite\admin\daoImpl\CommonDaoImpl.class
 myWebSite\admin\entity\SysUser.class
 myWebSite\admin\tools\ExcelUtil.class
 myWebSite\admin\dao\ShopDao.class
@@ -26,14 +27,17 @@ myWebSite\admin\tools\CryptHelper.class
 myWebSite\admin\controller\FrontFirstController.class
 myWebSite\admin\serviceImpl\SysUserServiceImpl.class
 myWebSite\admin\tools\AjaxJson.class
+myWebSite\admin\serviceImpl\ShopServiceImpl$1.class
 myWebSite\admin\dao\LoanPayTypeDao.class
 myWebSite\admin\entity\ImageData.class
 myWebSite\admin\daoImpl\ShopDaoImpl.class
+myWebSite\admin\entity\UploadImg.class
 myWebSite\admin\controller\CategoryController.class
 myWebSite\admin\daoImpl\LoanPayTypeDaoImpl.class
 myWebSite\admin\dao\GenericDao.class
 myWebSite\admin\tools\StringUtil.class
 myWebSite\admin\controller\LoginController.class
+myWebSite\admin\serviceImpl\ShopServiceImpl$2.class
 myWebSite\admin\serviceImpl\CategoryServiceImpl.class
 myWebSite\admin\serviceImpl\ShopServiceImpl.class
 myWebSite\admin\tools\CryptUtils.class

@@ -55,12 +55,13 @@
 		
 	
 		<!--配置拦截器, 多个拦截器,顺序执行 -->
-<!-- 	<mvc:interceptors>
+ 	<mvc:interceptors>
 		<mvc:interceptor>
-			<mvc:mapping path="/sys/**" />
+			<mvc:mapping path="/shop/**" />
+			<mvc:mapping path="/category/**" />
 			<bean class="myWebSite.admin.interceptor.LogInterceptor" />
 		</mvc:interceptor>
-	</mvc:interceptors> -->
+	</mvc:interceptors>
   
     <!-- 对模型视图名称的解析，即在模型视图名称添加前后缀 -->
     <bean  

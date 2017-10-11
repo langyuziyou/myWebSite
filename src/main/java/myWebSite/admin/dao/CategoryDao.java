@@ -23,4 +23,6 @@ public interface CategoryDao extends GenericDao<ShopCategory,Integer>{
 
 	List<Map<String, Object>> findByPid(String id);
 
+	Integer findShopById(String id);
+
 }

@@ -51,6 +51,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
 
       out.write("<html>\n");
+      out.write(" <meta http-equiv=\"Refresh\" content=\"0; URL=front/reStart\">\n");
       out.write("<body>\n");
       out.write("<h2>Hello World!</h2>\n");
       out.write("<a href=\"http://localhost:8080/myWebSite/front/reStart\">fds</a>\n");

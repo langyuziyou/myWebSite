@@ -16,6 +16,7 @@ import com.google.gson.reflect.TypeToken;
 
 import myWebSite.admin.dao.ShopDao;
 import myWebSite.admin.entity.Shop;
+import myWebSite.admin.entity.UploadImg;
 import myWebSite.admin.tools.DateUtil;
 
 @Repository
@@ -90,7 +91,7 @@ public class ShopDaoImpl extends CommonDaoImpl implements ShopDao {
 		
 		StringBuffer baseSql = new StringBuffer();
 		baseSql.append(" SELECT shop_info.*,shop_category.`shop_category_name` FROM shop_info   ");
-		baseSql.append(" LEFT JOIN shop_category  ON shop_category.`shop_category_id` = shop_info.`shop_category_id`  ");
+		baseSql.append(" LEFT JOIN shop_category  ON shop_category.`shop_category_id` = shop_info.`first_shop_category_id`  ");
 		baseSql.append(" where 1=1 ");
 		
 		StringBuffer sql = new StringBuffer();
@@ -134,7 +135,7 @@ public class ShopDaoImpl extends CommonDaoImpl implements ShopDao {
 		 * condition 1: 一级分类被选择 过滤 关键字
 		 **********************************************************************************************************/
 		case 1:
-			sql.append(" AND shop_info.`shop_category_id` = ? ");
+			sql.append(" AND shop_info.`first_shop_category_id` = ? ");
 			paramList.add(firstSelect);
 			
 			if (!shopName.equals("")) {
@@ -206,7 +207,7 @@ public class ShopDaoImpl extends CommonDaoImpl implements ShopDao {
 		 * condition 2: 选择了 二级分类 过滤 关键字
 		 **************************************************************************************************************/
 		case 2:
-			sql.append(" AND shop_info.`shop_category_id` = ? ");
+			sql.append(" AND shop_info.`second_shop_category_id` = ? ");
 			paramList.add(secondSelect);
 			
 			
@@ -261,7 +262,7 @@ public class ShopDaoImpl extends CommonDaoImpl implements ShopDao {
 		 * condition 3: 选择了3级分类 过滤 关键字
 		 **************************************************************************************************************/
 		case 3:
-			sql.append(" AND shop_info.`shop_category_id` = ? ");
+			sql.append(" AND shop_info.`three_shop_category_id` = ? ");
 			paramList.add(threeSelect);
 			
 			
@@ -332,7 +333,7 @@ public class ShopDaoImpl extends CommonDaoImpl implements ShopDao {
 		sb.append(" (shop_info_name,shop_info_image,price,shop_category_id,create_time,create_by,description,from_type) ");
 		sb.append(" VALUES(?,?,?,?,?,?,?,?) ");
 			for(Shop p:shopList){
-					batchArgs.add(new Object[] { p.getShopInfoName(),p.getShopInfoImage(),p.getPrice(),p.getShopCategoryId(),DateUtil.getDateTime(),currentUser,p.getDescription(),1});
+					batchArgs.add(new Object[] { p.getShopInfoName(),p.getShopInfoImage(),p.getPrice(),p.getFirstShopCategoryId(),DateUtil.getDateTime(),currentUser,p.getDescription(),1});
 			}
 			result = jdbcTemplate.batchUpdate(sb.toString(), batchArgs);
 		} catch (Exception e) {
@@ -347,9 +348,9 @@ public class ShopDaoImpl extends CommonDaoImpl implements ShopDao {
 		Integer result = null;
 		try{
 			sb.append("  INSERT INTO `shop_info`  ");
-			sb.append(" (shop_info_name,shop_info_image,price,shop_category_id,create_time,create_by,description,from_type) ");
-			sb.append(" VALUES(?,?,?,?,?,?,?,?) ");
-			result = jdbcTemplate.update(sb.toString(),new Object[]{ p.getShopInfoName(),p.getShopInfoImage(),p.getPrice(),p.getShopCategoryId(),DateUtil.getDateTime(),"admin",p.getDescription(),2});
+			sb.append(" (shop_info_name,shop_info_image,price,first_shop_category_id,second_shop_category_id,three_shop_category_id,create_time,create_by,description,from_type,category_name) ");
+			sb.append(" VALUES(?,?,?,?,?,?,?,?,?,?,?) ");
+			result = jdbcTemplate.update(sb.toString(),new Object[]{ p.getShopInfoName(),p.getShopInfoImage(),p.getPrice(),p.getFirstShopCategoryId(),p.getSecondShopCategoryId(),p.getThreeShopCategoryId(),DateUtil.getDateTime(),"admin",p.getDescription(),2,p.getCategoryName()});
 		}catch(Exception e){
 			LOGGER.error(e.toString());
 		}
@@ -367,6 +368,86 @@ public class ShopDaoImpl extends CommonDaoImpl implements ShopDao {
 		String sql = " select * from shop_info where shop_info_id = ? ";
 		Map<String, Object> result = jdbcTemplate.queryForMap(sql,new Object[] { id });
 		return result;
+	}
+
+	@Override
+	public int findByNameCount(String name) {
+		String sql = " select * from shop_info where shop_info_name = ? ";
+		return count(sql.toString(),name);
+	}
+
+	@Override
+	public void insertImg(String id, List<UploadImg> list) {
+		
+		try{
+		List<Object[]> batchArgs = new ArrayList<Object[]>();
+		StringBuffer sb = new StringBuffer();
+		sb.append("  INSERT INTO `shop_img`  ");
+		sb.append(" (shop_info_id,shop_info_image) ");
+		sb.append(" VALUES(?,?) ");
+			for(UploadImg p:list){
+					batchArgs.add(new Object[] { id,p.getSrc()});
+			}
+			jdbcTemplate.batchUpdate(sb.toString(), batchArgs);
+		} catch (Exception e) {
+			LOGGER.error(e.toString());
+		}
+	}
+
+	@Override
+	public List<Map<String, Object>> imgByShopId(String id) {
+		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
+		String sql = " select * from shop_img where shop_info_id = ? ";
+		list = jdbcTemplate.queryForList(sql,new Object[]{id});
+		return list;
+	}
+
+	@Override
+	public Integer deleteImg(String id, String imgId) {
+		String sql = " delete from shop_img where shop_img_id = ? ";
+		Integer result = 0;
+		try{
+			result = jdbcTemplate.update(sql,new Object[]{imgId});
+		}catch(Exception e){
+			LOGGER.error(e.toString());
+		}
+		return result;
+	}
+
+	@Override
+	public void editShop(Shop p) {
+		StringBuffer sb = new StringBuffer();
+		try{
+			sb.append("  update `shop_info` set  shop_info_name = ? ,shop_info_image = ? ,price =? ,first_shop_category_id =? ,second_shop_category_id = ? , three_shop_category_id = ? ,description = ? ,category_name =?  where shop_info_id = ? ");
+			jdbcTemplate.update(sb.toString(),new Object[]{ p.getShopInfoName(),p.getShopInfoImage(),p.getPrice(),p.getFirstShopCategoryId(),p.getSecondShopCategoryId(),p.getThreeShopCategoryId(),p.getDescription(),p.getCategoryName(),p.getShopInfoId()});
+		}catch(Exception e){
+			LOGGER.error(e.toString());
+		}
+	
+	}
+
+	@Override
+	public void deleteImgByShopId(String id) {
+		String sql = " delete from shop_img where shop_info_id = ? ";
+		try{
+			jdbcTemplate.update(sql,new Object[]{id});
+		}catch(Exception e){
+			LOGGER.error(e.toString());
+		}
+	
+	}
+
+	@Override
+	public Integer delShop(String id) {
+		String sql = " delete from shop_info where shop_info_id = ? ";
+		Integer result = 0;
+		try{
+			result = jdbcTemplate.update(sql,new Object[]{id});
+		}catch(Exception e){
+			LOGGER.error(e.toString());
+		}
+		return result;
+	
 	}
 
 }

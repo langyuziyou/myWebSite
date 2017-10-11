@@ -22,9 +22,19 @@ public class Shop implements RowMapper<Shop>, Serializable{
 	 */
 	private String shopInfoImage;
 	/**
-	 * 分类ID 
+	 * 1级分类ID 
 	 */
-	private Integer shopCategoryId;
+	private Integer firstShopCategoryId;
+	/**
+	 * 2级分类ID 
+	 */
+	private Integer secondShopCategoryId;
+	/**
+	 * 3级分类ID 
+	 */
+	private Integer threeShopCategoryId;
+	
+	private String categoryName;
 	
 	/**
 	 * 创建时间
@@ -93,15 +103,54 @@ public class Shop implements RowMapper<Shop>, Serializable{
 	}
 
 
+	
 
-	public Integer getShopCategoryId() {
-		return shopCategoryId;
+
+
+	public Integer getFirstShopCategoryId() {
+		return firstShopCategoryId;
 	}
 
 
 
-	public void setShopCategoryId(Integer shopCategoryId) {
-		this.shopCategoryId = shopCategoryId;
+	public void setFirstShopCategoryId(Integer firstShopCategoryId) {
+		this.firstShopCategoryId = firstShopCategoryId;
+	}
+
+
+
+	public Integer getSecondShopCategoryId() {
+		return secondShopCategoryId;
+	}
+
+
+
+	public void setSecondShopCategoryId(Integer secondShopCategoryId) {
+		this.secondShopCategoryId = secondShopCategoryId;
+	}
+
+
+
+	public Integer getThreeShopCategoryId() {
+		return threeShopCategoryId;
+	}
+
+
+
+	public void setThreeShopCategoryId(Integer threeShopCategoryId) {
+		this.threeShopCategoryId = threeShopCategoryId;
+	}
+
+	
+
+	public String getCategoryName() {
+		return categoryName;
+	}
+
+
+
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
 	}
 
 
@@ -188,7 +237,10 @@ public class Shop implements RowMapper<Shop>, Serializable{
 		shop.setShopInfoId(rs.getInt("shop_info_id"));
 		shop.setShopInfoName(rs.getString("shop_info_name"));
 		shop.setShopInfoImage(rs.getString("shop_info_image"));
-		shop.setShopCategoryId(rs.getInt("shop_category_id"));
+		shop.setFirstShopCategoryId(rs.getInt("first_shop_category_id"));
+		shop.setSecondShopCategoryId(rs.getInt("second_shop_category_id"));
+		shop.setThreeShopCategoryId(rs.getInt("three_shop_category_id"));
+		shop.setCategoryName(rs.getString("category_name"));
 		shop.setCreateTime(rs.getString("create_time"));
 		shop.setCreateBy(rs.getString("create_by"));
 		shop.setIsShow(rs.getInt("is_show"));
