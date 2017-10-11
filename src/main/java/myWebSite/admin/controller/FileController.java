@@ -56,6 +56,7 @@ public class FileController extends BaseController{
 	@RequestMapping(value="uploadImag", method = RequestMethod.POST)
 	@ResponseBody
 	public Object uploadImag(@RequestParam MultipartFile file, HttpServletRequest request){
+		String enviroment = "http://localhost:8080/myWebSite/shop/";
 		String basePath = request.getSession().getServletContext().getRealPath("shop/upload/imgs");
 		StringBuffer sb = new StringBuffer();
 		
@@ -94,7 +95,7 @@ public class FileController extends BaseController{
 			e.printStackTrace();
 		}
 		ImageData data = new ImageData();
-		data.setSrc("upload\\imgs\\"+ DateUtil.getDate()+"\\" +  fileName);
+		data.setSrc(enviroment + "upload\\imgs\\"+ DateUtil.getDate()+"\\" +  fileName);
 		object.put("code", 0);
 		object.put("data", data);
 		object.put("src", "upload\\imgs\\"+ DateUtil.getDate()+"\\" +  fileName);

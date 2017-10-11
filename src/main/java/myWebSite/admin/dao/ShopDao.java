@@ -5,6 +5,7 @@ import java.util.Map;
 
 import myWebSite.admin.entity.Shop;
 import myWebSite.admin.entity.ShopCategory;
+import myWebSite.admin.entity.UploadImg;
 
 public interface ShopDao extends GenericDao<Shop,Integer>{
 
@@ -19,5 +20,17 @@ public interface ShopDao extends GenericDao<Shop,Integer>{
 	Map<String, Object> findByName(String name);
 
 	Map<String, Object> findById(String id);
+
+	int findByNameCount(String name);
+
+	void insertImg(String id, List<UploadImg> uploadImgList);
+
+	List<Map<String, Object>> imgByShopId(String id);
+
+	Integer deleteImg(String id, String imgId);
+
+	void editShop(Shop shop);
+
+	void deleteImgByShopId(String id);
 
 }

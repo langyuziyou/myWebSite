@@ -120,7 +120,7 @@
 								        <th style="min-width:230px;">名称</th>
 								         <th style="min-width:30px;">价格</th>
 								        <th style="min-width:80px;">分类</th>
-								        <th style="min-width:80px;">图片</th>
+								        <th style="min-width:100px;">图片</th>
 								        <th>操作</th>
 								      </tr> 
 								    </thead>
@@ -132,8 +132,19 @@
 																	</td>
 																	<td>${row.shop_info_name }</td>
 																	<td>${row.price }</td>
-																	<td> ${row.shop_category_name }</td>
-																	<td>${row.shop_info_image }</td>
+																	<td> ${row.category_name }</td>
+																	<td>
+																		<c:choose>
+																			<c:when test="${row.from_type ==2}">
+																					<img src="${row.shop_info_image }" style="max-width:200px;max-height:120px;"/>
+																			</c:when>
+																			<c:otherwise>
+																					<img src="${row.shop_info_image }"/>
+																				</c:otherwise>
+																		</c:choose>	
+																		
+																	
+																	</td>
 																	<td>
 																	<a href="<%=basePath%>shop/preEdit/id/${row.shop_info_id}" class="layui-btn"> 编辑
 																	</a>
