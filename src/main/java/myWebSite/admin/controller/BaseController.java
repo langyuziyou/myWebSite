@@ -8,6 +8,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -136,38 +140,39 @@ public class BaseController {
 	 * @param args
 	 */
 	public static void main(String args[]){
-		for(int i=1;i<19;i++)
-		{
-			//getUrl("http://www.cnlipin.cn/image_list.aspx?page="+i+"&p1=1&p2=10",1);
+
+		Random random = new Random();
+		
+		ExecutorService executor = Executors.newScheduledThreadPool(10);
+		
+		//
+		int waitTime = 500;
+		for(int i=0;i<1000;i++){
+			String name = "thread" + i;
+			int time = random.nextInt(1);
+			waitTime +=time;
+			
+			Runnable runner = new ExecutorThread(name,1);
+		
+			executor.execute(runner);
+		}
+		
+		try {
+			//Thread.sleep(waitTime);
+			executor.shutdown();
+			executor.awaitTermination(waitTime, TimeUnit.MILLISECONDS);
+			System.out.println(" end ");
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
 		
-		/*String url = "http://www.cnlipin.cn/1684_3CfdMzdR.htm";  
-	    long start = System.currentTimeMillis();  
-	    Document doc=null;  
-	    try{  
-	        doc = Jsoup.connect(url).get();  
-	       
-	    }  
-	    catch(Exception e){  
-	        e.printStackTrace();  
-	    }  
-	    finally{  
-	        System.out.println("Time is:"+(System.currentTimeMillis()-start) + "ms");  
-	    }  
-	    
-	  
-	    Elements elem = doc.getElementsByTag("Title");  
-	    System.out.println("Title is:" +elem.text());  
-	    
-	    
-	    Elements classs = doc.getElementsByClass("article-img-box");
-	    
-	    System.out.println(classs.html());  
-	    
-	    Element id = doc.getElementById("article_content");
-	    System.out.println(id.html());  */
+		
+		
 	}
+	
+
 	
 	
 	/**
@@ -190,7 +195,7 @@ public class BaseController {
 		    finally{  
 		        System.out.println("Time is:"+(System.currentTimeMillis()-start) + "ms");  
 		    } 
-		    Elements classs = doc.getElementsByClass("cy-cp-box transition");
+		    Elements classs = doc.getElementsByClass("index");
 		    List<Shop> shopList = new ArrayList<>();
 		    for(Element c:classs){
 		    	Shop shop = new Shop();
@@ -263,4 +268,46 @@ public class BaseController {
 		return bd;
 		
 	}
+}
+
+class ExecutorThread implements Runnable{
+	private final String name;
+	private final int delay;
+	public ExecutorThread(String name,int delay){
+		this.name = name;
+		this.delay = delay;
+	}
+	public void run() {
+		for(int i=1;i<100911;i++)
+		{
+			//String url = "http://www.vstob.com/home/index";  
+			String url = "http://www.cnlipin.cn/";
+		    long start = System.currentTimeMillis();  
+		    Document doc=null;  
+		    try{  
+		        doc = Jsoup.connect(url).get();  
+		        System.out.println(Thread.currentThread().getName()+ " end  ");
+		       
+		    }  
+		    catch(Exception e){  
+		        e.printStackTrace();  
+		    }  
+		    finally{  
+		        System.out.println("Time is:"+(System.currentTimeMillis()-start) + "ms");  
+		    }  
+		    
+		  
+		    Elements elem = doc.getElementsByTag("Title");  
+		   /* System.out.println("Title is:" +elem.text());  
+		    
+		    
+		    Elements classs = doc.getElementsByClass("article-img-box");
+		    
+		    System.out.println(classs.html());  
+		    
+		    Element id = doc.getElementById("article_content");
+		    System.out.println(id.html());*/
+		}
+	}
+	
 }
