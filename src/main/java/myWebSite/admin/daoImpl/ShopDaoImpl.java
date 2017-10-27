@@ -330,10 +330,10 @@ public class ShopDaoImpl extends CommonDaoImpl implements ShopDao {
 		List<Object[]> batchArgs = new ArrayList<Object[]>();
 		StringBuffer sb = new StringBuffer();
 		sb.append("  INSERT INTO `shop_info`  ");
-		sb.append(" (shop_info_name,shop_info_image,price,shop_category_id,create_time,create_by,description,from_type) ");
-		sb.append(" VALUES(?,?,?,?,?,?,?,?) ");
+		sb.append(" (shop_info_name,shop_info_image,price,first_shop_category_id,second_shop_category_id,three_shop_category_id,create_time,create_by,description,from_type,from_web) ");
+		sb.append(" VALUES(?,?,?,?,?,?,?,?,?) ");
 			for(Shop p:shopList){
-					batchArgs.add(new Object[] { p.getShopInfoName(),p.getShopInfoImage(),p.getPrice(),p.getFirstShopCategoryId(),DateUtil.getDateTime(),currentUser,p.getDescription(),1});
+					batchArgs.add(new Object[] { p.getShopInfoName(),p.getShopInfoImage(),p.getPrice(),p.getFirstShopCategoryId(),0,0,DateUtil.getDateTime(),currentUser,p.getDescription(),1});
 			}
 			result = jdbcTemplate.batchUpdate(sb.toString(), batchArgs);
 		} catch (Exception e) {

@@ -2,24 +2,38 @@ package myWebSite.admin.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.math.BigDecimal;
 import java.security.MessageDigest;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 
+import myWebSite.admin.entity.Shop;
 import myWebSite.admin.service.CategoryService;
+import myWebSite.admin.service.ShopService;
 
 public class BaseController {
+	
+	
+	@Autowired
+	private ShopService shopService;
 	
 	private static final Logger LOGGER = Logger  
             .getLogger(BaseController.class); 
@@ -80,12 +94,8 @@ public class BaseController {
      * @return
      */
 	public List<Map<String, Object>> loadCategoryFirst(HttpServletRequest request) {
-		List<Map<String, Object>> list = (List<Map<String, Object>>) request.getSession().getAttribute(SESSION_LOAD_CATEGORY_FIRST);
-		if (list == null) {
-			list = categoryService.categoryList();
+			List<Map<String, Object>> list = categoryService.categoryList();
 			System.out.println(list);
-			request.getSession().setAttribute(SESSION_LOAD_CATEGORY_FIRST, list);
-		}
 		return list;
 	}
 	
@@ -115,5 +125,142 @@ public class BaseController {
 		} catch (IOException e) {
 			LOGGER.error(e.toString());
 		}
+	}
+	
+	
+	/**
+	 * 测试的主函数 
+	 * @author yzj
+	 * @version 2.0 2017年10月25日 上午9:33:34
+	 * 
+	 * @param args
+	 */
+	public static void main(String args[]){
+		for(int i=1;i<19;i++)
+		{
+			//getUrl("http://www.cnlipin.cn/image_list.aspx?page="+i+"&p1=1&p2=10",1);
+		}
+		
+		
+		/*String url = "http://www.cnlipin.cn/1684_3CfdMzdR.htm";  
+	    long start = System.currentTimeMillis();  
+	    Document doc=null;  
+	    try{  
+	        doc = Jsoup.connect(url).get();  
+	       
+	    }  
+	    catch(Exception e){  
+	        e.printStackTrace();  
+	    }  
+	    finally{  
+	        System.out.println("Time is:"+(System.currentTimeMillis()-start) + "ms");  
+	    }  
+	    
+	  
+	    Elements elem = doc.getElementsByTag("Title");  
+	    System.out.println("Title is:" +elem.text());  
+	    
+	    
+	    Elements classs = doc.getElementsByClass("article-img-box");
+	    
+	    System.out.println(classs.html());  
+	    
+	    Element id = doc.getElementById("article_content");
+	    System.out.println(id.html());  */
+	}
+	
+	
+	/**
+	 * 获取翻页数据 
+	 * @author yzj
+	 * @version 2.0 2017年10月25日 下午2:15:02
+	 *
+	 */
+	public void getUrl(String url,String fromWeb){
+		
+		 long start = System.currentTimeMillis();  
+		    Document doc=null;  
+		    try{  
+		        doc = Jsoup.connect(url).get();  
+		       
+		    }  
+		    catch(Exception e){  
+		        e.printStackTrace();  
+		    }  
+		    finally{  
+		        System.out.println("Time is:"+(System.currentTimeMillis()-start) + "ms");  
+		    } 
+		    Elements classs = doc.getElementsByClass("cy-cp-box transition");
+		    List<Shop> shopList = new ArrayList<>();
+		    for(Element c:classs){
+		    	Shop shop = new Shop();
+		    	shop.setFromType(Integer.parseInt(fromWeb));
+		    	shop.setShopInfoName(c.getElementsByClass("cy-cp-name").text());
+		    	shop.setShopInfoImage(c.getElementsByTag("img").attr("src"));
+		    	shop.setFirstShopCategoryId(1);
+		    	String dtailUrl = "http://www.cnlipin.cn"+c.getElementsByTag("a").attr("href");
+		    	 try {
+					Document detailDoc=Jsoup.connect(dtailUrl).get();
+					Elements detailPriceClasss = detailDoc.getElementsByClass("article-author");
+				    for(Element d:detailPriceClasss){
+				  /*  	System.out.println("price1: " + d.getElementsByClass("f12").next().text());
+				    	System.out.println("price: " + getPrice(d.getElementsByClass("f12").next().text()));*/
+				    	shop.setPrice(getPrice(d.getElementsByClass("f12").next().text())+"");
+				    }
+					
+				    String detail = detailDoc.getElementsByClass("article-img-box").html();
+				    String content = detailDoc.getElementById("article_content").html();
+				    shop.setDescription(detail+content);
+				}catch (Exception e) {
+					try {
+						shop.setPrice(getPrice(c.getElementsByTag("li").first().text())+"");
+						
+					} catch (Exception e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+		    	 shopList.add(shop);
+		    }
+
+			
+			Map<String, Object> paraList = new HashMap<String, Object>();
+			paraList.put("shopList",shopList);
+			paraList.put("user", "admin");
+			int[] strList = shopService.shopListAdd(paraList);
+			//System.out.println(sb);
+		    
+		    //System.out.println(classs.html());  
+		    
+/*		    Element id = doc.getElementById("article_content");
+		    System.out.println(id.html());  */
+		
+	}
+	
+	/**
+	 * 网页中的字符串 提取出 价格 
+	 * @author yzj
+	 * @version 2.0 2017年10月26日 下午2:37:38
+	 * 
+	 * @param str
+	 */
+	public static BigDecimal getPrice(String line) throws Exception{
+		
+		String price = "1";
+		// 按指定模式在字符串查找
+	      String pattern = "(\\D*)(\\d*)(.*)";
+	 
+	      // 创建 Pattern 对象
+	      Pattern r = Pattern.compile(pattern);
+	 
+	      // 现在创建 matcher 对象
+	      Matcher m = r.matcher(line);
+	      if (m.find( )) {
+	    	 price =  m.group(2).trim();
+	         //System.out.println("Found value: " + m.group(2) );
+	      }
+	      BigDecimal bd = new BigDecimal(price);
+		return bd;
+		
 	}
 }

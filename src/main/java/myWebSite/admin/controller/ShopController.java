@@ -490,17 +490,13 @@ public class ShopController extends BaseController {
 			
 			for(List<String> readChild:read){
 				if(readChild.get(0)!=null){
-					
-						System.out.println(readChild.get(4).replace("\"", "\'") );
-						
 						sb.append("{\"shopInfoName\":" + "\"" + readChild.get(0) + "\"");
 						sb.append(",\"shopInfoImage\":"  + "\"" + readChild.get(1)  + "\"");
 						sb.append(",\"price\":"  + "\"" + readChild.get(2)  + "\"");
 						sb.append(",\"shopCategoryId\":"  + "\"" + category  + "\"");
 						sb.append(",\"description\":"  + "\"" + readChild.get(3).replace("\"", "\'")  + "\"");
+						sb.append(",\"fromWeb\":"  + "\"" + category  + "\"");
 						sb.append("},");
-			
-					
 				}
 			}
 			

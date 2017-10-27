@@ -12,17 +12,11 @@
 <div class="header">
 		<div class="headerCon marginUp">
 			<div class="logo">
-				<a class="logoH" href="http://www.lipin-bj.cn/"></a>
+				<a href="http://www.yllipin.cn/" style="width:120px;height:30px;">圆周率礼品网</a>
 				<div class="contact">				
 				</div>
 			</div>
-			<div class="right">
-			您好，欢迎来到古韵礼品网，买礼品首选礼品网站！ <div id="append_parent"></div>
-&nbsp;&nbsp;&nbsp;&nbsp;
- <a href="http://www.lipin-bj.cn/user.php" rel="nofollow">登陆</a>&nbsp;/&nbsp;<a href="http://www.lipin-bj.cn/user.php?act=register" rel="nofollow">注册</a>
-			&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="http://www.lipin-bj.cn/flow.php" rel="nofollow">购物车</a>
-			&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="http://www.lipin-bj.cn/" rel="nofollow" onclick="window.external.addFavorite(this.href,this.title);return false;" title="古韵礼品网 - 礼品公司第一品牌">收藏本站</a>
-			</div>	
+
             <div class="search">
 				<form action="" method="get" name="advancedSearchForm" id="advancedSearchForm">
 					<input type="text" class="input" id="keywords" value="" name="keywords" style="width:90px;">
@@ -35,7 +29,7 @@
 				</form>
 								
 				<div class="keyword"><span class="text" "font:12px"="">&nbsp;热门：&nbsp;</span>
-                                <a href="http://www.lipin-bj.cn/f-chuanyilipin/">创意礼品</a><span>|</span>
+                <a href="http://www.lipin-bj.cn/f-chuanyilipin/">创意礼品</a><span>|</span>
 				<a href="http://www.lipin-bj.cn/f-shangwulipin/">商务礼品</a><span>|</span>
 				<a href="http://www.lipin-bj.cn/f-xiaolipin/">小礼品</a><span>|</span>
 				<a href="http://www.lipin-bj.cn/f-jiangpinlipin/">奖品</a>

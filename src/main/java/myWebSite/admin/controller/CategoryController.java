@@ -284,6 +284,28 @@ public class CategoryController extends BaseController {
 		}
 		return j;
 	}
+	
+	/**
+	 * 
+	 * @author yzj
+	 * @version 2.0 2017年10月26日 下午5:31:39
+	 * 
+	 * @param req
+	 * @param id
+	 * @param response
+	 * @return
+	 */
+	@RequestMapping(value = "/addDate")
+	@ResponseBody
+	public AjaxJson addDate(HttpServletRequest req, String webType, HttpServletResponse response) {
+		AjaxJson j = new AjaxJson();
+		System.out.println("webType = " + 1);
+		for(int i=1;i<19;i++)
+		{
+			getUrl("http://www.cnlipin.cn/image_list.aspx?page="+i+"&p1=1&p2=10","1");
+		}
+		return j;
+	}
 
 	/**
 	 * 
