@@ -1,0 +1,29 @@
+.mui-input-group label {
+	width: 22%;
+}
+.mui-input-row label~input,
+.mui-input-row label~select,
+.mui-input-row label~textarea {
+	width: 78%;
+}
+.mui-content-padded {
+	margin-top: 15px;
+}
+.mui-btn {
+	padding: 10px;
+}
+.link-area {
+	display: block;
+	margin-top: 15px;
+	text-align: center;
+}
+.ui-page-login,
+body {
+	margin: 0px;
+	padding: 0px;
+	max-width: 414px;
+	margin: auto;
+}
+.mui-content {
+	height: 100%;
+}

@@ -1,0 +1,48 @@
+#brand {
+	background-color: #FFFFFF;
+}
+
+#brandName {
+	background-color: #FFFFFF;
+	height: 30px;
+}
+
+#brand div {
+	width: 19%;
+	display: inline;
+	height: 120px;
+}
+
+#brand div img {
+	width: 19%;
+	height: 1%;
+	margin-left: 4%;
+	margin-top: 3%;
+	background-color: #FFFFFF;
+}
+
+.mui-table-view:before {
+	background-color: #FFFFFF;
+}
+
+li .mui-table-view {
+	background-color: #FFFFFF;
+}
+
+.mui-slider-handle p img {
+	width: 16px;
+	height: 16px;
+	margin-bottom: -3px;
+	margin-right: 4px;
+}
+
+.aui-active {
+	border-bottom: 2px solid #000000;
+}
+
+li p {
+	margin: 3px;
+}
+a{
+	color:#999;
+}

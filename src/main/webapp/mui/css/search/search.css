@@ -1,0 +1,70 @@
+body{
+	max-width: 414px;
+	margin:auto;
+}
+#brand {
+	background-color: #FFFFFF;
+}
+#brandName {
+	background-color: #FFFFFF;
+	height: 30px;
+}
+#brand div {
+	width: 19%;
+	display: inline;
+	height: 120px;
+}
+#brand div img {
+	width: 19%;
+	height: 1%;
+	margin-left: 4%;
+	margin-top: 3%;
+	background-color: #FFFFFF;
+}
+.mui-table-view:before {
+	background-color: #FFFFFF;
+}
+button {
+	margin: 5px;
+}
+.mui-table-view:before {
+	background-color: #FFFFFF;
+}
+
+.mui-bar-nav div:first-child{
+	float:left;width:84%;margin-left: 0%;
+}
+.mui-bar-nav div:first-child input{
+	border-radius:50px
+}
+.mui-bar-nav div:nth-child(2){
+	float:right;margin-top: 10px;margin-left: 3%;
+}
+.mui-content i{
+	font-size:17px;margin-right: 3px;margin-bottom:-3px;
+}
+.mui-media-body p:first-child{
+	float: right;max-height: 25px;
+}
+.contentDiv div:first-child{
+	background-color: #FFFFFF;height:50px;margin-top: -1px;
+}
+.contentDiv div:first-child div:nth-child(1){
+	float:left;padding-top: 14px;margin-left: 3%;
+}
+.contentDiv div:first-child div:nth-child(2){
+	float:left;margin-left: 30%;padding-top: 14px;
+}
+.contentDiv div:first-child div:nth-child(3){
+	float:left;margin-left: 27%;padding-top: 14px;
+}
+.contentDiv div:first-child div:nth-child(3) p{
+	font-size: 15px;
+}
+.searcList{
+	background-color:#FFFFFF;padding-top: -5px;z-index: 1;
+}
+.searcList p{
+	white-space:normal;text-align:left;
+}
+

@@ -1,0 +1,58 @@
+.myOrder {
+	margin-top: 0px;
+	background-color: #FFFFFF;
+	padding-top: 10px;
+}
+
+.myOrder div {
+	display: table-cell;
+	width: 17%;
+	padding-left: 3%;
+}
+
+.myOrder div i {
+	margin-left: 28%;
+}
+
+.myOrder div p {
+	margin-top: 10px;
+}
+
+a {
+	color: #000000;
+}
+
+.mySet {
+	margin-top: 10px;
+	background-color: #FFFFFF;
+	padding-top: 10px;
+}
+
+.mySet div {
+	display: table-cell;
+	width: 17%;
+	padding-left: 3%;
+	text-align: center;
+}
+
+.mySet div p {
+	margin-top: 10px;
+	text-align: center;
+}
+
+.mui-bar-nav {
+	box-shadow:0 0px 1px #ffffff;
+}
+.mui-table-view:after{
+	background-color:#FFFFFF;
+}
+.mui-table-view:before{
+	background-color:#FFFFFF;
+}
+
+.userName{
+	font-size: 25px;margin-top: 23px;font-family: '微软雅黑';
+}
+.userId{
+	font-size: 20px;font-weight: lighter;padding-top: 10px;
+}

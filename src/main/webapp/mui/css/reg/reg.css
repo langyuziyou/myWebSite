@@ -1,0 +1,32 @@
+body {
+	background-color: #E0E0E0;
+	max-width: 414px;
+	margin: auto;
+}
+.aui-list-itemx {
+	border: 10px;
+	border-color: #212121;
+}
+.mui-input-group label {
+	width: 28%;
+}
+.mui-input-row label~input,
+.mui-input-row label~select,
+.mui-input-row label~textarea {
+	width: 70%;
+}
+.mui-content-padded {
+	margin-top: 15px;
+}
+.mui-btn {
+	padding: 10px;
+}
+.link-area {
+	display: block;
+	margin-top: 15px;
+	text-align: center;
+}
+.ui-page-login,
+.mui-content {
+	height: 100%;
+}

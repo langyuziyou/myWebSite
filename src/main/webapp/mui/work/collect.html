@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>商品收藏</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/collect/collect.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a  class="mui-icon mui-pull-left mui-action-back"><i class="mui-icon-extra mui-icon-extra-hetao-left" style="">&nbsp;</i></a>
+			<h1 class="mui-title">商品收藏</h1>
+			<div>
+				<span id="edit" onClick="edit();">编辑</span>
+			</div>
+		</header>
+		<div class="mui-content">
+			<ul id="OA_task_1" class="mui-table-view">
+				<li class="mui-table-view-cell" style="">
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn mui-btn-red">删除</a>
+					</div>
+					<div class="mui-slider-handle">
+						<div class="mui-input-row mui-checkbox mui-left">
+							<input name="sccheckbox" value="1" type="checkbox" style="left:0px;top: 20px;">
+						</div>
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="../images/head/chanpin01.png">
+							<div class="mui-media-body">
+								<p class="mui-ellipsis" style="font-weight: bold;">高清夜视无限网络监控手机，所有属性+10 </p>
+								<p class="mui-ellipsis">品牌：A+ 颜色：英雄黄</p>
+								<p class="pMoney" style="">￥1000</p>
+								
+							</div>
+						</a>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn mui-btn-red">删除</a>
+					</div>
+					<div class="mui-slider-handle">
+						<div class="mui-input-row mui-checkbox mui-left">
+							<input name="sccheckbox" value="2" type="checkbox" style="left:0px;top: 20px;">
+						</div>
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="../images/head/chanpin03.png">
+							<div class="mui-media-body">
+								<p class="mui-ellipsis" style="font-weight: bold;">【电信赠费版】努比亚（nubia）Z17S 全面屏 黑金 6GB+64GB </p>
+								<p class="mui-ellipsis">品牌：A+ 颜色：英雄黄</p>
+								<p class="pMoney" style="">￥1000</p>
+								
+							</div>
+						</a>
+					</div>
+				</li>
+			</ul>
+			
+			<ul id="" class="aui-bar">
+				<li>
+					</br></br>
+					</li>
+				</ul>
+			
+			<footer class="aui-bar aui-bar-tab aui-margin-t-15 aui-margin-b-15">
+				<div class="mui-input-row mui-checkbox mui-left" style="float:left;display:inline;height:50px;width:85px;">
+					<input name="checkboxAll" id="checkboxAll" value="Item 1" type="checkbox" style="left:15px;top: 10px;">
+					<p style="margin-left:45px;margin-top: 13px;width:50px;">全选</p>
+				</div>
+				<div class="aui-bar-tab-item" id="last_hide" tapmode="" style="width: 50%;background-color:#efeff4;color:#000000;">删除</div>
+				<div class="aui-bar-tab-item" id="last_buy" onClick="subM();" tapmode="" style="width: 50%;background-color:#e51c23;color:#FFFFFF;display:none;">删除</div>
+			</footer>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/jquery-3.2.1.min.js"></script>
+		<script src="../js/list/rightDel.js"></script>
+		<script src="../js/collect/collect.js"></script>
+	</body>
+</html>

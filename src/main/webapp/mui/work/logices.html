@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/mui.indexedlist.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<style>
+			html,
+			body {
+				height: 100%;
+				overflow: hidden;
+			}
+			.mui-bar {
+				-webkit-box-shadow: none;
+				box-shadow: none;
+			}
+			#done.mui-disabled{
+				color: gray;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-pull-left mui-action-back"><i class="mui-icon-extra mui-icon-extra-hetao-left" style="">&nbsp;</i></a>
+			<h1 class="mui-title">选择物流</h1>
+			<a id='done' class="mui-btn mui-btn-link mui-pull-right mui-btn-blue mui-disabled">完成</a>
+		</header>
+		<div class="mui-content">
+			<div id='list' class="mui-indexed-list">
+				<div class="mui-indexed-list-search mui-input-row mui-search">
+					<input type="search" class="mui-input-clear mui-indexed-list-search-input" placeholder="搜索物流">
+				</div>
+				<div class="mui-indexed-list-bar">
+					<a>A</a>
+					<a>B</a>
+					<a>C</a>
+					<a>D</a>
+					<a>E</a>
+					<a>F</a>
+					<a>G</a>
+					<a>H</a>
+					<a>I</a>
+					<a>J</a>
+					<a>K</a>
+					<a>L</a>
+					<a>M</a>
+					<a>N</a>
+					<a>O</a>
+					<a>P</a>
+					<a>Q</a>
+					<a>R</a>
+					<a>S</a>
+					<a>T</a>
+					<a>U</a>
+					<a>V</a>
+					<a>W</a>
+					<a>X</a>
+					<a>Y</a>
+					<a>Z</a>
+				</div>
+				<div class="mui-indexed-list-alert"></div>
+				<div class="mui-indexed-list-inner">
+					<div class="mui-indexed-list-empty-alert">没有数据</div>
+					<ul class="mui-table-view">
+						<li data-group="A" class="mui-table-view-divider mui-indexed-list-group">A</li>
+						<li data-value="AKU" data-tags="AKeSu" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" name="wuliu" />Aramex</li>
+						<li data-value="BPL" data-tags="ALaShanKou" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" name="wuliu" />安能快递</li>
+						<li data-value="AAT" data-tags="ALeTai" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" name="wuliu" />安捷</li>
+						<li data-value="NGQ" data-tags="ALiKunSha" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" name="wuliu" />安能</li>
+						<li data-value="AQG" data-tags="AnQingTianZhuShan" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" name="wuliu" />澳邮</li>
+						<li data-value="MFM" data-tags="AoMenGuoJi" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" name="wuliu" />AAE</li>
+						<li data-value="MFM" data-tags="AoMenGuoJi" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" name="wuliu" />安信达</li>
+						<li data-group="B" class="mui-table-view-divider mui-indexed-list-group">B</li>
+						<li data-value="BSD" data-tags="BaoShan" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" name="wuliu" />百福东方</li>
+						<li data-value="BAV" data-tags="BaoTou" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" name="wuliu" />百世快运</li>
+						<li data-value="BHY" data-tags="BeiHaiFuCheng" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" name="wuliu" />百世快递</li>
+						<li data-group="C" class="mui-table-view-divider mui-indexed-list-group">C</li>
+						<li data-value="NBS" data-tags="ChangBaiShan" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" name="wuliu" />程光</li>
+						<li data-group="D" class="mui-table-view-divider mui-indexed-list-group">D</li>
+						<li data-value="DLU" data-tags="DaLi" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" name="wuliu" />德邦</li>
+						<li data-value="DLC" data-tags="DaLianZhouShuiZiGuoJi" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" name="wuliu" />DPEX</li>
+						<li data-value="DQA" data-tags="DaQingSaErTu" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" name="wuliu" />D速</li>
+						<li data-value="DAT" data-tags="DaTongDongWangZhuang" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" name="wuliu" />DHL</li>
+						<li data-value="DAX" data-tags="DaZhouHeShi" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" name="wuliu" />大田</li>
+						<li data-value="DDG" data-tags="DanDongLangTou" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" name="wuliu" />东骏物流</li>
+						<li data-group="E" class="mui-table-view-divider mui-indexed-list-group">E</li>
+						<li data-value="DSN" data-tags="EErDuoSi" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" name="wuliu" />EMS</li>
+						<li data-value="ENH" data-tags="EnShiXuJiaPing" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" name="wuliu" />EWE</li>
+						<li data-group="F" class="mui-table-view-divider mui-indexed-list-group">F</li>
+						<li data-value="FUG" data-tags="FuYangXiGuan" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" name="wuliu" />FedEx国际</li>
+						<li data-value="FOC" data-tags="FuZhouChangLeGuoJi" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" name="wuliu" />富腾达</li>
+						<li data-value="FOC" data-tags="FedEx" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" name="wuliu" />FedEx</li>
+						<li data-value="FOC" data-tags="fenghuan" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" name="wuliu" />凤凰</li>
+						<li data-value="FOC" data-tags="fenghuan" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" name="wuliu" />飞洋</li>
+							
+						<li data-group="G" class="mui-table-view-divider mui-indexed-list-group">G</li>
+						<li data-value="KOW" data-tags="GanZhouHuangJin" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" name="wuliu" />国通</li>
+						<li data-value="GOQ" data-tags="GeErMu" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />共速达</li>
+						<li data-group="H" class="mui-table-view-divider mui-indexed-list-group">H</li>
+						<li data-value="HRB" data-tags="HaErBinTaiPingGuoJi" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />黑狗</li>
+						<li data-value="HMI" data-tags="HaMi" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />鸿远</li>
+						<li data-value="HAK" data-tags="HaiKouMeiLanGuoJi" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />黄马甲</li>
+						<li data-value="HLD" data-tags="HaiLaErDongShanGuoJi" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />恒路</li>
+						<li data-value="HDG" data-tags="HanDan" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />华企</li>
+						<li data-value="HZG" data-tags="HanZhong" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />货运皇</li>
+						<li data-group="J" class="mui-table-view-divider mui-indexed-list-group">J</li>
+						<li data-value="TNA" data-tags="JiNanYaoQiangGuoJi" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />锦程快递</li>
+						<li data-value="JNG" data-tags="JiNingQuFu" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />嘉里物流</li>
+						<li data-value="JXA" data-tags="JiXiXingKaiHu" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />佳吉</li>
+						<li data-value="JMU" data-tags="JiaMuSiDongJiao" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />九曳</li>
+						<li data-value="JGN" data-tags="JiaYuGuan" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />京东</li>
+						<li data-value="JNZ" data-tags="JinZhouXiaoLingZi" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />京广</li>
+						<li data-value="JDZ" data-tags="JingDeZhen" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />佳怡</li>
+						<li data-value="JGS" data-tags="JingGangShan" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />加运美</li>
+						<li data-value="JIU" data-tags="JiuJiangLuShan" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />急先达</li>
+						<li data-group="K" class="mui-table-view-divider mui-indexed-list-group">K</li>
+						<li data-value="KHG" data-tags="KaShi" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />跨越</li>
+						<li data-value="KRY" data-tags="KeLaMaYi" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />快捷</li>
+						<li data-group="L" class="mui-table-view-divider mui-indexed-list-group">L</li>
+						<li data-value="LXA" data-tags="LaSaGongGa" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />蓝天</li>
+						<li data-value="LHW" data-tags="LanZhouZhongChuan" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />龙邦</li>
+						<li data-value="LJG" data-tags="LiJiangSanYi" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />联昊通</li>
+						<li data-group="M" class="mui-table-view-divider mui-indexed-list-group">M</li>
+						<li data-value="NZH" data-tags="ManZhouLiXiJiao" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />民航</li>
+						<li data-group="N" class="mui-table-view-divider mui-indexed-list-group">N</li>
+						<li data-value="KHN" data-tags="NanChangChangBeiGuoJi" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />能达</li>
+						<li data-group="P" class="mui-table-view-divider mui-indexed-list-group">P</li>
+						<li data-value="SYM" data-tags="PuErSiMao" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />平安快递</li>
+						<li data-value="SYM" data-tags="PuErSiMao" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />PCA</li>
+							
+						<li data-group="Q" class="mui-table-view-divider mui-indexed-list-group">Q</li>
+						<li data-value="NDG" data-tags="QiQiHaErSanJiaZi" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />秦远物流</li>
+						<li data-value="SHP" data-tags="QinHuangDaoShanHaiGuan" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />全峰</li>
+						<li data-value="TAO" data-tags="QingDaoLiuTingGuoJi" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />全一</li>
+						<li data-value="JUZ" data-tags="QuZhou" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />全晨</li>
+						<li data-group="R" class="mui-table-view-divider mui-indexed-list-group">R</li>
+						<li data-value="RKZ" data-tags="RiKaZeHePing" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />如风达</li>
+						<li data-group="S" class="mui-table-view-divider mui-indexed-list-group">S</li>
+						<li data-value="SYX" data-tags="SanYaFengHuangGuoJi" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />顺丰</li>
+						<li data-value="SWA" data-tags="ShanTouWaiSha" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />申通</li>
+						<li data-value="SHA" data-tags="ShangHaiHongQiaoGuoJi" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />苏宁</li>
+						<li data-value="PVG" data-tags="ShangHaiPuDongGuoJi" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />顺达快递</li>
+						<li data-value="SZX" data-tags="ShenChouBaoAnGuoJi" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />三态</li>
+						<li data-value="SHE" data-tags="ShenYangTaoXianGuoJi" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />盛辉</li>
+						<li data-value="SJW" data-tags="ShiJiaZhuangZhengDingGuoJi" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />盛丰</li>
+						<li data-value="WUX" data-tags="SuNanShuoFangGuoJi" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />速尔</li>
+						<li data-group="T" class="mui-table-view-divider mui-indexed-list-group">T</li>
+						<li data-value="TCG" data-tags="TaCheng" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />天天</li>
+						<li data-value="TYN" data-tags="TaiYuanWuSuGuoJi" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />TNT</li>
+						<li data-value="HYN" data-tags="TaiZhouLuQiao-HuangYanJiChang" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />天地华宇</li>
+						<li data-group="U" class="mui-table-view-divider mui-indexed-list-group">U</li>
+						<li data-value="TCG" data-tags="TaCheng" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />UPS</li>
+						<li data-group="W" class="mui-table-view-divider mui-indexed-list-group">W</li>
+						<li data-value="WXN" data-tags="WanZhouWuQiao" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />万庚</li>
+						<li data-value="WEF" data-tags="WeiFang" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />文捷航空</li>
+						<li data-value="WEH" data-tags="WeiHaiDaShuiBo" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />万象</li>
+						<li data-value="WNH" data-tags="WenShanPuZheHei" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />万家物流</li>
+						<li data-group="X" class="mui-table-view-divider mui-indexed-list-group">X</li>
+						<li data-value="XIY" data-tags="XiAnXianYangGuoJi" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />配思航宇</li>
+						<li data-value="XIC" data-tags="XiChangQingShan" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />信丰</li>
+						<li data-value="XIL" data-tags="XiLinHaoTe" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />新邦</li>
+						<li data-group="Y" class="mui-table-view-divider mui-indexed-list-group">Y</li>
+						<li data-value="ENY" data-tags="YanAnErShiLiBao" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />圆通</li>
+						<li data-value="YNZ" data-tags="YanCheng" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />韵达</li>
+						<li data-value="YNJ" data-tags="YanJiChaoYangChuan" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />邮政包裹</li>
+						<li data-value="YNT" data-tags="YanTaiLaiShanGuoJi" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />运通</li>
+						<li data-value="YBP" data-tags="YiBinCaiBa" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />越丰</li>
+						<li data-value="YIH" data-tags="YiChangSanXia" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />远成</li>
+						<li data-value="LDS" data-tags="YiChunLinDu" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />亚风</li>
+						<li data-value="YIN" data-tags="YiNing" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />优速</li>
+						<li data-value="YIW" data-tags="YiWu" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />原飞航</li>
+						<li data-value="INC" data-tags="YinChuanHeDong" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />源安达</li>
+						<li data-value="LLF" data-tags="YongZhouLingLing" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />宜送</li>
+						<li data-value="UYN" data-tags="YuLinYuYang" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />易通达</li>
+						<li data-value="YUS" data-tags="YuShuBaTang" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />易达通</li>
+						<li data-group="Z" class="mui-table-view-divider mui-indexed-list-group">Z</li>
+						<li data-value="ZHA" data-tags="ZhanJiang" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />中通</li>
+						<li data-value="ZAT" data-tags="ZhaoTong" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />宅急送</li>
+						<li data-value="CGO" data-tags="ZhengZhouXinZhengGuoJi" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />中通快运</li>
+						<li data-value="HJJ" data-tags="ZhiJiang" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />中铁物流</li>
+						<li data-value="CKG" data-tags="ZhongQingJiangBeiGuoJi" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />芝麻开门</li>
+						<li data-value="ZHY" data-tags="ZhongWeiXiangShan" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />中国东方</li>
+						<li data-value="HSN" data-tags="ZhouShanZhuJiaJian" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />中邮</li>
+						<li data-value="ZUH" data-tags="ZhuHaiSanZao" class="mui-table-view-cell mui-indexed-list-item mui-radio mui-left">
+							<input type="radio" name="wuliu" />中铁快运</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.indexedlist.js"></script>
+		<!--<script src="../js/mui.grouplist.testdata.js"></script>-->
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+			mui.ready(function() {
+				var header = document.querySelector('header.mui-bar');
+				var list = document.getElementById('list');
+				var done = document.getElementById('done');
+				//calc hieght
+				list.style.height = (document.body.offsetHeight - header.offsetHeight) + 'px';
+				//create
+				window.indexedList = new mui.IndexedList(list);
+				//done event
+				done.addEventListener('tap', function() {
+					var radioArray = [].slice.call(list.querySelectorAll('input[type="radio"]'));
+					var checkedValues = [];
+					radioArray.forEach(function(box) {
+						if (box.checked) {
+							checkedValues.push(box.parentNode.innerText);
+						}
+					});
+					if (checkedValues.length > 0) {
+						mui.alert('你选择了: ' + checkedValues);
+					} else {
+						mui.alert('你没选择任何物流');
+					}
+				}, false);
+				mui('.mui-indexed-list-inner').on('change', 'input', function() {
+					var count = list.querySelectorAll('input[type="radio"]:checked').length;
+					var value = count ? "完成(" + count + ")" : "完成";
+					done.innerHTML = value;
+					if (count) {
+						if (done.classList.contains("mui-disabled")) {
+							done.classList.remove("mui-disabled");
+						}
+					} else {
+						if (!done.classList.contains("mui-disabled")) {
+							done.classList.add("mui-disabled");
+						}
+					}
+				});
+			});
+		</script>
+	</body>
+
+</html>

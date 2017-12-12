@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>搜索</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<link rel="stylesheet" type="text/css" href="../css/search/search.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<div class="mui-search mui-active">
+				<input id="searchInput" type="search" class="mui-input-clear" placeholder="华为手机">
+				<span class="mui-placeholder">
+					<span class="mui-icon mui-icon-search"></span>
+					</span>
+			</div>
+			<div style="">
+				<a href="first.html">
+					<p>取消</p>
+				</a>
+			</div>
+		</header>
+
+		<div class="mui-content">
+			<ul id="hot" class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-handle">
+						<div class="mui-media-body">
+							<p>
+								<i class="mui-icon mui-icon-loop" style=""></i>
+								<span>换一换</span></p>
+							<p>热门搜索 </p>
+							<p>
+								<button type="button" class="mui-btn">
+					手机
+				</button>
+								<button type="button" class="mui-btn">
+					女装
+				</button>
+								<button type="button" class="mui-btn">
+					情趣
+				</button>
+								<button type="button" class="mui-btn">
+					游戏机
+				</button>
+								<button type="button" class="mui-btn">
+					playstion
+				</button>
+								<button type="button" class="mui-btn">
+					军事
+				</button>
+								<button type="button" class="mui-btn">
+					政治
+				</button>
+								<button type="button" class="mui-btn">
+					JAVA
+				</button>
+								<button type="button" class="mui-btn">历史</button>
+							</p>
+						</div>
+
+					</div>
+				</li>
+			</ul>
+
+			<ul id="history" class="mui-table-view" style="margin-top: 5px;">
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-handle">
+						<div class="mui-media-body">
+							<p onClick="delHistory()">
+								<i class="mui-icon mui-icon-trash"></i>
+								<span>删除</span></p>
+							<p>历史搜索 </p>
+							<p id="hisP">
+								
+							</p>
+						</div>
+					</div>
+				</li>
+			</ul>
+
+	<div id="contentDiv" class="contentDiv">
+			<div style="">
+				<div id="click1" onClick="clickType(1);">综合
+				</div>
+				<div id="click2" onClick="clickType(2);">销量
+				</div>
+				<div id="click3" onClick="clickType(3);">价格<p class="mui-icon mui-icon-arrowup"></p>
+				</div>
+			</div>
+
+			<ul class="mui-table-view mui-grid-view searcList" id="demoUi">
+				<li class="mui-table-view-cell mui-media mui-col-xs-6">
+					<a href="#">
+						<img class="mui-media-object" src="../images/head/chanpin01.png">
+						<div class="mui-content-padded">
+							<p>OPPO 前后2000万 全面屏拍照手机
+								</br>
+								<span style="color: red;">￥ 1000</span>
+							</p>
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-6">
+					<a href="#">
+						<img class="mui-media-object" src="../images/head/chanpin02.png">
+						<div class="mui-content-padded">
+							<p>大米 前后2000万 全面屏拍照手机
+								</br>
+								<span style="color: red;">￥ 1000</span>
+						</p>
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-6">
+					<a href="#">
+						<img class="mui-media-object" src="../images/head/chanpin03.png">
+						<div class="mui-content-padded">
+							<p>OPPO 前后2000万 全面屏拍照手机
+								</br>
+								<span style="color: red;">￥ 1000</span>
+						</p>
+						</div>
+					</a>
+				</li>
+			</ul>
+	</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/jquery-3.2.1.min.js"></script>
+		<script src="../js/search/search.js"></script>
+	</body>
+</html>

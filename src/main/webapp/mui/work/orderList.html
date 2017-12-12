@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>订单</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			
+			.mui-bar~.mui-content .mui-fullscreen {
+				top: 44px;
+				height: auto;
+			}
+			
+			.mui-pull-top-tips {
+				position: absolute;
+				top: -20px;
+				left: 50%;
+				margin-left: -25px;
+				width: 40px;
+				height: 40px;
+				border-radius: 100%;
+				z-index: 1;
+			}
+			
+			.mui-bar~.mui-pull-top-tips {
+				top: 24px;
+			}
+			
+			.mui-pull-top-wrapper {
+				width: 42px;
+				height: 42px;
+				display: block;
+				text-align: center;
+				background-color: #efeff4;
+				border: 1px solid #ddd;
+				border-radius: 25px;
+				background-clip: padding-box;
+				box-shadow: 0 4px 10px #bbb;
+				overflow: hidden;
+			}
+			
+			.mui-pull-top-tips.mui-transitioning {
+				-webkit-transition-duration: 200ms;
+				transition-duration: 200ms;
+			}
+			
+			.mui-pull-top-tips .mui-pull-loading {
+				/*-webkit-backface-visibility: hidden;
+				-webkit-transition-duration: 400ms;
+				transition-duration: 400ms;*/
+				margin: 0;
+			}
+			
+			.mui-pull-top-wrapper .mui-icon,
+			.mui-pull-top-wrapper .mui-spinner {
+				margin-top: 7px;
+			}
+			
+			.mui-pull-top-wrapper .mui-icon.mui-reverse {
+				/*-webkit-transform: rotate(180deg) translateZ(0);*/
+			}
+			
+			.mui-pull-bottom-tips {
+				text-align: center;
+				background-color: #efeff4;
+				font-size: 15px;
+				line-height: 40px;
+				color: #777;
+			}
+			
+			.mui-pull-top-canvas {
+				overflow: hidden;
+				background-color: #fafafa;
+				border-radius: 40px;
+				box-shadow: 0 4px 10px #bbb;
+				width: 40px;
+				height: 40px;
+				margin: 0 auto;
+			}
+			
+			.mui-pull-top-canvas canvas {
+				width: 40px;
+			}
+			
+			.mui-slider-indicator.mui-segmented-control {
+				background-color: #efeff4;
+			}
+			
+		img{
+			width:50px;
+			height:50px;
+			margin: 1px;
+		}
+		#nate{
+			background-color: #FFFFFF;
+		}
+		#nate a{
+			display:static;
+			color:#000000;
+			font-weight: lighter;
+		}
+		.mui-media-body p{
+			padding-left: 10px;
+		}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color: #FFFFFF;">
+			<a  class="mui-icon mui-action-back"><i class="mui-icon-extra mui-icon-extra-hetao-left" style="">&nbsp;</i></a>
+			<h1 class="mui-title" style="">全部订单</h1>
+			<div id="nate" style="position:fixed;top:44px;margin-left: -10px;" class=" mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					
+						<a class="mui-control-item mui-active" style="margin-left: 0px;" onClick="console.log(1);" href="" data-wid="tab-top-subpage-1.html">
+							全部
+						</a>
+						<a class="mui-control-item " href="#item2mobile" style="" data-wid="tab-top-subpage-2.html">
+							待付款
+						</a>
+						<a class="mui-control-item" href="#item3mobile" style="" data-wid="tab-top-subpage-3.html">
+							待发货
+						</a>
+						<a class="mui-control-item" href="#item4mobile" style="" data-wid="tab-top-subpage-4.html">
+							待收获
+						</a>
+						<a class="mui-control-item" href="#item5mobile" style="" data-wid="tab-top-subpage-5.html">
+							已完成
+						</a>
+					
+					
+				</div>
+		</header>
+		<div class="mui-content">
+				
+					
+				<ul id="" class="mui-table-view" style="margin-top:40px;">
+					<li class="mui-table-view-cell">
+						<p style="font-weight: lighter;float:left">订单编号:95271457 </p>
+						<p style="font-weight: lighter;float:right">待付款 </p>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="mui-slider-handle">
+							<a href="javascript:;">
+								<img class="mui-pull-left" src="../images/head/chanpin04.png">
+								<div class="mui-media-body">
+									<p style="float: right;max-height: 25px;">x1</p>
+									<p class="mui-ellipsis">电信赠费版 努比亚（nubia）Z17S 全面屏 黑金 6GB+64GB</p>
+									<p class="mui-ellipsis">品牌：A+ 颜色：英雄黄 品牌：A+ 颜色：英雄黄品牌：A+ 颜色：英雄黄</p>
+									<p class="mui-ellipsis">￥1000</p>
+								</div>
+							</a>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="mui-slider-handle">
+							<a href="javascript:;">
+								<img class="mui-pull-left" src="../images/head/chanpin02.png">
+								<div class="mui-media-body">
+									<p style="float: right;max-height: 25px;">x1</p>
+									<p class="mui-ellipsis">电信赠费版 努比亚（nubia）Z17S 全面屏 黑金 6GB+64GB</p>
+									<p class="mui-ellipsis">品牌：A+ 颜色：英雄黄 品牌：A+ 颜色：英雄黄品牌：A+ 颜色：英雄黄</p>
+									<p class="mui-ellipsis">￥1000</p>
+								</div>
+							</a>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<p style="float:right;">共2件商品 
+						 <span style="padding-left: 5px;">合计:￥1000 (含运费￥ 59)</span>
+						</p>
+					</li>
+					<li class="mui-table-view-cell">
+							<button type="button" style="float: right;">去付款</button>
+							<button type="button" style="float: right;margin-right: 5px;">取消订单</button>
+							
+					</li>
+				</ul>
+				
+				<ul id="" class="mui-table-view" style="margin-top:2px;">
+					<li class="mui-table-view-cell">
+						<p style="font-weight: lighter;float:left">订单编号:95271457 </p>
+						<p style="font-weight: lighter;float:right">待付款 </p>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="mui-slider-handle">
+							<a href="javascript:;">
+								<img class="mui-pull-left" src="../images/head/chanpin04.png">
+								<div class="mui-media-body">
+									<p style="float: right;max-height: 25px;">x1</p>
+									<p class="mui-ellipsis">电信赠费版 努比亚（nubia）Z17S 全面屏 黑金 6GB+64GB</p>
+									<p class="mui-ellipsis">品牌：A+ 颜色：英雄黄 品牌：A+ 颜色：英雄黄品牌：A+ 颜色：英雄黄</p>
+									<p class="mui-ellipsis">￥1000</p>
+								</div>
+							</a>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="mui-slider-handle">
+							<a href="javascript:;">
+								<img class="mui-pull-left" src="../images/head/chanpin02.png">
+								<div class="mui-media-body">
+									<p style="float: right;max-height: 25px;">x1</p>
+									<p class="mui-ellipsis">电信赠费版 努比亚（nubia）Z17S 全面屏 黑金 6GB+64GB</p>
+									<p class="mui-ellipsis">品牌：A+ 颜色：英雄黄 品牌：A+ 颜色：英雄黄品牌：A+ 颜色：英雄黄</p>
+									<p class="mui-ellipsis">￥1000</p>
+								</div>
+							</a>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<p style="float:right;">共2件商品 
+						 <span style="padding-left: 5px;">合计:￥1000 (含运费￥ 59)</span>
+						</p>
+					</li>
+					<li class="mui-table-view-cell">
+							<button type="button" style="float: right;">去付款</button>
+							<button type="button" style="float: right;margin-right: 5px;">取消订单</button>
+							
+					</li>
+				</ul>
+
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/webviewGroup.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			mui.init();
+		</script>
+	</body>
+
+</html>

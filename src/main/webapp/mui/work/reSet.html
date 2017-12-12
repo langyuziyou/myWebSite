@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html class="ui-page-login">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/reg/slideValidate.css" rel="stylesheet" />
+		<link href="../css/reg/reg.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a  class="mui-icon mui-action-back"><i class="mui-icon-extra mui-icon-extra-hetao-left" style="">&nbsp;</i></a>
+			<h1 class="mui-title">忘记密码</h1>
+		</header>
+		<div class="mui-content">
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>手机</label>
+					<input id='account' type="tel" class="mui-input-clear mui-input" placeholder="请输入手机号" > 
+				</div>
+				<div class="mui-input-row">
+					<label>短信</label>
+					<button type="button" id='msgCode' class="mui-btn mui-btn-danger mui-btn-outlined" style="margin-right: 1px;width: 100px;" onClick="slideOpen();">
+					发送验证码
+					</button>
+					<input id='password' type="tel" class="mui-input-clear mui-input" style="margin-left:5px;width:100px;" placeholder="短信验证码">
+					
+				</div>
+				<div class="mui-input-row" style="height:50px;display:none;" id="slide">
+				
+				<div id="slider">
+				<div id="slider_bg"></div>
+				<span id="label">|&nbsp;|&nbsp;|</span> <span id="labelTip">拖动滑块完成验证</span>
+					</div>
+				</div>	
+				
+				<div class="mui-input-row mui-password">
+					<label>密码</label>
+					<input type="password" class="mui-input-password" placeholder="6-16位字符的新密码" ><span class="mui-icon mui-icon-eye"></span>
+				</div>
+				
+			</form>
+			<div class="mui-content-padded">
+				<button id='reg' class="mui-btn mui-btn-block mui-btn-primary">提交</button>
+			</div>
+			<div class="mui-content-padded">
+				<p></p>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="../js/reg/phoneValidate.js"></script>
+		<script type="text/javascript" src="../js/reg/slideValidate.js"></script>
+	</body>
+
+</html>

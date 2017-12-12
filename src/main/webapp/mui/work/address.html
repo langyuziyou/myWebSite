@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>收货地址</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<style>
+			a {
+				color: #8f8f94;
+				font-size:14px;
+			}
+			p{
+				color:#000000;
+			}
+			.mui-media-body :first-child {font-weight: bold;font-size: 15px;}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color: #FFFFFF;">
+			<a  class="mui-icon mui-pull-left mui-action-back"><i class="mui-icon-extra mui-icon-extra-hetao-left" style="">&nbsp;</i></a>
+			<h1 class="mui-title">收货地址</h1>
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view" style="margin-top: 0px;">
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-handle">
+						<div class="mui-media-body">
+							<p class="mui-ellipsis">杨云丹 <span style="padding-left: 20%;">138***74587</span> </p>
+							<a class="mui-ellipsis" style="white-space:normal;">广东深圳市南山区海德一路深圳软件产业园基地5C501</a>
+						</div>
+					</div>
+				</li>
+				<li class="mui-table-view-cell" style="height:39px;top:-10px;">
+					<div class="mui-slider-handle">
+							<div class="mui-input-row mui-radio mui-left" style="height:31px;">
+								<div style="margin-left: 30px;float: left;margin-top: 3px;"><a>设为默认</a>
+								</div>
+
+								<div style="margin-left:50px;float: right;margin-top: 0px;">
+									<a href="addressEdit.html"><span class="mui-icon mui-icon-compose"></span>编辑</a>
+									<a><span class="mui-icon mui-icon-trash"></span>删除</a>
+								</div>
+								<input name="radio1" type="radio" checked="" style="left:0px;">
+
+							</div>
+					</div>
+				</li>
+			</ul>
+			<ul class="mui-table-view" style="margin-top: 0px;">
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-handle">
+						<div class="mui-media-body">
+							<p class="mui-ellipsis">杨云丹 <span style="padding-left: 20%;">138***74587</span> </p>
+							<a class="mui-ellipsis" style="white-space:normal;">广东深圳市南山区海德一路深圳软件产业园基地5C501</a>
+						</div>
+					</div>
+				</li>
+				<li class="mui-table-view-cell" style="height:39px;top:-10px;">
+					<div class="mui-slider-handle">
+							<div class="mui-input-row mui-radio mui-left" style="height:31px;">
+								<div style="margin-left: 30px;float: left;margin-top: 3px;"><a>设为默认</a>
+								</div>
+
+								<div style="margin-left:50px;float: right;margin-top: 0px;">
+									<a href="addressEdit.html"><span class="mui-icon mui-icon-compose"></span>编辑</a>
+									<a><span class="mui-icon mui-icon-trash"></span>删除</a>
+								</div>
+								<input name="radio1" type="radio" checked="" style="left:0px;">
+
+							</div>
+					</div>
+				</li>
+			</ul>
+
+				<div style="text-align: center;bottom: 5px;position: fixed;width: 96%;left:2%;">
+							<button type="button" class="mui-btn mui-btn-danger" style="width: 100%;height:45px;">+新增地址</button>
+						</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/jquery-3.2.1.min.js"></script>
+		<script>
+			var btnArray = ['确认', '取消'];
+			$(function() {
+				$("#checkboxAll").click(function() {
+					//全选 反选
+					var ch = this.checked;
+					console.log(ch);
+					console.log(this.checked);
+					$("input[type=checkBox][name=sccheckbox]").each(function() {
+						this.checked = ch;
+					});
+
+				});
+
+				//del
+				$("#del").click(function() {
+					//全选 反选
+					var isDel = false;
+					/*			var ch = this.checked;
+								console.log(ch);
+								console.log(this.checked);*/
+					$("input[type=checkBox][name=sccheckbox]").each(function() {
+						if(this.checked) {
+							console.log(this.checked);
+							isDel = true;
+							return;
+						}
+
+						//this.checked = ch;
+					});
+
+					if(isDel) {
+						mui.confirm('确认删除记录？', '浏览足迹', btnArray, function(e) {
+							$("input[type=checkBox][name=sccheckbox]").each(function() {
+								if(this.checked) {
+									var elem = this.parentNode;
+									var li = elem.parentNode.parentNode;
+									console.log(e);
+									if(e.index == 0) {
+										li.parentNode.removeChild(li);
+									} else {
+										setTimeout(function() {
+											$.swipeoutClose(li);
+										}, 0);
+									}
+									console.log(this.checked);
+									isDel = true;
+									return;
+								}
+
+								//this.checked = ch;
+							});
+
+						});
+					}
+
+				});
+			});
+		</script>
+
+		<script>
+			mui.init();
+			(function($) {
+				//$.swipeoutOpen(el,direction)//打开指定列的滑动菜单，el:指定列的dom对象，direction：取值left|right，指定打开的是左侧或右侧滑动菜单
+				//$.swipeoutClose(el);//关闭指定列的滑动菜单，el:指定列的dom对象
+				//				setTimeout(function() {
+				//					$.swipeoutOpen(document.getElementById("OA_task_1").querySelector('li:last-child'), 'left');
+				//					setTimeout(function() {
+				//						$.swipeoutClose(document.getElementById("OA_task_1").querySelector('li:last-child'));
+				//					}, 1000);
+				//				}, 1000);
+				//第一个demo，拖拽后显示操作图标，点击操作图标删除元素；
+				$('#OA_task_1').on('tap', '.mui-btn-red', function(event) {
+					console.log(this);
+					var elem = this;
+					var li = elem.parentNode.parentNode;
+					mui.confirm('确认删除该条记录？', '浏览足迹', btnArray, function(e) {
+						if(e.index == 0) {
+							li.parentNode.removeChild(li);
+						} else {
+							setTimeout(function() {
+								$.swipeoutClose(li);
+							}, 0);
+						}
+					});
+				});
+				var btnArray = ['确认', '取消'];
+				//第二个demo，向左拖拽后显示操作图标，释放后自动触发的业务逻辑
+				$('#OA_task_2').on('slideleft', '.mui-table-view-cell', function(event) {
+					var elem = this;
+					mui.confirm('确认删除该条记录？', 'Hello MUI', btnArray, function(e) {
+						if(e.index == 0) {
+							elem.parentNode.removeChild(elem);
+						} else {
+							setTimeout(function() {
+								$.swipeoutClose(elem);
+							}, 0);
+						}
+					});
+				});
+				//第二个demo，向右拖拽后显示操作图标，释放后自动触发的业务逻辑
+				$('#OA_task_2').on('slideright', '.mui-table-view-cell', function(event) {
+					var elem = this;
+					mui.confirm('确认删除该条记录？', 'Hello MUI', btnArray, function(e) {
+						if(e.index == 0) {
+							elem.parentNode.removeChild(elem);
+						} else {
+							setTimeout(function() {
+								$.swipeoutClose(elem);
+							}, 0);
+						}
+					});
+				});
+			})(mui);
+		</script>
+	</body>
+
+</html>

@@ -281,7 +281,7 @@ class ExecutorThread implements Runnable{
 		for(int i=1;i<100911;i++)
 		{
 			//String url = "http://www.vstob.com/home/index";  
-			String url = "http://www.cnlipin.cn/";
+			String url = "http://www.hetao168.com/";
 		    long start = System.currentTimeMillis();  
 		    Document doc=null;  
 		    try{  

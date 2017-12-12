@@ -1,0 +1,39 @@
+img {
+	width: 69px;
+	height: 69px;
+}
+
+.pMoney {
+	float: left;
+	max-height: 30px;
+	margin-top: 5px;
+	color: red;
+}
+
+.mui-input-numbox {
+	color: #000000;
+}
+
+.mui-table-view:before {
+	background-color: #FFFFFF;
+}
+.mui-bar-nav div{
+	float:right;vertical-align: middle;height:44px;margin-top: 10px;
+}
+.mui-bar-nav div span{
+	font-size: 13px;
+}
+.mui-slider-handle .mui-checkbox
+{
+	float:left;display:inline;height:50px;width:30px;
+}
+.aui-bar-tab{
+	margin-bottom: 0px;
+}
+.aui-bar-tab div:first-child{
+	float:left;display:inline;height:50px;width:85px;
+}
+.aui-bar-tab div:first-child p{
+	margin-left:45px;margin-top: 13px;width:50px;
+}
+
