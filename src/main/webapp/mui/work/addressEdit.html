@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html class="ui-page-login">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>编辑地址</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<link href="../css/mui.picker.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<link href="../css/mui.poppicker.css" rel="stylesheet" />
+		<link href="../css/account/addressEdit.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a  class="mui-icon mui-pull-left mui-action-back"><i class="mui-icon-extra mui-icon-extra-hetao-left" style="">&nbsp;</i></a>
+			<h1 class="mui-title">编辑地址</h1>
+		</header>
+		<div class="mui-content">
+			<form id='login-form' class="mui-input-group">
+				<div class="mui-input-row">
+					<label>收货人</label>
+					<input id='account' type="text" class="mui-input" style="width:70%;" placeholder="" value="张小号">
+				</div>
+				<div class="mui-input-row">
+					<label>手机</label>
+					<input id='password' type="text" class=" mui-input" style="width:70%;" placeholder="" value="154875224587">
+				</div>
+
+				<div class="mui-input-row">
+					<label style="width:30%;">地区</label>
+					<div id='showCityPicker3' class="mui-navigate-right">广东深圳市南山区</div>
+				</div>
+				<div class="mui-input-row" style="height:80px;">
+					<label style="width:20%;">地址</label>
+					<textarea id="textarea" rows="5" placeholder="详细地址" style="padding-left: 7%;">海德一路深圳软件产业12321213园基地5C501</textarea>
+				</div>
+			</form>
+
+			<div class="mui-content-padded">
+				<button id='login' class="mui-btn mui-btn-block mui-btn-primary">保存</button>
+
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/jquery-3.2.1.min.js"></script>
+		<script src="../js/mui.picker.js"></script>
+
+		<script src="../js/mui.poppicker.js"></script>
+		<script src="../js/city.data.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/account/addressEdit.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

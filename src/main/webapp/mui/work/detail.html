@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>商品详情</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/detail/detail.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<img src="../images/head/01.png" style="display: none;">
+			<a  class="mui-icon mui-pull-left mui-action-back"><i class="mui-icon-extra mui-icon-extra-hetao-left" style="">&nbsp;</i></a>
+			<h1 class="mui-title"><div id="shopDiv" class="aui-active" style="height:44px;width: 50px;margin-left: 30%;float:left ;" onClick="shopShow(1)">商品</div>
+								<div id="detailDiv" style="margin-left:60%;width: 50px;" onClick="shopShow(2)">详情</div></h1>
+			<a style="color: #000000;" class="mui-icon mui-pull-right" id="shareBtn"><img src="../images/icon/share.png" style="height: 30px;width: 30px;" /></a>
+		</header>
+		<div class="mui-content" style="position:absolute;width:100%;height: 100%;max-width: 414px;">
+			<div class="mui-content" id="shop" style="z-index: 1px;">
+				<div id="slider" class="mui-slider">
+					<div class="mui-slider-group mui-slider-loop">
+						<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+						<div class="mui-slider-item mui-slider-item-duplicate">
+							<a href="#">
+								<img src="../images/yuantiao.jpg">
+							</a>
+						</div>
+						<!-- 第一张 -->
+						<div class="mui-slider-item">
+							<a href="#">
+								<img src="../images/shuijiao.jpg">
+							</a>
+						</div>
+						<!-- 第二张 -->
+						<div class="mui-slider-item">
+							<a href="#">
+								<img src="../images/muwu.jpg">
+							</a>
+						</div>
+						<!-- 第三张 -->
+						<div class="mui-slider-item">
+							<a href="#">
+								<img src="../images/cbd.jpg">
+							</a>
+						</div>
+						<!-- 第四张 -->
+						<div class="mui-slider-item">
+							<a href="#">
+								<img src="../images/yuantiao.jpg">
+							</a>
+						</div>
+						<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+						<div class="mui-slider-item mui-slider-item-duplicate">
+							<a href="#">
+								<img src="../images/shuijiao.jpg">
+							</a>
+						</div>
+					</div>
+					<div class="mui-slider-indicator">
+						<div class="mui-indicator mui-active"></div>
+						<div class="mui-indicator"></div>
+						<div class="mui-indicator"></div>
+						<div class="mui-indicator"></div>
+					</div>
+				</div>
+
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<div class="mui-media-body">
+							xiaomi/小米 红色手机4A 超薄迷你学生智能手机
+							<p style="color:red">￥1000</p>
+							<!--<p>快递费10元 <span style="margin-left:10%;">已有10人购买</span><span style="margin-left: 15%;">广东深圳</span></p>-->
+							<p style="float: left;">快递费10元 </p>
+							<p style="float: left;margin-left: 15%;">已有10人购买</p>
+							<p style="float: right;">广东深圳</p>
+						</div>
+						<script src="../js/soshm.min.js"></script>
+						<script src="../js/jquery-3.2.1.min.js"></script>
+						<script type="text/javascript">
+							$(function(){
+								BrowserType();
+							});
+							
+							/* 
+							 * 描述：判断浏览器信息 
+							 * 编写：LittleQiang_w 
+							 * 日期：2016.1.5 
+							 * 版本：V1.1 
+							 */
+
+							
+							//判断当前浏览类型  
+							function BrowserType() {
+								var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串 
+								var isQQMobile = userAgent.indexOf("QQBrowser") > -1; //判断是否QQ浏览器  
+								var isBaiduApp = userAgent.indexOf("baiduboxapp") > -1; //判断是否百度APP浏览器  
+								if(isQQMobile){
+									$("#shareBtn").hide();
+								}
+								if(isBaiduApp){
+									$("#shareBtn").hide();
+								}
+							}
+						</script>
+
+						<script>
+							document.getElementById('shareBtn').addEventListener('click', function() {
+								soshm.popIn({
+									title: '小米',
+									sites: ['qzone', 'qq', 'weixin']
+								});
+							}, false);
+						</script>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="mui-slider-handle">
+							<p><img src="../images/icon/1.png" />正品保证 <span style="margin-left:8%;"><img src="../images/icon/1.png"/>7天无忧</span><span style="margin-left: 8%;"><img src="../images/icon/1.png"/>售后无忧</span></p>
+						</div>
+					</li>
+				</ul>
+
+			</div>
+
+			<div class="mui-content" id="detail" style="display:none;">
+
+				<div class="mui-content-padded">
+
+					<p>
+						<img src="../images/2112.jpg" style="width:100%;">
+					</p>
+
+					<p>
+						<img src="../images/2111.jpg" style="width:100%;">
+					</p>
+
+					<p>
+						<img src="../images/2113.jpg" style="width:100%;">
+					</p>
+				</div>
+
+			</div>
+
+			<div id="picture" class="mui-popover mui-popover-action mui-popover-bottom mui-active" style="z-index:999999;display: none;background-color:#FFFFFF ;height: 350px;bottom: 50px;max-width: 414px;">
+				<ul class="mui-table-view" style="background-color: #FFFFFF;">
+					<li class="mui-table-view" style="background-color: #FFFFFF;">
+						<div style="float: right;" onclick="hideSku()">
+							<span class="mui-icon mui-icon-closeempty"></span>
+						</div>
+						<a href="javascript:;">
+							<img class="mui-pull-left" src="../images/shuijiao.jpg" style="width:70px;height:70px;margin-left: 5px;">
+							<div style="text-align:left;margin-top: 7%;">
+								<p style="margin-left: 85px;color: red;">￥1000</p>
+								<p style="margin-left: 85px;">已经选择：英雄黄 64G</p>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view" style="text-align:left;background-color: #FFFFFF;margin-top:10px ;">
+						<p>颜色</p>
+						<p>
+							<button type="button" class="mui-btn mui-btn-outlined">
+								金色
+							</button>
+							<span style="margin-left:8%;"><button type="button" class="mui-btn mui-btn-outlined">
+									黑色
+							</button>
+							</span>
+							<span style="margin-left: 8%;">
+								<button type="button" class="mui-btn mui-btn-danger mui-btn-outlined">
+								英雄黄
+							</button>
+								
+							</span>
+
+						</p>
+					</li>
+
+					<li class="mui-table-view" style="text-align:left;background-color: #FFFFFF;margin-top:10px ;">
+						<p>存储容量</p>
+						<p>
+							<button type="button" class="mui-btn mui-btn-outlined">
+								32G
+							</button>
+							<span style="margin-left:8%;"><button type="button" class="mui-btn mui-btn-danger mui-btn-outlined">
+									64G
+							</button>
+							</span>
+							<span style="margin-left: 8%;">
+								<button type="button" class="mui-btn  mui-btn-outlined" >
+								128G
+							</button>
+								
+							</span>
+
+						</p>
+					</li>
+					<li class="mui-table-view" style="text-align:left;background-color: #FFFFFF;margin-top:10px ;">
+						<p>数量</p>
+						<div class="mui-numbox" data-numbox-min="1" style="float: left;max-height: 25px;">
+							<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+							<input class="mui-input-numbox" type="number">
+							<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+						</div>
+					</li>
+				</ul>
+
+			</div>
+			<div class="mui-backdrop mui-active mui-backdrop-action" style="bottom:53px;display:none;"></div>
+
+			<footer class="aui-bar aui-bar-tab aui-margin-t-15 aui-margin-b-15" style="margin-bottom: 0px;">
+				<div class="aui-bar-tab-item" tapmode="" style="width: 3rem;border:1px;">
+					<a href="">
+						<i class="mui-icon-extra mui-icon-extra-hetao-wdsc-default" style="font-size: 30px;">&nbsp;</i>
+					</a>
+				</div>
+				<div class="aui-bar-tab-item" tapmode="" style="width: 3rem;">
+					<a href="shopCar.html">
+						<i class="mui-icon-extra mui-icon-extra-hetao-shopCar" style="font-size: 30px;">&nbsp;</i>
+					</a>
+				</div>
+				<div class="aui-bar-tab-item aui-bg-warning aui-text-white" tapmode="" style="width: auto;" onclick="showSku(1)">加入购物车</div>
+				<div class="aui-bar-tab-item aui-bg-danger aui-text-white" tapmode="" style="width: auto;" onclick="showSku(2)">立即购买</div>
+			</footer>
+
+		</div>
+
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/jquery-3.2.1.min.js"></script>
+		<script src="../js/soshm.min.js"></script>
+
+		<script>
+			function shopShow(obj) {
+				if(obj == 1) {
+					$("#shopDiv").addClass("aui-active");
+					$("#detailDiv").removeClass("aui-active");
+					$("#detail").hide();
+					$("#shop").show();
+				} else {
+					$("#detailDiv").addClass("aui-active");
+					$("#shopDiv").removeClass("aui-active");
+					$("#detail").show();
+					$("#shop").hide();
+				}
+			}
+
+			/**
+			 * 1 购物车
+			 * 2购买
+			 * @param {Object} obj
+			 */
+			function showSku(obj) {
+				// 展示 sku
+				if($(".mui-backdrop").is(":hidden")) {
+					$(".mui-backdrop").show();
+					$("#picture").slideToggle();
+				} else {
+					// 提交购买逻辑
+
+				}
+
+			}
+
+			function hideSku() {
+				$(".mui-backdrop").hide();
+				$("#picture").slideToggle();
+			}
+		</script>
+		<script type="text/javascript" charset="utf-8">
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+			var slider = mui("#slider");
+			slider.slider({
+
+				interval: 5000
+
+			});
+		</script>
+	</body>
+
+	</body>
+
+</html>
+
+</html>

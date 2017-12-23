@@ -1,0 +1,67 @@
+body ul:first-child{
+	margin-top:5px;background-color:#E51C23;margin-top: 0px;padding-right: 15px;
+}
+body ul:first-child li:first-child p{
+	font-weight: lighter;float:left;color:#FFFFFF;
+}
+body ul:first-child li:first-child p:first-child{
+	margin-top: -1px;
+}
+body ul:first-child li:first-child p:nth-child(2){
+	float:right;margin-right: -30px;
+}
+body ul:first-child li:first-child p:nth-child(3){
+	margin-left: 30px;margin-top: 0px;
+}
+/**
+ * 等待 付款 start
+ */
+.hetao-order-ul{
+	margin-top:5px;
+}
+.hetao-order-ul p:first-child{
+	float: right;max-height: 25px;color: #000000;margin-top: 3px;
+}
+.hetao-order-ul p:nth-child(2){
+	font-size:14px;margin-top: 3px;font-weight: bold;color: #000000;font-weight: lighter;
+}
+.hetao-order-ul p:nth-child(3){
+	font-weight: lighter;font-size: 12px; 
+}
+.hetao-order-ul p:nth-child(4){
+	margin-top: 2px;color: #000000; 
+}
+/**
+ * 等待 付款 end
+ */
+
+.hetao-bottom-ul{
+	margin-top: 10px;
+}
+.hetao-bottom-ul li{
+	height:60px; 
+}
+button{
+	height:45px
+}
+.hetao-bottom-ul button:first-child{
+	float: right;margin-right: 100px;
+}
+.hetao-bottom-ul button:nth-child(2){
+	float: right;
+}
+
+img {
+	width: 67px;
+	height: 67px;
+	margin-right: 5px;
+}
+
+.divP {
+	color: #494949;
+	font-weight: lighter;
+}
+
+.divS {
+	margin-left: 10px;
+}

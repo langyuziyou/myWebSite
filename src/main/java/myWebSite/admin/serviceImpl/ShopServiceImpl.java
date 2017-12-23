@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.interceptor.TransactionAspectSupport;
@@ -13,13 +15,21 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import myWebSite.admin.dao.ShopDao;
+import myWebSite.admin.daoImpl.ShopDaoImpl;
 import myWebSite.admin.entity.Shop;
 import myWebSite.admin.entity.UploadImg;
 import myWebSite.admin.service.ShopService;
+import myWebSite.admin.tools.DateUtil;
 
 
 @Service("shopService")
 public class ShopServiceImpl implements ShopService{
+	
+	private static final Logger LOGGER = Logger.getLogger(ShopServiceImpl.class);
+
+
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
 	
 	@Autowired
 	private ShopDao shopDao;
@@ -183,6 +193,32 @@ public class ShopServiceImpl implements ShopService{
 	
 
 }
+
+	@Override
+	public int[] shopListAdd(Map<String, Object> map) {
+		int [] result = null;
+		Gson g = new Gson();
+	try {
+		String currentUser = map.get("user").toString();// userName
+		/***************************************************************
+		 * 前台传入的 json 数据 已经封装成 ProductExcel
+		 **************************************************************/
+		List<Shop> shopList = (List<Shop>) map.get("shopList");
+		
+		List<Object[]> batchArgs = new ArrayList<Object[]>();
+		StringBuffer sb = new StringBuffer();
+		sb.append("  INSERT INTO `shop_info`  ");
+		sb.append(" (shop_info_name,shop_info_image,price,first_shop_category_id,second_shop_category_id,three_shop_category_id,create_time,create_by,description,from_type,from_web) ");
+		sb.append(" VALUES(?,?,?,?,?,?,?,?,?,?,?) ");
+			for(Shop p:shopList){
+					batchArgs.add(new Object[] { p.getShopInfoName(),p.getShopInfoImage(),p.getPrice(),p.getFirstShopCategoryId(),0,0,DateUtil.getDateTime(),currentUser,p.getDescription(),1,p.getFromWeb()});
+			}
+			result = jdbcTemplate.batchUpdate(sb.toString(), batchArgs);
+		} catch (Exception e) {
+			LOGGER.error(e.toString());
+		}
+		return result;
+	}
 		
 
 }

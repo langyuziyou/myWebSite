@@ -1,0 +1,73 @@
+	body {
+		max-width: 414px;
+		margin: auto;
+	}
+	.mui-row.mui-fullscreen>[class*="mui-col-"] {
+		height: 100%;
+	}
+	
+	.mui-col-xs-3,
+	.mui-col-xs-9 {
+		overflow-y: auto;
+		height: 100%;
+	}
+	
+	.mui-segmented-control .mui-control-item {
+		line-height: 50px;
+		width: 100%;
+	}
+	
+	.mui-control-content {
+		display: block;
+	}
+	
+	.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+		background-color: #fff;
+	}
+	
+	.mui-table-view:before {
+		background-color: #FFFFFF;
+	}
+	.mui-table-view:after{
+		position: static;
+	}
+	 h3.title {
+    color: #F2AE11;
+    font-size: 1.3em;
+    text-align: center;
+    font-weight: 500;
+    line-height: 3.1;
+    background-color: #FFFFFF;
+    height:40px;
+    margin: 0px;
+}
+h3.title span {
+    display: block;     /*设置为块级元素会独占一行形成上下居中的效果*/
+    font-size: 18px;
+    color: #212121;
+    position: relative;   /*定位横线（当横线的父元素）*/
+}
+h3.title span:before, h3.title span:after {
+    content: '';                 /*CSS伪类用法*/
+    position: absolute;         /*定位背景横线的位置*/
+    top: 50%;
+    background: #494949;       /*宽和高做出来的背景横线*/
+    width: 9%;
+    height: 1px;
+}
+h3.title span:before{
+    left: 25%;        /*调整背景横线的左右距离*/
+}
+h3.title span:after {
+    right: 25%;
+}
+
+.mui-content{
+	max-width: 414px;margin: auto;
+}
+.mui-col-xs-3{
+	background-color: #FFFFFF;
+}
+.mui-col-xs-9{
+	border-left: 1px solid #c8c7cc;
+}

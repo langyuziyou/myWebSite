@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>浏览足迹</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<style>
+			#OA_task_1 img {
+				width: 69px;
+				height: 69px;
+			}
+			
+			.pMoney {
+				float: left;
+				max-height: 30px;
+				margin-top: 5px;
+				color: red;
+			}
+			
+			.mui-input-numbox {
+				color: #000000;
+			}
+			
+			.mui-table-view:before {
+				background-color: #FFFFFF;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color:#FFFFFF;">
+			<a  class="mui-icon mui-pull-left mui-action-back"><i class="mui-icon-extra mui-icon-extra-hetao-left" style="">&nbsp;</i></a>
+			<h1 class="mui-title" style="float:left;">浏览足迹</h1>
+			<div style="float:right;vertical-align: middle;height:44px;margin-top: 10px;">
+				<span id="edit" style="font-size: 13px;" onClick="edit();">编辑</span>
+			</div>
+
+		</header>
+		<div class="mui-content" style="margin-top:0px;">
+			<ul id="" class="mui-table-view" style="margin-top:0px;">
+				<li class="mui-table-view-cell" style="text-align: left;">
+						2017-12-5 
+				</li>
+				<li class="mui-table-view-cell" style="">
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn mui-btn-red">删除</a>
+					</div>
+					<div class="mui-slider-handle">
+						<div class="mui-input-row mui-checkbox mui-left" style="float:left;display:inline;height:50px;width:30px;">
+							<input name="sccheckbox" value="1" type="checkbox" style="left:-1px;top: 20px;">
+						</div>
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="../images/head/chanpin01.png">
+							<div class="mui-media-body">
+								<p class="mui-ellipsis" style="font-weight: bold;">高清夜视无限网络监控手机，所有属性+10 </p>
+								<p class="mui-ellipsis">品牌：A+ 颜色：英雄黄</p>
+								<p class="pMoney" style="">￥1000</p>
+								
+							</div>
+						</a>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn mui-btn-red">删除</a>
+					</div>
+					<div class="mui-slider-handle">
+						<div class="mui-input-row mui-checkbox mui-left" style="float:left;display:inline;height:50px;width:30px;">
+							<input name="sccheckbox" value="2" type="checkbox" style="left:0px;top: 20px;">
+						</div>
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="../images/head/chanpin03.png">
+							<div class="mui-media-body">
+								<p class="mui-ellipsis" style="font-weight: bold;">【电信赠费版】努比亚（nubia）Z17S 全面屏 黑金 6GB+64GB </p>
+								<p class="mui-ellipsis">品牌：A+ 颜色：英雄黄</p>
+								<p class="pMoney" style="">￥1000</p>
+								
+							</div>
+						</a>
+					</div>
+				</li>
+			</ul>
+			
+			<ul id="" class="mui-table-view" style="margin-top:0px;">
+				<li class="mui-table-view-cell" style="text-align: left;">
+						2017-12-5 
+				</li>
+				<li class="mui-table-view-cell" style="">
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn mui-btn-red">删除</a>
+					</div>
+					<div class="mui-slider-handle">
+						<div class="mui-input-row mui-checkbox mui-left" style="float:left;display:inline;height:50px;width:30px;">
+							<input name="sccheckbox" value="1" type="checkbox" style="left:-1px;top: 20px;">
+						</div>
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="../images/head/chanpin01.png">
+							<div class="mui-media-body">
+								<p class="mui-ellipsis" style="font-weight: bold;">高清夜视无限网络监控手机，所有属性+10 </p>
+								<p class="mui-ellipsis">品牌：A+ 颜色：英雄黄</p>
+								<p class="pMoney" style="">￥1000</p>
+								
+							</div>
+						</a>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn mui-btn-red">删除</a>
+					</div>
+					<div class="mui-slider-handle">
+						<div class="mui-input-row mui-checkbox mui-left" style="float:left;display:inline;height:50px;width:30px;">
+							<input name="sccheckbox" value="2" type="checkbox" style="left:0px;top: 20px;">
+						</div>
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="../images/head/chanpin03.png">
+							<div class="mui-media-body">
+								<p class="mui-ellipsis" style="font-weight: bold;">【电信赠费版】努比亚（nubia）Z17S 全面屏 黑金 6GB+64GB </p>
+								<p class="mui-ellipsis">品牌：A+ 颜色：英雄黄</p>
+								<p class="pMoney" style="">￥1000</p>
+								
+							</div>
+						</a>
+					</div>
+				</li>
+			</ul>
+			
+			
+					<ul id="" class="mui-table-view" style="margin-top:0px;">
+				<li class="mui-table-view-cell" style="text-align: left;">
+						2017-12-5 
+				</li>
+				<li class="mui-table-view-cell" style="">
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn mui-btn-red">删除</a>
+					</div>
+					<div class="mui-slider-handle">
+						<div class="mui-input-row mui-checkbox mui-left" style="float:left;display:inline;height:50px;width:30px;">
+							<input name="sccheckbox" value="1" type="checkbox" style="left:-1px;top: 20px;">
+						</div>
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="../images/head/chanpin01.png">
+							<div class="mui-media-body">
+								<p class="mui-ellipsis" style="font-weight: bold;">高清夜视无限网络监控手机，所有属性+10 </p>
+								<p class="mui-ellipsis">品牌：A+ 颜色：英雄黄</p>
+								<p class="pMoney" style="">￥1000</p>
+								
+							</div>
+						</a>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn mui-btn-red">删除</a>
+					</div>
+					<div class="mui-slider-handle">
+						<div class="mui-input-row mui-checkbox mui-left" style="float:left;display:inline;height:50px;width:30px;">
+							<input name="sccheckbox" value="2" type="checkbox" style="left:0px;top: 20px;">
+						</div>
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="../images/head/chanpin03.png">
+							<div class="mui-media-body">
+								<p class="mui-ellipsis" style="font-weight: bold;">【电信赠费版】努比亚（nubia）Z17S 全面屏 黑金 6GB+64GB </p>
+								<p class="mui-ellipsis">品牌：A+ 颜色：英雄黄</p>
+								<p class="pMoney" style="">￥1000</p>
+								
+							</div>
+						</a>
+					</div>
+				</li>
+			</ul>
+			
+			<ul id="" class="aui-bar">
+				<li>
+					</br></br>
+					</li>
+				</ul>
+			
+			<footer class="aui-bar aui-bar-tab aui-margin-t-15 aui-margin-b-15" style="margin-bottom: 0px;">
+
+				<div class="mui-input-row mui-checkbox mui-left" style="float:left;display:inline;height:50px;width:85px;">
+					<input name="checkboxAll" id="checkboxAll" value="Item 1" type="checkbox" style="left:15px;top: 10px;">
+					<p style="margin-left:45px;margin-top: 13px;width:50px;">全选</p>
+				</div>
+
+				
+
+				<div class="aui-bar-tab-item" id="last_hide" tapmode="" style="width: 50%;background-color:#efeff4;color:#000000;">删除</div>
+				<div class="aui-bar-tab-item" id="last_buy" onClick="subM();" tapmode="" style="width: 50%;background-color:#e51c23;color:#FFFFFF;display:none;">删除</div>
+			</footer>
+
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/jquery-3.2.1.min.js"></script>
+		<script>
+			//
+			$(".mui-input-row").hide();
+			$(".aui-bar").hide();
+			
+/*			$("input[type=checkBox][name=sccheckbox]").each(function() {
+						$(this).hide();
+					});*/
+			
+			
+			function subM() {
+				console.log(1);;
+			}
+
+			/**
+			 * 切换 编辑 还是完成
+			 */
+			function edit() {
+				var v = $("#edit").html();
+				if(v == "完成") {
+					//
+					$("#edit").html("编辑");
+					$(".mui-input-row").hide();
+					$(".aui-bar").hide();
+
+				} else {
+					//
+					$("#edit").html("完成");
+					$(".mui-input-row").show();
+					$(".aui-bar").show();
+				}
+			}
+		</script>
+		<script>
+			var btnArray = ['确认', '取消'];
+			$(function() {
+				$("#checkboxAll").click(function() {
+					//全选 反选
+					var ch = this.checked;
+					console.log(ch);
+					console.log(this.checked);
+					$("input[type=checkBox][name=sccheckbox]").each(function() {
+						this.checked = ch;
+					});
+
+					//
+					if(this.checked) {
+						styleChange(1);
+					} else {
+						styleChange(2);
+					}
+
+				});
+
+				//监听  点击 如果有选中 
+				$("input[type=checkBox][name=sccheckbox]").click(function() {
+					//
+					var l = 0;
+					if(this.checked) {
+						l++;
+					}
+
+					$("input[type=checkBox][name=sccheckbox]").each(function() {
+						if(this.checked == true) {
+							l++;
+						}
+					});
+
+					console.log(l);
+					if(l > 0) {
+						styleChange(1);
+					} else {
+						styleChange(2);
+
+					}
+
+				});
+
+				// type 1:选中     2:未选中
+				function styleChange(type) {
+					switch(type) {
+						case 1:
+							$("#last_buy").show();
+							$("#last_hide").hide();
+							break;
+						case 2:
+							$("#last_buy").hide();
+							$("#last_hide").show();
+							break;
+					}
+
+				}
+
+				//del
+				$("#del").click(function() {
+					//全选 反选
+					var isDel = false;
+					/*			var ch = this.checked;
+								console.log(ch);
+								console.log(this.checked);*/
+					$("input[type=checkBox][name=sccheckbox]").each(function() {
+						if(this.checked) {
+							console.log(this.checked);
+							isDel = true;
+							return;
+						}
+
+						//this.checked = ch;
+					});
+
+					if(isDel) {
+						mui.confirm('确认删除记录？', '购物车', btnArray, function(e) {
+							$("input[type=checkBox][name=sccheckbox]").each(function() {
+								if(this.checked) {
+									var elem = this.parentNode;
+									var li = elem.parentNode.parentNode;
+									console.log(e);
+									if(e.index == 0) {
+										li.parentNode.removeChild(li);
+									} else {
+										setTimeout(function() {
+											$.swipeoutClose(li);
+										}, 0);
+									}
+									console.log(this.checked);
+									isDel = true;
+									return;
+								}
+
+								//this.checked = ch;
+							});
+
+						});
+					}
+
+				});
+			});
+		</script>
+
+		<script>
+			mui.init();
+			(function($) {
+				//$.swipeoutOpen(el,direction)//打开指定列的滑动菜单，el:指定列的dom对象，direction：取值left|right，指定打开的是左侧或右侧滑动菜单
+				//$.swipeoutClose(el);//关闭指定列的滑动菜单，el:指定列的dom对象
+				//				setTimeout(function() {
+				//					$.swipeoutOpen(document.getElementById("OA_task_1").querySelector('li:last-child'), 'left');
+				//					setTimeout(function() {
+				//						$.swipeoutClose(document.getElementById("OA_task_1").querySelector('li:last-child'));
+				//					}, 1000);
+				//				}, 1000);
+				//第一个demo，拖拽后显示操作图标，点击操作图标删除元素；
+				$('#OA_task_1').on('tap', '.mui-btn-red', function(event) {
+					console.log(this);
+					var elem = this;
+					var li = elem.parentNode.parentNode;
+					mui.confirm('确认删除该条记录？', 'Hello MUI', btnArray, function(e) {
+						if(e.index == 0) {
+							li.parentNode.removeChild(li);
+						} else {
+							setTimeout(function() {
+								$.swipeoutClose(li);
+							}, 0);
+						}
+					});
+				});
+				var btnArray = ['确认', '取消'];
+				//第二个demo，向左拖拽后显示操作图标，释放后自动触发的业务逻辑
+				$('#OA_task_2').on('slideleft', '.mui-table-view-cell', function(event) {
+					var elem = this;
+					mui.confirm('确认删除该条记录？', 'Hello MUI', btnArray, function(e) {
+						if(e.index == 0) {
+							elem.parentNode.removeChild(elem);
+						} else {
+							setTimeout(function() {
+								$.swipeoutClose(elem);
+							}, 0);
+						}
+					});
+				});
+				//第二个demo，向右拖拽后显示操作图标，释放后自动触发的业务逻辑
+				$('#OA_task_2').on('slideright', '.mui-table-view-cell', function(event) {
+					var elem = this;
+					mui.confirm('确认删除该条记录？', 'Hello MUI', btnArray, function(e) {
+						if(e.index == 0) {
+							elem.parentNode.removeChild(elem);
+						} else {
+							setTimeout(function() {
+								$.swipeoutClose(elem);
+							}, 0);
+						}
+					});
+				});
+			})(mui);
+		</script>
+	</body>
+
+</html>

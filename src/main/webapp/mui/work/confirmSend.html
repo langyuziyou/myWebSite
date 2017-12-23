@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>确认发货</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<link rel="stylesheet" type="text/css" href="../css/feedback.css" />
+		<link rel="stylesheet" type="text/css" href="../css/order/refund.css" />
+		<link href="../css/mui.picker.css" rel="stylesheet" />
+		<link href="../css/mui.poppicker.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-pull-left mui-action-back"><i class="mui-icon-extra mui-icon-extra-hetao-left" style="">&nbsp;</i></a>
+			<h1 class="mui-title">确认发货</h1>
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view hetao-order-ul">
+				<li class="mui-table-view-cell">
+					<div class="mui-input-row" id='showUserPicker'>
+					<label style="width:30%;padding-left: 0px;">快递公司</label>
+					<a href="logices.html" style="color:#000000;"><div id="userResult" class="mui-navigate-right" style="padding-top: 8px;">广东深圳市南山区</div></a>
+					</div>
+				</li>	
+				<li class="mui-table-view-cell">
+					<div class="mui-input-row">
+						<label style="width:30%;padding-left: 0px;">快递单号</label>
+						<input id='account' type="text" class="mui-input" placeholder="必填" style="width:215px;float: left;">
+					</div>
+				</li>	
+				<li class="mui-table-view-cell">	
+					<div class="mui-input-row">
+						<label style="width:30%;padding-left: 0px;">发货说明</label>
+						<textarea id="textarea" rows="5" placeholder="选填，请详细描述你的退款原因" style="width:215px;float:left"></textarea>
+					</div>
+				</li>
+			</ul>
+
+			<div class="imgDiv" style="background-color: #FFFFFF;padding-top: 10px;">
+				<p style="margin-left: 15px;color:#000000;font-size: 18px;font-weight: bold;">上传照片 (最多上传6张)</p>
+				<div style="margin-left: 1%;">
+					<img src="../images/brand/2x.png" />
+					<img src="../images/brand/xx.png" />
+					<img src="../images/brand/up.png" onClick="preUpload();"/>
+
+				</div>
+			</div>
+
+			
+			<div style="display:none;">
+				<input type="file" id="upFile" accept="image/*" />
+			</div>
+		</div>
+		
+		<div class="mui-content-padded">
+			<button id='reg' class="mui-btn mui-btn-block mui-btn-primary" style="border-radius: 10px;">提交</button>
+		</div>
+		
+		
+	</body>
+	<script src="../js/mui.min.js "></script>
+		<script src="../js/jquery-3.2.1.min.js"></script>
+				<script src="../js/mui.picker.js"></script>
+
+		<script src="../js/mui.poppicker.js"></script>
+	<script>
+		function preUpload(){
+			$("#upFile").click();
+		}
+		</script>
+
+</html>

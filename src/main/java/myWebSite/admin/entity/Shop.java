@@ -65,6 +65,20 @@ public class Shop implements RowMapper<Shop>, Serializable{
 	
 	private Integer fromType;
 	
+	private Integer fromWeb;
+	
+	public Integer getFromWeb() {
+		return fromWeb;
+	}
+
+
+
+	public void setFromWeb(Integer fromWeb) {
+		this.fromWeb = fromWeb;
+	}
+
+
+
 	private String price;
 	 
 	
@@ -246,6 +260,7 @@ public class Shop implements RowMapper<Shop>, Serializable{
 		shop.setIsShow(rs.getInt("is_show"));
 		shop.setDescription(rs.getString("description"));
 		shop.setFromType(rs.getInt("from_type"));
+		shop.setFromWeb(rs.getInt("from_web"));
 		shop.setPrice(rs.getString("price"));
 		return shop;
 	}

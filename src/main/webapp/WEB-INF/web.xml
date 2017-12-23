@@ -24,17 +24,31 @@
     </servlet-mapping>
 
     <filter>
-        <filter-name>CharacterEncodingFilter</filter-name>
+<!--         <filter-name>CharacterEncodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
         <init-param>
             <param-name>encoding</param-name>
             <param-value>utf-8</param-value>
+        </init-param> -->
+        
+     <filter-name>FilterCache</filter-name>
+     <filter-class>myWebSite.admin.interceptor.FilterCache</filter-class>
+       <init-param>
+            <param-name>encoding</param-name>
+            <param-value>utf-8</param-value>
         </init-param>
+        
     </filter>
     <filter-mapping>
-        <filter-name>CharacterEncodingFilter</filter-name>
-        <url-pattern>/*</url-pattern>
+<!--         <filter-name>CharacterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern> -->
+        
+        <filter-name>FilterCache</filter-name>
+   		<url-pattern>/*</url-pattern>
     </filter-mapping>
+    
+    
+    
     
   
     <!-- 配置session超时时间，单位分钟 -->  

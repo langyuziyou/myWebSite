@@ -10,11 +10,12 @@
 %>
 <div class="footer">
    <div align="center">
-   <p>北京古韵华礼文化发展有限公司 版权所有 2008-2015 京ICP备12041176号-11 
-   	<a href="http://www.cnzz.com/stat/website.php?web_id=1880666" target="_blank" title="站长统计">
-   		<img border="0" hspace="0" vspace="0" src="<%=basePath%>css/images/pic.gif"></a>
+   <p>深圳圆周率文化传播有限公司 版权所有 2017-2020 
+   	<a  target="_blank" title="站长统计">
+   		<!--<img border="0" hspace="0" vspace="0" src="<%=basePath%>css/images/pic.gif">-->
+   	</a>
    </p>
-   <p>古韵礼品网 Copyright © www.lipin-bj.cn All Rights Reserved.
+   <p>圆周率礼品网 Copyright © www.yllipin.cn All Rights Reserved.
    <script>
 var _hmt = _hmt || [];
 (function() {

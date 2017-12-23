@@ -27,4 +27,6 @@ public interface ShopService {
 	
 	Integer editShop(String uploadImage, String id, String price, String name, String firstSelect, String secondSelect, String threeSelect, String firstSelectVal, String secondSelectVal, String threeSelectVal, String description);
 
+	int[] shopListAdd(Map<String, Object> paraList);
+
 }

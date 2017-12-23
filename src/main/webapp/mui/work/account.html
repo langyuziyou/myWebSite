@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>个人中心</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<link rel="stylesheet" type="text/css" href="../css/account/account.css" />
+	</head>
+
+	<body>
+		<form id="form1" enctype="multipart/form-data" method="post" action="http://192.168.1.173:8080/shop-admin-web/uploadFile/uploadImag">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-pull-left mui-action-back"><i class="mui-icon-extra mui-icon-extra-hetao-left" style="">&nbsp;</i></a>
+			<h1 class="mui-title">个人信息</h1>
+						
+				
+		</header>
+		<div class="mui-page-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="#picture" class="mui-navigate-right" style="height:58px;">
+						<p style="margin-top: 10px;color:#000000;font-size: 17px;">头像</p>
+						<span class="mui-pull-right head">
+								<img class="head-img mui-action-preview" id="head-img1" src="../images/mine/h.png"/ style="border-radius:30px;height:45px;width: 45px;top: 5px;">
+							</span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="nickName.html" class="mui-navigate-right">昵称<span class="mui-pull-right" style="padding-right: 25px;">playStation-贰</span></a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="heziName.html" class="mui-navigate-right">盒淘号<span class="mui-pull-right" style="padding-right: 25px;">4512474741</span></a>
+				</li>
+				<li>
+					<div id="fileName"></div>
+					<div id="fileSize"></div>
+					<div id="fileType"></div>
+					<div class="row">
+						<input type="button" onclick="uploadFile();" value="Upload" />
+					</div>
+				</li>
+			</ul>
+
+		</div>
+		<div id="picture" class="mui-popover mui-popover-action mui-popover-bottom">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a onClick="upLoad();">选择图片</a>
+				</li>
+
+			</ul>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="#picture"><b>取消</b></a>
+				</li>
+			</ul>
+		</div>
+		<div>
+			<input type="file" id="upFile" accept="image/*" onchange="fileSelected();" />
+		</div>
+		</form>
+	</body>
+	<script src="../js/mui.min.js "></script>
+	<script src="../js/jquery-3.2.1.min.js"></script>
+	<script src="../js/account/account.js"></script>
+
+	<script>
+		function fileSelected() {
+			var file = document.getElementById('upFile').files[0];
+			if(file) {
+				var fileSize = 0;
+				if(file.size > 1024 * 1024)
+					fileSize = (Math.round(file.size * 100 / (1024 * 1024)) / 100).toString() + 'MB';
+				else
+					fileSize = (Math.round(file.size * 100 / 1024) / 100).toString() + 'KB';
+
+				document.getElementById('fileName').innerHTML = 'Name: ' + file.name;
+				document.getElementById('fileSize').innerHTML = 'Size: ' + fileSize;
+				document.getElementById('fileType').innerHTML = 'Type: ' + file.type;
+			}
+		}
+
+		function uploadFile() {
+			var xhr = new XMLHttpRequest();
+			/*var formobj =  document.getElementById("form1");*/
+			var fd = new FormData();
+			fd.append("name", "司徒正美"); 
+			fd.append("blog", "http://www.cnblogs.com/rubylouvre/");
+			//var fd = new FormData(formobj);
+			
+			
+			//
+			var form = new FormData();
+	          form.append("username","zxj");
+	          form.append("password",123456);
+	          var req = new XMLHttpRequest();
+	          req.open("post", "http://192.168.1.173:8080/shop-admin-web/uploadFile/uploadImag", false);
+	          req.send(form);
+			
+			console.log(fd);
+			/* event listners */
+			xhr.upload.addEventListener("progress", uploadProgress, false);
+			xhr.addEventListener("load", uploadComplete, false);
+			xhr.addEventListener("error", uploadFailed, false);
+			xhr.addEventListener("abort", uploadCanceled, false);
+			/* Be sure to change the url below to the url of your upload server side script */
+			xhr.open("POST", "http://192.168.1.173:8080/shop-admin-web/uploadFile/uploadImag");
+			xhr.send(fd);
+		}
+
+		function uploadProgress(evt) {
+			if(evt.lengthComputable) {
+				var percentComplete = Math.round(evt.loaded * 100 / evt.total);
+				document.getElementById('progressNumber').innerHTML = percentComplete.toString() + '%';
+			} else {
+				document.getElementById('progressNumber').innerHTML = 'unable to compute';
+			}
+		}
+
+		function uploadComplete(evt) {
+			/* This event is raised when the server send back a response */
+			alert(evt.target.responseText);
+		}
+
+		function uploadFailed(evt) {
+			alert("There was an error attempting to upload the file.");
+		}
+
+		function uploadCanceled(evt) {
+			alert("The upload has been canceled by the user or the browser dropped the connection.");
+		}
+	</script>
+
+</html>

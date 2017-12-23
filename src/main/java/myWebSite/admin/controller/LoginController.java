@@ -22,21 +22,19 @@ import myWebSite.admin.service.SysUserService;
 import myWebSite.admin.tools.CryptHelper;
 import myWebSite.admin.tools.PasswordUtil;
 
-
-
 @Scope("prototype")
 @Controller
 @RequestMapping("/login")
-public class LoginController extends BaseController{
-	
-	private static final Logger LOGGER = Logger  
-            .getLogger(LoginController.class);  
-	
-    @Autowired  
-    private SysUserService sysUserService;
-	
+public class LoginController extends BaseController {
+
+	private static final Logger LOGGER = Logger.getLogger(LoginController.class);
+
+	@Autowired
+	private SysUserService sysUserService;
+
 	/**
 	 * 登录入口
+	 * 
 	 * @author yzj
 	 * @version 2.0 2017年9月25日 下午3:59:17
 	 * 
@@ -48,10 +46,10 @@ public class LoginController extends BaseController{
 		LOGGER.info(" loginPage ");
 		return new ModelAndView("/sys/login");
 	}
-	
-	
+
 	/***
-	 * 登录 
+	 * 登录
+	 * 
 	 * @author yzj
 	 * @version 2.0 2017年9月27日 上午10:38:07
 	 * 
@@ -66,21 +64,21 @@ public class LoginController extends BaseController{
 	 */
 	@RequestMapping(value = "/login")
 	public ModelAndView login(HttpServletRequest request, HttpServletResponse response, String username,
-			String password, int setCookie, int cookieLogin){
+			String password, int setCookie, int cookieLogin) {
 		LOGGER.info(" 请求登录 :" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSS").format(new Date()));
-//		 System.out.println("commonUserA:" + PasswordUtil.encrytPwd("123456", "commonUserA"));
-//		 System.out.println("commonUserB:"+PasswordUtil.encrytPwd("123456", "commonUserB"));
-
+		// System.out.println("commonUserA:" + PasswordUtil.encrytPwd("123456",
+		// "commonUserA"));
+		// System.out.println("commonUserB:"+PasswordUtil.encrytPwd("123456",
+		// "commonUserB"));
 
 		String url = "/sys/loginPage";
-		request.setAttribute("loginError", null);
 
+		request.setAttribute("loginError", null);
 
 		try {
 			if (cookieLogin == 1) {
 				password = CryptHelper.decrypt(password);
 			}
-
 
 			/**
 			 * 如果开启记住我功能 ， 启用cookie
@@ -108,16 +106,16 @@ public class LoginController extends BaseController{
 				response.addCookie(loginWay);
 			}
 
-			SysUser user = sysUserService.getByLogin(username,MD5(username+password));
-			//session 
+			SysUser user = sysUserService.getByLogin(username, MD5(username + password));
+			// session
 			request.getSession().setAttribute("user", user);
 
 			// 项目路径
 			String path = request.getContextPath();
-			System.out.println(" path = " +path);
+			System.out.println(" path = " + path);
 			String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
 					+ path + "/";
-			System.out.println(" basePath = " +basePath);
+			System.out.println(" basePath = " + basePath);
 			request.getSession().setAttribute("basePath", basePath);
 
 			// 保存登陆日志

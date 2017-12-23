@@ -29,6 +29,24 @@
     </dependency>
     
     
+    
+    
+		<!-- https://mvnrepository.com/artifact/httpunit/httpunit -->
+		<dependency>
+		    <groupId>httpunit</groupId>
+		    <artifactId>httpunit</artifactId>
+		    <version>1.7</version>
+		    <scope>test</scope>
+		</dependency>
+
+    
+		<dependency>
+		  <!-- jsoup HTML parser library @ https://jsoup.org/ -->
+		  <groupId>org.jsoup</groupId>
+		  <artifactId>jsoup</artifactId>
+		  <version>1.10.3</version>
+		</dependency>
+    
 	  <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
 		<dependency>
 		    <groupId>org.apache.commons</groupId>

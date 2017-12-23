@@ -38,6 +38,7 @@
 								</br>
 								<div class="site-demo-button" id="layerDemo" style="margin-bottom: 0;">
 									  <button data-method="offset" data-type="auto" class="layui-btn layui-btn-normal" onClick="addCategory">新增</button>
+									    <button data-method="offset" data-type="auto" class="layui-btn layui-btn-normal" onClick="addDate()">导入quanquan网</button>
 									</div>
 		
 							 	<form name="" id="mainForm" action="<%=request.getContextPath()%>category/contractList/threeId/${threeId }" method="post">
@@ -94,6 +95,35 @@
 		
 		
 <script>
+	/**
+	 * 抓取数据保存到 sql
+	 */
+function addDate(webType){
+		$.ajax({
+		type : "Post",
+		contentType : "application/x-www-form-urlencoded; charset=UTF-8",
+		url : basePath + "category/addDate",
+		dataType : 'json',
+		data : {
+		    webType:webType
+		},
+		async : false,
+		success : function(data) {
+		    if (data.success) {
+		    		layer.alert(data.msg, {
+					  title: '提示信息'  
+						  }); 
+		    }
+		},
+		beforeSend : function() {
+
+		},
+		error : function() {
+		    return false;
+		}
+	    });
+}
+	
 /**
  * 信息导入
  */
