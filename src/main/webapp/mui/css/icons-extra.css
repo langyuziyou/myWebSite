@@ -66,6 +66,7 @@
 .hetao-left:before { content: "\10502"; }
 .mui-icon-extra-hetao-left:before { content: "\10502"; }
 .mui-icon-extra-hetao-msg:before { content: "\0F05"; }
+.mui-icon-extra-hetao-msg-white:before { content: "\0F05";color: #FFF7F7; }
 .mui-icon-extra-hetao-index:before { content: "\10012"; }
 .mui-icon-extra-hetao-index-red:before { content: "\10013"; color:red;}
 .mui-icon-extra-hetao-cate:before { content: "\10014"; }
