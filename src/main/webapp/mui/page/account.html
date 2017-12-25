@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>个人中心</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta http-equiv="Content-Type" content="multipart/form-data; charset=utf-8">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<link rel="stylesheet" type="text/css" href="../css/account/account.css" />
+	</head>
+	<body>
+		<form id="myArticleForm" enctype="multipart/form-data" method="POST" action="http://127.0.0.1:8080/file/upload?callbackType=forward">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-pull-left mui-action-back"><i class="mui-icon-extra mui-icon-extra-hetao-left" style="">&nbsp;</i></a>
+			<h1 class="mui-title">个人信息</h1>
+		</header>
+		<div class="mui-page-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="#picture" class="mui-navigate-right" style="height:58px;">
+						<p style="margin-top: 10px;color:#000000;font-size: 17px;">头像</p>
+						<span class="mui-pull-right head">
+								<img class="head-img mui-action-preview" id="head-img1" style="border-radius:30px;height:45px;width: 45px;top: 5px;">
+							</span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="nickName.html" class="mui-navigate-right">昵称<span class="mui-pull-right" style="padding-right: 25px;" id="nickName"></span></a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="heziName.html" class="mui-navigate-right">盒淘号<span class="mui-pull-right" style="padding-right: 25px;" id="account"></span></a>
+				</li>
+				<li>
+				</li>
+			</ul>
+
+		</div>
+		<div id="picture" class="mui-popover mui-popover-action mui-popover-bottom">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a onClick="upLoad();">选择图片</a>
+				</li>
+
+			</ul>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="#picture" id="cancel"><b>取消</b></a>
+				</li>
+			</ul>
+		</div>
+		<div>
+			<input type="hidden" id="imageId" name="imageId" />
+			<input type="hidden" id="notFullUrl" name="notFullUrl" />
+			
+			<input type="file" capture="camera" accept="image/*" id="upFile" name="upFile" value="选择图片">
+		</div>
+		</form>
+	</body>
+	<script src="../js/mui.min.js "></script>
+	<script src="../js/jquery-3.2.1.min.js"></script>
+	<script src="../js/jquery_form.js"></script>
+	<script src="../js/account/account.js"></script>
+	
+</html>

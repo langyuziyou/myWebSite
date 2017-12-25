@@ -7,24 +7,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-		<!--标准mui.css-->
 		<link rel="stylesheet" href="../css/mui.min.css">
 		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
-		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
 		<link rel="stylesheet" type="text/css" href="../css/detail/detail.css" />
 	</head>
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
 			<img src="../images/head/01.png" style="display: none;">
-			<a  class="mui-icon mui-pull-left mui-action-back"><i class="mui-icon-extra mui-icon-extra-hetao-left" style="">&nbsp;</i></a>
-			<h1 class="mui-title"><div id="shopDiv" class="aui-active" style="height:44px;width: 50px;margin-left: 30%;float:left ;" onClick="shopShow(1)">商品</div>
-								<div id="detailDiv" style="margin-left:60%;width: 50px;" onClick="shopShow(2)">详情</div></h1>
-			<a style="color: #000000;" class="mui-icon mui-pull-right" id="shareBtn"><img src="../images/icon/share.png" style="height: 30px;width: 30px;" /></a>
+			<a class="mui-icon mui-pull-left mui-action-back"><i class="mui-icon-extra mui-icon-extra-hetao-left" style="">&nbsp;</i></a>
+			<h1 class="mui-title">
+			<div id="shopDiv" class="aui-active" style="height:44px;width: 50px;margin-left: 30%;float:left ;" onClick="shopShow(1)">商品</div>
+			<div id="detailDiv" style="margin-left:60%;width: 50px;" onClick="shopShow(2)">详情</div></h1>
+			<a style="color: #000000;" class="mui-icon mui-pull-right" id="shareBtn"><i class="mui-icon-extra mui-icon-extra-hetao-share" style="font-size: 25px;">&nbsp;</i></a>
 		</header>
-		<div class="mui-content" style="position:absolute;width:100%;height: 100%;max-width: 414px;">
-			<div class="mui-content" id="shop" style="z-index: 1px;">
+		<div class="mui-content">
+			<div class="mui-content" id="shop">
 				<div id="slider" class="mui-slider">
 					<div class="mui-slider-group mui-slider-loop">
 						<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
@@ -75,58 +73,23 @@
 				<ul class="mui-table-view">
 					<li class="mui-table-view-cell">
 						<div class="mui-media-body">
-							xiaomi/小米 红色手机4A 超薄迷你学生智能手机
-							<p style="color:red">￥1000</p>
-							<!--<p>快递费10元 <span style="margin-left:10%;">已有10人购买</span><span style="margin-left: 15%;">广东深圳</span></p>-->
-							<p style="float: left;">快递费10元 </p>
-							<p style="float: left;margin-left: 15%;">已有10人购买</p>
-							<p style="float: right;">广东深圳</p>
+							Xiaomi/小米 红色手机4A 超薄迷你学生智能手机
+							<p style="color:#FC1D18;margin-left: 0px;font-size: 21px;">￥1000</p>
+							<p style="float: left;font-size: 13px;">快递费:10 </p>
+							<p style="float: left;margin-left: 15%;font-size: 13px;">已有10人购买</p>
+							<p style="float: right;font-size: 13px;">广东深圳</p>
 						</div>
-						<script src="../js/soshm.min.js"></script>
-						<script src="../js/jquery-3.2.1.min.js"></script>
-						<script type="text/javascript">
-							$(function(){
-								BrowserType();
-							});
-							
-							/* 
-							 * 描述：判断浏览器信息 
-							 * 编写：LittleQiang_w 
-							 * 日期：2016.1.5 
-							 * 版本：V1.1 
-							 */
 
-							
-							//判断当前浏览类型  
-							function BrowserType() {
-								var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串 
-								var isQQMobile = userAgent.indexOf("QQBrowser") > -1; //判断是否QQ浏览器  
-								var isBaiduApp = userAgent.indexOf("baiduboxapp") > -1; //判断是否百度APP浏览器  
-								if(isQQMobile){
-									$("#shareBtn").hide();
-								}
-								if(isBaiduApp){
-									$("#shareBtn").hide();
-								}
-							}
-						</script>
-
-						<script>
-							document.getElementById('shareBtn').addEventListener('click', function() {
-								soshm.popIn({
-									title: '小米',
-									sites: ['qzone', 'qq', 'weixin']
-								});
-							}, false);
-						</script>
 					</li>
 					<li class="mui-table-view-cell">
 						<div class="mui-slider-handle">
-							<p><img src="../images/icon/1.png" />正品保证 <span style="margin-left:8%;"><img src="../images/icon/1.png"/>7天无忧</span><span style="margin-left: 8%;"><img src="../images/icon/1.png"/>售后无忧</span></p>
+							<p><i class="mui-icon-extra mui-icon-extra-hetao-right" style="font-size: 15px;margin-right: 7px;padding-left: 4px;">&nbsp;</i>正品保证
+								<span style="margin-left:8%;"><i class="mui-icon-extra mui-icon-extra-hetao-right" style="font-size: 15px;margin-right: 7px;">&nbsp;</i>7天无忧</span>
+								<span style="margin-left: 8%;"><i class="mui-icon-extra mui-icon-extra-hetao-right" style="font-size: 15px;margin-right: 7px;">&nbsp;</i>售后无忧</span>
+							</p>
 						</div>
 					</li>
 				</ul>
-
 			</div>
 
 			<div class="mui-content" id="detail" style="display:none;">
@@ -168,7 +131,8 @@
 							<button type="button" class="mui-btn mui-btn-outlined">
 								金色
 							</button>
-							<span style="margin-left:8%;"><button type="button" class="mui-btn mui-btn-outlined">
+							<span style="margin-left:8%;">
+							<button type="button" class="mui-btn mui-btn-outlined">
 									黑色
 							</button>
 							</span>
@@ -214,19 +178,19 @@
 			</div>
 			<div class="mui-backdrop mui-active mui-backdrop-action" style="bottom:53px;display:none;"></div>
 
-			<footer class="aui-bar aui-bar-tab aui-margin-t-15 aui-margin-b-15" style="margin-bottom: 0px;">
-				<div class="aui-bar-tab-item" tapmode="" style="width: 3rem;border:1px;">
+			<footer class="hetaoFoot" style="margin-bottom: 0px;">
+				<div>
 					<a href="">
 						<i class="mui-icon-extra mui-icon-extra-hetao-wdsc-default" style="font-size: 30px;">&nbsp;</i>
 					</a>
 				</div>
-				<div class="aui-bar-tab-item" tapmode="" style="width: 3rem;">
+				<div>
 					<a href="shopCar.html">
 						<i class="mui-icon-extra mui-icon-extra-hetao-shopCar" style="font-size: 30px;">&nbsp;</i>
 					</a>
 				</div>
-				<div class="aui-bar-tab-item aui-bg-warning aui-text-white" tapmode="" style="width: auto;" onclick="showSku(1)">加入购物车</div>
-				<div class="aui-bar-tab-item aui-bg-danger aui-text-white" tapmode="" style="width: auto;" onclick="showSku(2)">立即购买</div>
+				<div onclick="showSku(1)">加入购物车</div>
+				<div onclick="showSku(2)">立即购买</div>
 			</footer>
 
 		</div>
@@ -234,8 +198,66 @@
 		<script src="../js/mui.min.js"></script>
 		<script src="../js/jquery-3.2.1.min.js"></script>
 		<script src="../js/soshm.min.js"></script>
+		<script src="../js/soshm.min.js"></script>
+		<script src="../js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				BrowserType();
+				loadDetail();// 基本信息
+			});
 
-		<script>
+			/**
+			 * 加载基本信息
+			 */
+			function loadDetail() {
+				$.ajax({
+					type: 'post',
+					url: basePath+'goods/detail',
+					data: {
+						id: 15
+					},
+					cache: false,
+					async: false,
+					dataType: 'JSONP',
+					contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
+					success: function(data) {
+						if(data.success) {
+							console.log(data.attributes.rs);
+							//页面赋值
+							
+						} else {
+
+						}
+					}
+				});
+			}
+
+			/* 
+			 * 描述：判断浏览器信息 
+			 * 编写：LittleQiang_w 
+			 * 日期：2016.1.5 
+			 * 版本：V1.1 
+			 */
+			//判断当前浏览类型  
+			function BrowserType() {
+				var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串 
+				var isQQMobile = userAgent.indexOf("QQBrowser") > -1; //判断是否QQ浏览器  
+				var isBaiduApp = userAgent.indexOf("baiduboxapp") > -1; //判断是否百度APP浏览器  
+				if(isQQMobile) {
+					$("#shareBtn").hide();
+				}
+				if(isBaiduApp) {
+					$("#shareBtn").hide();
+				}
+			}
+
+			document.getElementById('shareBtn').addEventListener('click', function() {
+				soshm.popIn({
+					title: '小米',
+					sites: ['qzone', 'qq', 'weixin']
+				});
+			}, false);
+
 			function shopShow(obj) {
 				if(obj == 1) {
 					$("#shopDiv").addClass("aui-active");
@@ -271,8 +293,10 @@
 				$(".mui-backdrop").hide();
 				$("#picture").slideToggle();
 			}
-		</script>
-		<script type="text/javascript" charset="utf-8">
+
+			/**
+			 * 轮播图
+			 */
 			mui.init({
 				swipeBack: true //启用右滑关闭功能
 			});
@@ -284,9 +308,5 @@
 			});
 		</script>
 	</body>
-
-	</body>
-
-</html>
 
 </html>

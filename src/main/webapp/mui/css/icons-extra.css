@@ -4,6 +4,15 @@
     font-style: normal;
     src:  url('../fonts/mui-icons-extra.ttf') format('truetype'); /* iOS 4.1- */
 }
+.mui-icon-extra-hetao
+{
+    font-family: MuiiconSpread;
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+}
 .mui-icon-extra
 {
     font-family: MuiiconSpread;
@@ -66,7 +75,7 @@
 .hetao-left:before { content: "\10502"; }
 .mui-icon-extra-hetao-left:before { content: "\10502"; }
 .mui-icon-extra-hetao-msg:before { content: "\0F05"; }
-.mui-icon-extra-hetao-msg-white:before { content: "\0F05";color: #FFF7F7; }
+.mui-icon-extra-hetao-msg-white:before { content: "\0F05";color:#FFFFFF; }
 .mui-icon-extra-hetao-index:before { content: "\10012"; }
 .mui-icon-extra-hetao-index-red:before { content: "\10013"; color:red;}
 .mui-icon-extra-hetao-cate:before { content: "\10014"; }
@@ -80,9 +89,11 @@
 .mui-icon-extra-hetao-dsh:before { content: "\10022";}
 .mui-icon-extra-hetao-ywc:before { content: "\10023";}
 .mui-icon-extra-hetao-tk:before { content: "\10024";}
-.mui-icon-extra-hetao-wdsc:before { content: "\10025";color:#ffae00;}
+.mui-icon-extra-hetao-wdsc:before { content: "\10032";color:red;}
 .mui-icon-extra-hetao-wdsc-default:before { content: "\10025";}
 .mui-icon-extra-hetao-zj:before { content: "\10026";color:#ff3935;}
 .mui-icon-extra-hetao-shdz:before { content: "\10028";color:#ffae00;}
 .mui-icon-extra-hetao-sz:before { content: "\10029";color:#ff3935;}
+.mui-icon-extra-hetao-right:before { content: "\10030";color:#fc1d18;}
+.mui-icon-extra-hetao-share:before { content: "\10031";}
 

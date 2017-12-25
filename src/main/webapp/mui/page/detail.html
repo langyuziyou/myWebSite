@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>商品详情</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<link rel="stylesheet" type="text/css" href="../css/detail/detail.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<img src="../images/head/01.png" style="display: none;">
+			<a class="mui-icon mui-pull-left mui-action-back"><i class="mui-icon-extra mui-icon-extra-hetao-left" style="">&nbsp;</i></a>
+			<h1 class="mui-title">
+			<div id="shopDiv" class="aui-active" style="height:44px;width: 50px;margin-left: 30%;float:left ;" onClick="shopShow(1)">商品</div>
+			<div id="detailDiv" style="margin-left:60%;width: 50px;" onClick="shopShow(2)">详情</div></h1>
+			<a style="color: #000000;" class="mui-icon mui-pull-right" id="shareBtn"><i class="mui-icon-extra mui-icon-extra-hetao-share" style="font-size: 25px;">&nbsp;</i></a>
+		</header>
+		<div class="mui-content">
+			<div class="mui-content" id="shop">
+				<div id="slider" class="mui-slider">
+					<div class="mui-slider-group mui-slider-loop" id="imgList">
+					</div>
+					<div class="mui-slider-indicator" id="imgDiv">
+					</div>
+				</div>
+
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<div class="mui-media-body">
+							<p id="name" style="color:#000000;margin-left: 0px;font-size: 19px;"></p>
+							<p id="price" style="color:#FC1D18;margin-left: 0px;font-size: 21px;"></p>
+							<p style="float: left;font-size: 13px;">快递费10</p>
+							<p style="float: left;margin-left: 15%;font-size: 13px;">已有10人购买</p>
+							<p style="float: right;font-size: 13px;">广东深圳</p>
+						</div>
+
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="mui-slider-handle">
+							<p><i class="mui-icon-extra mui-icon-extra-hetao-right" style="font-size: 15px;margin-right: 7px;padding-left: 4px;">&nbsp;</i>正品保证
+								<span style="margin-left:8%;"><i class="mui-icon-extra mui-icon-extra-hetao-right" style="font-size: 15px;margin-right: 7px;">&nbsp;</i>7天无忧</span>
+								<span style="margin-left: 8%;"><i class="mui-icon-extra mui-icon-extra-hetao-right" style="font-size: 15px;margin-right: 7px;">&nbsp;</i>售后无忧</span>
+							</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<div class="mui-content" id="detail" style="display:none;">
+				<div class="mui-content-padded">
+				</div>
+			</div>
+
+			<div id="picture" class="mui-popover mui-popover-action mui-popover-bottom mui-active" style="z-index:9999;display: none;background-color:#FFFFFF ;height: 350px;max-width: 414px;margin-bottom: 0px;">
+				<ul class="mui-table-view" style="background-color: #FFFFFF;">
+					<li class="mui-table-view" style="background-color: #FFFFFF;">
+						<div style="float: right;" onclick="hideSku()">
+							<span class="mui-icon mui-icon-closeempty"></span>
+						</div>
+						<a href="javascript:;">
+							<img class="mui-pull-left" src="../images/shuijiao.jpg" style="width:70px;height:70px;margin-left: 5px;">
+							<div style="text-align:left;margin-top: 7%;">
+								<p style="margin-left: 85px;color: red;">￥<span id="skuPrice">1000</span></p>
+								<p style="margin-left: 85px;">已经选择：<span id="selectedSku"></span></p>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<ul class="mui-table-view skuUl" style="background-color: #FFFFFF;" id="skuUl">
+
+				</ul>
+				<ul class="mui-table-view" style="background-color: #FFFFFF;margin-bottom: 53px;">
+					<li class="mui-table-view" style="text-align:left;background-color: #FFFFFF;margin-top:10px ;">
+						<p>数量</p>
+						<div class="mui-numbox" data-numbox-min="1" style="float: left;max-height: 25px;">
+							<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+							<input class="mui-input-numbox" type="number" id="number">
+							<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+						</div>
+					</li>
+				</ul>
+
+			</div>
+			<div class="mui-backdrop mui-active mui-backdrop-action" style="display:none;"></div>
+
+			<footer class="hetaoFoot" style="margin-bottom: 0px;z-index: 9999;">
+				<div>
+					<a onClick="collect();">
+						<i id="collect" class="mui-icon-extra mui-icon-extra-hetao-wdsc-default" style="font-size: 30px;">&nbsp;</i>
+					</a>
+				</div>
+				<div>
+					<a href="shopCar.html">
+						<i class="mui-icon-extra mui-icon-extra-hetao-shopCar" style="font-size: 30px;">&nbsp;</i>
+					</a>
+				</div>
+				<div onclick="showSku(1)">加入购物车</div>
+				<div onclick="showSku(2)">立即购买</div>
+			</footer>
+			<div style="display:none;" id="skuListDiv">
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/jquery-3.2.1.min.js"></script>
+		<script src="../js/soshm.min.js"></script>
+		<script src="../js/detail/share.js"></script>
+		<script src="../js/detail/detail.js"></script>
+		<script src="../js/detail/collect.js"></script>
+	</body>
+
+</html>

@@ -31,7 +31,14 @@ a {
 .mySet div {
 	display: table-cell;
 	width: 17%;
-	padding-left: 3%;
+	padding-left: 5%;
+	text-align: center;
+}
+
+.mySet div:first-child {
+	display: table-cell;
+	width: 17%;
+	padding-left: 7%;
 	text-align: center;
 }
 

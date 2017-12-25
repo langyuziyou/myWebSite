@@ -10,6 +10,11 @@
 
 		<link rel="stylesheet" href="../css/mui.min.css">
 		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+				<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../css/app.css"/>
+		<link href="../css/mui.picker.css" rel="stylesheet" />
+
+		<link href="../css/mui.poppicker.css" rel="stylesheet" />
 		<style>
 			html,
 			body {
@@ -116,10 +121,12 @@
 			.mui-table-view-cell:after {
 				background-color: #efeff4;
 			}
+			.mui-table-view:after {
+				background-color: #efeff4;
+			}
 			
 			
 		</style>
-		<link rel="stylesheet" type="text/css" href="../css/feedback.css" />
 		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
 	</head>
 
@@ -201,9 +208,16 @@
 						</a>
 					</li>
 					<li class="mui-table-view-cell">
-						<a href="collect.html" class="mui-navigate-right">
-							发票类型<span style="float: right;">公司</span>
-						</a>
+					<span>开具发票</span>
+					<div class="mui-switch mui-switch-mini mui-active ">
+						<div class="mui-switch-handle"></div>
+					</div>
+					</li>
+					<li class="mui-table-view-cell">
+						
+						<a id='showUserPicker' class="mui-navigate-right">
+								发票类型<span id='userResult' style="float: right;">公司</span>
+							</a>
 					</li>
 					<li class="mui-table-view-cell">
 						<a href="collect.html" class="mui-navigate-right">
@@ -248,16 +262,57 @@
 
 	</body>
 	<script src="../js/mui.min.js "></script>
-	<script src="../js/mui.view.js "></script>
-
+	<script src="../js/mui.picker.js"></script>
+	<script src="../js/mui.poppicker.js"></script>
 	<script>
-		mui.init();
-		//初始化单页view
-		var viewApi = mui('#app').view({
-			defaultPage: '#setting'
-		});
-		//初始化单页的区域滚动
-		mui('.mui-scroll-wrapper').scroll();
-	</script>
+			mui.init({
+				swipeBack:true //启用右滑关闭功能
+			});
+			mui('.mui-switch').each(function() { //循环所有toggle
+				
+				/**
+				 * toggle 事件监听
+				 */
+				this.addEventListener('toggle', function(event) {
+					console.log((event.detail.isActive ? 'true' : 'false'));
+				});
+				//console.log(this.classList.contains('mui-active') ? 'true' : 'false');
+			});
+			
+			//
+			(function($, doc) {
+				$.init();
+				$.ready(function() {
+					/**
+					 * 获取对象属性的值
+					 * 主要用于过滤三级联动中，可能出现的最低级的数据不存在的情况，实际开发中需要注意这一点；
+					 * @param {Object} obj 对象
+					 * @param {String} param 属性名
+					 */
+					var _getParam = function(obj, param) {
+						return obj[param] || '';
+					};
+					//普通示例
+					var userPicker = new $.PopPicker();
+					userPicker.setData([{
+						value: '1',
+						text: '公司'
+					}, {
+						value: '2',
+						text: '个人'
+					}]);
+					var showUserPickerButton = doc.getElementById('showUserPicker');
+					var userResult = doc.getElementById('userResult');
+					showUserPickerButton.addEventListener('tap', function(event) {
+						userPicker.show(function(items) {
+							userResult.innerText =items[0].text;
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+					//-----------------------------------------
+				});
+			})(mui, document);
+		</script>
 
 </html>

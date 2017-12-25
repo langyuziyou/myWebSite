@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>购物车</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<link rel="stylesheet" type="text/css" href="../css/shopCar/shopCar.css" />
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color:#FFFFFF;">
+			<a class="mui-icon mui-pull-left mui-action-back"><i class="mui-icon-extra mui-icon-extra-hetao-left" style="">&nbsp;</i></a>
+			<h1 class="mui-title" style="float:left;">购物车</h1>
+			<div style="float:right;vertical-align: middle;height:44px;margin-top: 10px;">
+				<span id="edit" style="font-size: 13px;" onClick="edit();">编辑</span>
+			</div>
+		</header>
+		<div class="mui-content" style="margin-top:0px;">
+			<ul id="OA_task_1" class="mui-table-view" style="margin-top:0px;">
+			</ul>
+
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					</br>
+				</li>
+				<li class="mui-table-view-cell">
+					</br>
+				</li>
+			</ul>
+		</div>
+		<footer class="hetaoFoot" style="margin-bottom: 0px;">
+			<div class="mui-input-row mui-checkbox mui-left" style="float:left;display:inline;height:50px;width:25%;">
+				<input name="checkboxAll" id="checkboxAll" value="Item 1" type="checkbox" style="left:15px;top: 10px;">
+				<p style="margin-left:45px;margin-top: 13px;width:40px;">全选</p>
+			</div>
+			<div class="" style="height:50px;width:130px;width: 45%;">
+				<p style="margin-top: 13px;display:none;" id="paybupay">合计<span  style="color:red;">￥<span id="pay">1022200.00</span></span></p>
+			</div>
+			<div class="aui-bar-tab-item" id="last_hide" tapmode="" style="margin-right:0px;width: 30%;background-color:#efeff4;color:#000000;">去结算</div>
+			<div class="aui-bar-tab-item" id="last_buy" onClick="subM();" tapmode="" style="width: 30%;background-color:#e51c23;color:#FFFFFF;display:none;">去结算</div>
+		</footer>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/jquery-3.2.1.min.js"></script>
+		<script src="../js/shopCar/shopCar.js"></script>
+		<script src="../js/shopCar/shopCarMui.js"></script>
+	</body>
+</html>

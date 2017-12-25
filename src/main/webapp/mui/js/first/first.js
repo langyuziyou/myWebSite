@@ -54,7 +54,7 @@ var scroll = new auiScroll({
 				html += '<div class="mui-content-padded">';
 				html += '<p >OPPO 前后2000万 全面屏拍照手机';
 				html += '</br>';
-				html += '<span>￥ 1000</span>';
+				html += '<span style="font-size: 8px;">￥ <span style="font-size: 15px;">1000</span></span>';
 				html += '</p>';
 				html += '</div>';
 				html += '</a>';

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>分类</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<link rel="stylesheet" type="text/css" href="../css/category/category.css" />
+		<style>
+			.mui-row.mui-fullscreen>[class*="mui-col-"] {
+				height: 100%;
+			}
+			
+			.mui-col-xs-3,
+			.mui-control-content {
+				overflow-y: auto;
+				height: 100%;
+			}
+			
+			.mui-segmented-control .mui-control-item {
+				line-height: 50px;
+				width: 100%;
+				background-color: #F0F0F0;
+			}
+			
+
+			.mui-segmented-control .mui-control-item:before{
+			    position: absolute;
+			    display: block;
+			    border-left: 5px solid #F0F0F0;
+			}
+			.mui-segmented-control .mui-control-item.mui-active:before{
+				content:"\10031";
+			    position: absolute;
+			    display: block;
+			    color:#FFFFFF;
+			    padding-left: 0px;
+			    padding-top: 0px;
+			    border-left: 2px solid #f02b2b;
+			}
+			
+			.mui-table-view-cell:before {
+				background-color: #FFFFFF;
+			}
+			
+			.mui-table-view-cell:after {
+				background-color: #FFFFFF;
+			}
+			
+			.mui-active {
+				border-bottom: 0px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-pull-left mui-action-back"><i class="mui-icon-extra mui-icon-extra-hetao-left" style="">&nbsp;</i></a>
+			<h1 class="mui-title">分类</h1>
+		</header>
+		<div class="mui-content mui-row mui-fullscreen">
+			<div class="mui-col-xs-3">
+				<div id="segmentedControls" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-vertical">
+
+				</div>
+			</div>
+			<div id="segmentedControlContents" class="mui-col-xs-9" style="border-left: 0px solid #c8c7cc;background-color: #FFFFFF;">
+				<div id="item1" class="mui-control-content" style="height:auto;">
+					<h3 class="imgTitle"> <img src="../images/category/2.png"></h3>
+					<ul class="mui-table-view mui-grid-view mui-grid-1">
+						<li>
+
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+							<a href="#">
+								<span class="mui-icon"> <img class="mui-media-object mui-pull-left" src="../images/brand/595b5b64Ne0c16c4c.jpg"></span>
+								<div class="mui-media-body">GANK</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+							<a href="#">
+								<span class="mui-icon"> <img class="mui-media-object mui-pull-left" src="../images/brand/595b5b72Nfebd50ea.jpg"></span>
+								<div class="mui-media-body">PORT</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+							<a href="#">
+								<span class="mui-icon"> <img class="mui-media-object mui-pull-left" src="../images/brand/5983e733Nd131e8c7.jpg"></span>
+								<div class="mui-media-body">KAOCH</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+							<a href="#">
+								<span class="mui-icon"> <img class="mui-media-object mui-pull-left" src="../images/brand/595b5b72Nfebd50ea.jpg"></span>
+								<div class="mui-media-body">PORT</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+							<a href="#">
+								<span class="mui-icon"> <img class="mui-media-object mui-pull-left" src="../images/brand/5983e733Nd131e8c7.jpg"></span>
+								<div class="mui-media-body">KAOCH</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/jquery-3.2.1.min.js"></script>
+		<script>
+			$(function() {
+				loadCategory();
+			});
+
+			/***
+			 * 加载 分类
+			 */
+			function loadCategory() {
+				var controls = document.getElementById("segmentedControls");
+				var html = '';
+				$.ajax({
+					type: 'post',
+					url: basePath + 'cate/loadCategory',
+					data: {
+
+					},
+					cache: false,
+					async: false,
+					dataType: 'JSONP',
+					contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
+					success: function(data) {
+						if(data.success) {
+							console.log(data);
+							var list = data.obj.list;
+							var cp = data.obj.cpList;
+							for(var i = 0; i < list.length; i++) {
+								if(i == 0) {
+									html+='<a class="mui-control-item  mui-active" onClick="loadCateById(\''+list[i].mallCatId+'\')">' + list[i].catName + '</a>';
+								} else {
+									html+='<a class="mui-control-item " onClick="loadCateById(\''+list[i].mallCatId+'\')">' + list[i].catName + '</a>';
+								}
+
+							}
+							$("#segmentedControls").append(html);
+							//$("#item1").empty();
+							var content = '';
+							for(i = 0; i < cp.length; i++) {
+								console.log(cp[i].categoryName);
+								var img = cp[i].img;
+								if(img != null){
+										content += '<h3 class="imgTitle"> <img src="'+imgPath+img+'"></h3>';
+								}else
+								{
+										content += '<h3 class="title"> <span>' + cp[i].categoryName + '</span></h3>';
+								}
+							
+								content += '<ul class="mui-table-view mui-grid-view mui-grid-1">';
+								var l = cp[i].list;
+								for(var j = 0; j < l.length; j++) {
+									content += '<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">';
+									content += '<a href="#">';
+									content += '<span class="mui-icon"> <img class="mui-media-object mui-pull-left" src="'+imgPath+l[j].imageUrl+'"></span>';
+									content += '<div class="mui-media-body" style="font-size:12px;">'+l[j].catName+'</div>';
+									content += '</a>';
+									content += '</li>';
+								}
+								content += '</ul>';
+								
+							}
+							$("#item1").append(content);
+						} else {
+
+						}
+					}
+				});
+			}
+			
+			
+			
+			
+			/***
+			 * 点击加载分类
+			 */
+			function loadCateById(id) {
+				var controls = document.getElementById("segmentedControls");
+				var html = [];
+				$.ajax({
+					type: 'post',
+					url: basePath + 'cate/loadCateById',
+					data: {
+						id:id
+					},
+					cache: false,
+					async: false,
+					dataType: 'JSONP',
+					contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
+					success: function(data) {
+						if(data.success) {
+							console.log(data);
+							$("#item1").empty();
+							var cp = data.obj.cpList;
+							//$("#item1").empty();
+							var content = '';
+							for(i = 0; i < cp.length; i++) {
+								
+								var img = cp[i].img;
+								if(img != null){
+										content += '<h3 class="imgTitle"> <img src="'+imgPath+img+'"></h3>';
+								}
+								else
+								{
+										content += '<h3 class="title"> <span>' + cp[i].categoryName + '</span></h3>';
+										
+								}
+								console.log(cp[i].categoryName);
+								content += '<ul class="mui-table-view mui-grid-view mui-grid-1">';
+								var l = cp[i].list;
+								for(var j = 0; j < l.length; j++) {
+									content += '<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">';
+									content += '<a href="#">';
+									content += '<span class="mui-icon"> <img class="mui-media-object mui-pull-left" src="'+imgPath+l[j].imageUrl+'"></span>';
+									content += '<div class="mui-media-body" style="font-size:12px;">'+l[j].catName+'</div>';
+									content += '</a>';
+									content += '</li>';
+								}
+								content += '</ul>';
+								console.log(content);
+								
+							}
+							$("#item1").append(content);
+						} else {
+
+						}
+					}
+				});
+			}
+
+			/*			mui.init({
+							swipeBack: true //启用右滑关闭功能
+						});
+						var controls = document.getElementById("segmentedControls");
+						var contents = document.getElementById("segmentedControlContents");
+						var html = [];
+						var i = 1,
+							j = 1,
+							m = 16, //左侧选项卡数量+1
+							n = 21; //每个选项卡列表数量+1
+						for(; i < m; i++) {
+							html.push('<a class="mui-control-item" href="#content' + i + '">选项' + i + '</a>');
+						}
+						controls.innerHTML = html.join('');
+						html = [];
+						for(i = 1; i < m; i++) {
+							html.push('<div id="content' + i + '" class="mui-control-content"><ul class="mui-table-view">');
+							for(j = 1; j < n; j++) {
+								html.push('<li class="mui-table-view-cell">第' + i + '个选项卡子项-' + j + '</li>');
+							}
+							html.push('</ul></div>');
+						}
+						contents.innerHTML = html.join('');
+						//默认选中第一个
+						controls.querySelector('.mui-control-item').classList.add('mui-active');
+						contents.querySelector('.mui-control-content').classList.add('mui-active');*/
+		</script>
+
+	</body>
+
+</html>

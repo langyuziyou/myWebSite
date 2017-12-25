@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>浏览足迹</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<style>
+			#OA_task_1 img {
+				width: 69px;
+				height: 69px;
+			}
+			
+			.pMoney {
+				float: left;
+				max-height: 30px;
+				margin-top: 5px;
+				color: red;
+			}
+			
+			.mui-input-numbox {
+				color: #000000;
+			}
+			
+			.mui-table-view:before {
+				background-color: #FFFFFF;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color:#FFFFFF;">
+			<a  class="mui-icon mui-pull-left mui-action-back"><i class="mui-icon-extra mui-icon-extra-hetao-left" style="">&nbsp;</i></a>
+			<h1 class="mui-title" style="float:left;">浏览足迹</h1>
+			<div style="float:right;vertical-align: middle;height:44px;margin-top: 10px;">
+				<span id="edit" style="font-size: 13px;" onClick="edit();">编辑</span>
+			</div>
+
+		</header>
+		<div class="mui-content" style="margin-top:0px;">
+			<ul id="" class="aui-bar">
+				<li>
+					</br></br>
+					</li>
+				</ul>
+			
+			<footer class="aui-bar aui-bar-tab aui-margin-t-15 aui-margin-b-15" style="margin-bottom: 0px;">
+
+				<div class="mui-input-row mui-checkbox mui-left" style="float:left;display:inline;height:50px;width:85px;">
+					<input name="checkboxAll" id="checkboxAll" value="Item 1" type="checkbox" style="left:15px;top: 10px;">
+					<p style="margin-left:45px;margin-top: 13px;width:50px;">全选</p>
+				</div>
+
+				
+
+				<div class="aui-bar-tab-item" id="last_hide" tapmode="" style="width: 50%;background-color:#efeff4;color:#000000;">删除</div>
+				<div class="aui-bar-tab-item" id="last_buy" onClick="subM();" tapmode="" style="width: 50%;background-color:#e51c23;color:#FFFFFF;display:none;">删除</div>
+			</footer>
+
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/jquery-3.2.1.min.js"></script>
+		<script src="../js/look/readed.js"></script>
+	</body>
+
+</html>

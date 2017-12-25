@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>个人中心</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<link rel="stylesheet" type="text/css" href="../css/account/setting.css" />
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav">
+				<a href="msgCenter.html" id="msgA" style="float:right;margin-top: 11px;margin-right: -8px;"><i class="mui-icon-extra mui-icon-extra-hetao-msg">&nbsp;</i></a>
+			</div>
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-media">
+					<a class="mui-navigate-right" href="account.html" id="accountA">
+						<img class="mui-media-object mui-pull-left head-img" id="headImg" src="../images/account/default.png" style="border-radius:100px;height:93px;width:93px;">
+						<div class="userName">
+								<p style="padding-top: 15px;font-size: 18px;">登录/注册</p>
+						</div>
+					</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view" style="margin-top: 10px;">
+				<li class="mui-table-view-cell">
+					<a href='orderList.html' class="mui-navigate-right" id="orderA">我的订单</a>
+				</li>
+			</ul>
+			<div class="myOrder">
+					<div>
+						<a href='orderList.html' id="orderADFK"><i class="mui-icon-extra mui-icon-extra-hetao-dfk">&nbsp;</i>
+							<p>待付款</p>
+						</a>
+					</div>
+					<div><i class="mui-icon-extra mui-icon-extra-hetao-dfh">&nbsp;</i>
+						<p>代发货</p>
+					</div>
+					<div><i class="mui-icon-extra mui-icon-extra-hetao-dfk">&nbsp;</i>
+						<p>待收货</p>
+					</div>
+					<div><i class="mui-icon-extra mui-icon-extra-hetao-ywc">&nbsp;</i>
+						<p>已完成</p>
+					</div>
+					<div><i class="mui-icon-extra mui-icon-extra-hetao-tk" style="margin-left: 30px;">&nbsp;</i>
+						<p>退款/售后</p>
+					</div>
+			</div>
+			<div class="mySet">
+					<div>
+						<a href='collect.html' id="collectA"><i class="mui-icon-extra mui-icon-extra-hetao-wdsc">&nbsp;</i>
+							<p>我的收藏</p>
+						</a>
+					</div>
+					<div>
+						<a href="readed.html" id="readedA"><i class="mui-icon-extra mui-icon-extra-hetao-zj">&nbsp;</i>
+							<p>我的足迹</p>
+						</a>
+					</div>
+					<div>
+						<a href="address.html" id="addressA"><i class="mui-icon-extra mui-icon-extra-hetao-shdz">&nbsp;</i>
+							<p>收货地址</p>
+						</a>
+					</div>
+					<div>
+						<a href="set.html" id="setA"><i class="mui-icon-extra mui-icon-extra-hetao-sz">&nbsp;</i>
+							<p>设置</p>
+						</a>
+					</div>
+			</div>
+			<nav class="YZJbottomNav" id="nav">
+				<a href="first.html">
+					<i class="mui-icon-extra mui-icon-extra-hetao-index">&nbsp;</i>
+					<span>首页</span>
+				</a>
+				<a href="category.html">
+					<i class="mui-icon-extra mui-icon-extra-hetao-cate">&nbsp;</i>
+					<span>分类</span>
+				</a>
+				<a href="shopCar.html">
+					<i class="mui-icon-extra mui-icon-extra-hetao-shopCar">&nbsp;</i>
+					<span>购物车</span>
+				</a>
+				<a href="setting.html">
+					<i class="mui-icon-extra mui-icon-extra-hetao-my-red">&nbsp;</i>
+					<span class="active">我的</span>
+				</a>
+			</nav>
+		</div>
+	</body>
+	<script src="../js/mui.min.js "></script>
+	<script src="../js/jquery-3.2.1.min.js"></script>
+	<script src="../js/account/setting.js"></script>
+</html>

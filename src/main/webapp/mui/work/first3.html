@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>首页</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<link rel="stylesheet" type="text/css" href="../css/first/first.css" />
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<div>
+				<img class="mui-icon mui-pull-left" src="../images/head/logo.png">
+			</div>
+			<div class="mui-search mui-active">
+				<input type="search" class="mui-input-clear" onClick="goSearch();" placeholder="华为手机" style="border-radius:50px">
+				<span class="mui-placeholder">
+					<span class="mui-icon mui-icon-search"></span>
+				</span>
+			</div>
+			<div style="">
+				<a href="msgCenter.html" ><i class="mui-icon-extra mui-icon-extra-hetao-msg">&nbsp;</i></a>
+			</div>
+		</header>
+
+		<div class="mui-content">
+			<div id="slider" class="mui-slider">
+				<div class="mui-slider-group mui-slider-loop">
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="../images/yuantiao.jpg">
+						</a>
+					</div>
+					<!-- 第一张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../images/shuijiao.jpg">
+						</a>
+					</div>
+					<!-- 第二张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../images/muwu.jpg">
+						</a>
+					</div>
+					<!-- 第三张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../images/cbd.jpg">
+						</a>
+					</div>
+					<!-- 第四张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../images/yuantiao.jpg">
+						</a>
+					</div>
+					<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="../images/shuijiao.jpg">
+						</a>
+					</div>
+				</div>
+				<div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+				</div>
+			</div>
+
+			<div class="brand">
+				<div>
+					<img src="../images/head/x4.png"/>
+					<div>手机数码</div>
+				</div>
+				<div>
+					<img src="../images/head/x2.png"/>
+					<div>电脑数码</div>
+				</div>
+				<div>
+					<img src="../images/head/x3.png"/>
+					<div>女装</div>
+				</div>
+				<div>
+					<img src="../images/head/x1.png"/>
+					<div>男装</div>
+				</div>
+			</div>
+			
+			<div class="head-title">
+				品牌手机直供
+			</div>
+			<ul class="mui-table-view mui-grid-view" style="background-color:#FFFFFF;padding-top: -5px;z-index: 1;">
+				<li class="mui-table-view-cell mui-media mui-col-xs-6">
+					<a href="detail.html">
+						<img class="mui-media-object" src="../images/head/01.png">
+
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-6">
+					<a href="#">
+						<img class="mui-media-object" src="../images/head/02.png">
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-6">
+					<a href="#">
+						<img class="mui-media-object" src="../images/head/03.png">
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-6">
+					<a href="#">
+						<img class="mui-media-object" src="../images/head/04.png">
+					</a>
+				</li>
+			</ul>
+
+			<div class="head-title">
+				明星商品
+			</div>
+			<ul class="mui-table-view mui-grid-view brandUl">
+				<li class="mui-table-view-cell mui-media">
+					<a href="#">
+						<img class="mui-media-object" src="../images/head/￥499.png">
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media ">
+					<a href="#">
+						<img class="mui-media-object" src="../images/head/￥179.png">
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media ">
+					<a href="#">
+						<img class="mui-media-object" src="../images/head/￥2299.png">
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media ">
+					<a href="#">
+						<img class="mui-media-object" src="../images/head/￥1299.png">
+					</a>
+				</li>
+			</ul>
+
+			<div class="head-title">
+				盒淘推荐
+			</div>
+			<ul class="mui-table-view mui-grid-view brandUl" id="demoUi" style="">
+				<li class="mui-table-view-cell mui-media mui-col-xs-6">
+					<a href="#">
+						<img class="mui-media-object" src="../images/head/chanpin01.png">
+						<div class="mui-content-padded">
+							<p>OPPO 前后2000万 全面屏拍照手机
+								</br>
+								<span>￥ 1000</span>
+							</p>
+
+						</div>
+
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-6">
+					<a href="#">
+						<img class="mui-media-object" src="../images/head/chanpin02.png">
+						<div class="mui-content-padded">
+							<p>大米 前后2000万 全面屏拍照手机
+								</br>
+								<span>￥ 1000</span>
+							</p>
+
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-6">
+					<a href="#">
+						<img class="mui-media-object" src="../images/head/chanpin03.png">
+						<div class="mui-content-padded">
+							<p>OPPO 前后2000万 全面屏拍照手机
+								</br>
+								<span>￥ 1000</span>
+							</p>
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-6">
+					<a href="#">
+						<img class="mui-media-object" src="../images/head/chanpin04.png">
+						<div class="mui-content-padded">
+							<p>大米 前后2000万 全面屏拍照手机
+								</br>
+								<span>￥ 1000</span>
+							</p>
+
+						</div>
+					</a>
+				</li>
+			</ul>
+
+			<ul class="mui-table-view mui-grid-view">
+				<li>
+				</br>
+				</li>
+			</ul>
+
+			<a id="goTopBtn"><img src="../images/icon/top.png"/></a>
+
+			<nav class="YZJbottomNav" id="nav">
+				<a href="first.html">
+					<i class="mui-icon-extra mui-icon-extra-hetao-index-red">&nbsp;</i>
+					<span class="active">首页</span>
+				</a>
+				<a href="category.html">
+					<i class="mui-icon-extra mui-icon-extra-hetao-cate">&nbsp;</i>
+					<span>分类</span>
+				</a>
+				<a href="shopCar.html">
+					<i class="mui-icon-extra mui-icon-extra-hetao-shopCar">&nbsp;</i>
+					<span>购物车</span>
+				</a>
+				<a href="setting.html">
+					<i class="mui-icon-extra mui-icon-extra-hetao-my">&nbsp;</i>
+					<span>我的</span>
+				</a>
+			</nav>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/aui-scroll.js"></script>
+		<script src="../js/jquery-3.2.1.min.js"></script>
+		<script src="../js/first/first.js"></script>
+	</body>
+
+</html>

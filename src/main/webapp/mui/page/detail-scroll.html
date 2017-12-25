@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>商品详情</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<style>
+			#brand {
+				background-color: #FFFFFF;
+			}
+			
+			#brandName {
+				background-color: #FFFFFF;
+				height: 30px;
+			}
+			
+			#brand div {
+				width: 19%;
+				display: inline;
+				height: 120px;
+			}
+			
+			#brand div img {
+				width: 19%;
+				height: 1%;
+				margin-left: 4%;
+				margin-top: 3%;
+				background-color: #FFFFFF;
+			}
+			
+			.mui-table-view:before {
+				background-color: #FFFFFF;
+			}
+			
+			.mui-slider-handle p img {
+				width: 16px;
+				height: 16px;
+				margin-bottom: -3px;
+				margin-right: 4px;
+			}
+		</style>
+		<!--App自定义的css-->
+		<!--<link rel="stylesheet" type="text/css" href="../css/app.css"/>-->
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a style="color: #000000;" class="mui-icon mui-pull-left"><img src="../images/icon/left.png" style="height: 30px;width: 30px;" /></a>
+			<h1 class="mui-title">商品</h1>
+			<a style="color: #000000;" class="mui-icon mui-pull-right"><img src="../images/icon/share.png" style="height: 30px;width: 30px;" /></a>
+		</header>
+
+		<div class="mui-content" id="shop" style="display:none;">
+			<div id="slider" class="mui-slider">
+				<div class="mui-slider-group mui-slider-loop">
+					<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="../images/yuantiao.jpg">
+						</a>
+					</div>
+					<!-- 第一张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../images/shuijiao.jpg">
+						</a>
+					</div>
+					<!-- 第二张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../images/muwu.jpg">
+						</a>
+					</div>
+					<!-- 第三张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../images/cbd.jpg">
+						</a>
+					</div>
+					<!-- 第四张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../images/yuantiao.jpg">
+						</a>
+					</div>
+					<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="../images/shuijiao.jpg">
+						</a>
+					</div>
+				</div>
+				<div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+				</div>
+			</div>
+
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<div class="mui-media-body">
+						xiaomi/小米 红色手机4A 超薄迷你学生智能手机
+						<p style="color:red">￥1000</p>
+						<!--<p>快递费10元 <span style="margin-left:10%;">已有10人购买</span><span style="margin-left: 15%;">广东深圳</span></p>-->
+						<p style="float: left;">快递费10元 </p>
+						<p style="float: left;margin-left: 15%;">已有10人购买</p>
+						<p style="float: right;">广东深圳</p>
+					</div>
+
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-handle">
+						<p><img src="../images/icon/1.png" />正品保证 <span style="margin-left:8%;"><img src="../images/icon/1.png"/>7天无忧</span><span style="margin-left: 8%;"><img src="../images/icon/1.png"/>售后无忧</span></p>
+					</div>
+				</li>
+			</ul>
+
+		</div>
+
+		<div class="mui-content" id="detail">
+
+			<div class="mui-content-padded">
+
+				<p>
+					<img src="../images/2112.jpg" data-preview-src="" data-preview-group="1">
+				</p>
+
+				<p>
+					<img src="../images/2111.jpg" data-preview-src="" data-preview-group="1">
+				</p>
+
+				<p>
+					<img src="../images/2113.jpg" data-preview-src="" data-preview-group="1">
+				</p>
+			</div>
+
+			<footer class="aui-bar aui-bar-tab aui-margin-t-15 aui-margin-b-15" style="margin-bottom: 0px;">
+				<div class="aui-bar-tab-item" tapmode="" style="width: 3rem;border:1px;">
+					<img src="../images/icon/star.png" style="height: 30px;width: 30px;" />
+				</div>
+				<div class="aui-bar-tab-item" tapmode="" style="width: 3rem;">
+					<img src="../images/icon/shopCar.png" style="height: 30px;width: 30px;" />
+				</div>
+				<div class="aui-bar-tab-item aui-bg-warning aui-text-white" tapmode="" style="width: auto;" onclick="showSku()">加入购物车</div>
+				<div class="aui-bar-tab-item aui-bg-danger aui-text-white" tapmode="" style="width: auto;">立即购买</div>
+			</footer>
+
+		</div>
+
+		<script src="../js/mui.min.js"></script>
+		<script src="../../js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+			var slider = mui("#slider");
+			slider.slider({
+
+				interval: 5000
+
+			});
+		</script>
+	</body>
+
+</html>

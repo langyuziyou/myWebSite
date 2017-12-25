@@ -47,3 +47,10 @@ img {
 	background-color: #FFFFFF;
 }
 
+.mui-table-view-cell:before{
+	background-color: #FFFFFF;
+}
+.mui-table-view-cell:after{
+	background-color: #FFFFFF;
+}
+

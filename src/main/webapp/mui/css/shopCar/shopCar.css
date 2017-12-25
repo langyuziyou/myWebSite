@@ -1,0 +1,91 @@
+#OA_task_1 img {
+	width: 69px;
+	height: 69px;
+}
+
+.pMoney {
+	float: left;
+	max-height: 30px;
+	margin-top: 5px;
+	color: red;
+}
+
+.mui-input-numbox {
+	color: #000000;
+}
+
+.mui-table-view:before {
+	background-color: #FFFFFF;
+}
+
+.hetaoFoot {
+	position: fixed;
+	top: auto;
+	bottom: 0;
+	table-layout: fixed;
+	background-color: #ffffff;
+	color: #757575;
+	height: 53px;
+	width: 100%;
+	max-width: 414px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.hetaoFoot div {
+	float: left;
+	height: 53px;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.hetaoFoot div:nth-child(3) {
+	background-color: #f1c40f;
+	width: 35%;
+	padding-top: 15px;
+	font-size: 20px;
+	color: #FFFFFF;
+}
+
+.hetaoFoot div:nth-child(4) {
+	background-color: #f1c40f;
+	width: 35%;
+	padding-top: 15px;
+	font-size: 20px;
+	color: #FFFFFF;
+}
+
+.mui-table-view:after {
+	background-color: #FFFFFF;
+}
+
+.mui-table-view:before {
+	background-color: #FFFFFF;
+}
+
+.mui-table-view-cell:after {
+	background-color: #FFFFFF;
+}
+
+.imgStr {
+	width: 69px;
+	text-align: center;
+	position: absolute;
+	z-index: 1;
+	bottom: 3px;
+	left: 30px;
+	height: 18px;
+	line-height: 18px;
+	background-color: #000000;
+	opacity: 0.4;
+	font-size: 13px;
+	font-family: "微软雅黑";
+	color: #FFFFFF;
+	font-style: normal;
+}
+
+.mui-numbox {
+	float: right;
+	max-height: 23px;
+	width: 100px;
+}
